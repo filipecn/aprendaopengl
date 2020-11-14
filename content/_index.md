@@ -29,9 +29,13 @@ Apesar de todas conjugações erradas, frases sem sentido nenhum e termos maluco
 
 Caso deseje me ajudar nessa empreitada, ou simplesmente achou o texto/site tão ruins que tem vontade de corrigir por conta própria, ou qualquer outra razão que tenha, eu serei eternamente grato! 
 
-As contribuições são feitas via o [repositório do github](https://github.com/filipecn/aprendaopengl). É realmente muito simples, basta criar/modificar os arquivos markdown que estão na pasta `content` na pasta raiz do repositório. O sistema de pastas/arquivos dentro de `content` estão organizadas de um jeito bem fácil e intuitivo.
+Para contribuir você pode:
 
-Para aqueles(as) que quiserem se basear nas traduções do _google translate_ eu lhes dou de presente o `translate.py` (que também se encontra na raiz do repositório), script mão na roda para traduzir o post inteiro e gerar o markdown de saída. Por exemplo, digamos que você queira traduzir a seção de materiais [https://learnopengl.com/Lighting/Materials](https://learnopengl.com/Lighting/Materials) e salvar a tradução direto no seu respectivo arquivo (que neste caso deve ser `content/iluminacao/materiais/_index.md`). O script aceita vários argumentos, mas apenas dois são realmente necessários: o link do post e o arquivo de saída. Bastaria então fazer algo do tipo (partindo da pasta raiz do repositório):
+* Contribuir diretamente no [repositório do github](https://github.com/filipecn/aprendaopengl) (clonando e submetendo mudanças). É realmente muito simples, basta criar/modificar os arquivos markdown que estão na pasta `content` na pasta raiz do repositório. O sistema de pastas/arquivos dentro de `content` estão organizadas de um jeito bem fácil e intuitivo.
+
+* Modificar diretamente no github, clicando no botão **Edit this page** que estará no canto superior de cada página com o conteúdo traduzido. Este botão te leva diretamente pro arquivo markdown dentro do repositório do github e lá você pode fazer suas modificações e submetê-las.
+
+Para aqueles(as) que quiserem se basear nas traduções do _google translate_ eu lhes dou de presente o [translate.py](https://github.com/filipecn/aprendaopengl/blob/main/translate.py) (que também se encontra na raiz do repositório), script mão na roda para traduzir o post inteiro e gerar o markdown de saída. Por exemplo, digamos que você queira traduzir a seção de materiais [https://learnopengl.com/Lighting/Materials](https://learnopengl.com/Lighting/Materials) e salvar a tradução direto no seu respectivo arquivo (que neste caso deve ser `content/iluminacao/materiais/_index.md`). O script aceita vários argumentos, mas apenas dois são realmente necessários: o link do post e o arquivo de saída. Bastaria então fazer algo do tipo (partindo da pasta raiz do repositório):
 
 ``` shell
  python3 translate.py https://learnopengl.com/Lighting/Materials content/iluminacao/materiais/_index.md
@@ -39,7 +43,7 @@ Para aqueles(as) que quiserem se basear nas traduções do _google translate_ eu
 e esperar a porcentagem chegar a `100%`.
 
 {{% greenbox warning%}}
-**Esse script pode falhar, e provavelmente vai** :). Todo texto que ele não consegue traduzir ele coloca o texto em inglês original no lugar, por isso mais um motivo para realmente revisar tudo. E não preciso reforçar o fato de que muitas frases vêm erradas, sem sentido... então a revisão é realmente necessária!
+**Esse script pode falhar, e provavelmente vai .... com certeza :)**. Todo texto que ele não consegue traduzir ele coloca o texto em inglês original no lugar, por isso mais um motivo para realmente revisar tudo. E não preciso reforçar o fato de que muitas frases vêm erradas, sem sentido... então a revisão é realmente necessária!
 {{% /greenbox %}}
 
 ## Status

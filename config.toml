@@ -22,4 +22,7 @@ home = [ "HTML", "RSS", "JSON"]
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "mine"
+  editURL = "https://github.com/filipecn/aprendaopengl/tree/main/content/"
+  landingPageURL = "/aprendaopengl"
+  disableLandingPageButton = true
   
