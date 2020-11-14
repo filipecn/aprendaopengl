@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://filipecn.github.io/aprendaopengl/"
 languageCode = "pt-br"
 title = "Aprenda OpenGL"
 theme = "learn"
