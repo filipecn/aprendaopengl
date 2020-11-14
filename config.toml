@@ -1,0 +1,25 @@
+baseURL = "http://example.org/"
+languageCode = "pt-br"
+title = "Aprenda OpenGL"
+theme = "learn"
+
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/filipecn/aprendaopengl"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-bullhorn'></i> Credits"
+url = "/credits"
+weight = 30
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "mine"
+  
