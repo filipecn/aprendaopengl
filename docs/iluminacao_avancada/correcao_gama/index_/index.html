@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Correção Gama :: Aprenda OpenGL</title>
+
+    
+    <link href="/css/nucleus.css?1605373825" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605373825" rel="stylesheet">
+    <link href="/css/hybrid.css?1605373825" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605373825" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605373825" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605373825" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605373825" rel="stylesheet">
+    <link href="/css/theme.css?1605373825" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605373825" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1605373825" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605373825"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/iluminacao_avancada/correcao_gama/index_/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+<img src="images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605373825"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605373825"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/example.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605373825"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/" title="Iluminação" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item active">
+        <a href="/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://example.org/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>home</a> > <a href='/iluminacao_avancada/'>Iluminação Avançada</a> > Correção Gama
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Correção Gama
+            </h1>
+          
+
+        
+
+
+<p><a href="https://learnopengl.com/Advanced-Lighting/Gamma-Correction">Post original</a></p>
+
+<p>Logo que calculamos as cores finais de cada pixel, temos que mostrá-los em um monitor. Antigamente a maioria dos monitores utilizavam tubos de raios catódicos (<em>cathode-ray tube</em> - CRT) para gerar imagens na tela. Nesses monitores, dobrar a tensão de entrada não resultava no dobro da quantidade de brilho. Dobrar a tensão de entrada resultava em um brilho que seguia uma relação exponencial de aproximadamente 2.2, conhecida como o <em>gama</em> do monitor. Acontece que, coincidentemente, esta relação também se assemelha a como humanos medem o brilho, dado que este é mostrado na tela com uma relação similar de potência (inversa). Para melhor entender o que tudo isto significa veja a imagem seguinte:</p>
+
+<p><figure><img src="/iluminacao_avancada/correcao_gama/images/gamma_correction_brightness.png" alt="GitHub Logo"></figure></p>
+
+<p>A linha de cima parece com uma escala de brilho correta para o olho humano, dobrando o brilho (de <span  class="math">\(0.1\)</span> para <span  class="math">\(0.2\)</span> por exemplo) parece de fato ser duas vezes mais brilhante com algumas diferenças consistentes. Porém, quando estamos falando do brilho físico da luz, ou seja, a quantidade de fótons vindos de uma fonte de luz, a escala debaixo mostra o brilho correto. Na escala inferior, o dobrar o brilho resulta no brilho físico correto, mas já que nossos olhos percebem brilho diferentemente (mais susceptível a mudanças em cores escuras) o brilho parece estranho.</p>
+
+<p>Como o olho humano prefere enxergar o brilho das cores de acordo com a escala superior, monitores (ainda hoje) usam uma relação de potência para mostrar as cores de saída de tal forma que os brilhos físicos das cores originais sejam mapeados (não linearmente) a brilhos de cores na escala de cima.</p>
+
+<p>Este mapeamento não linear feito pelos monitores resulta em brilhos mais agradáveis para os nossos olhos, mas quando se fala de renderizar gráficos existe um problema: todas opções de cor e brilho que nós configuramos em nossas aplicações são baseadas no que percebemos do monitor e portanto todas opções são de fato opções não lineares de brilho/cor. Olhe o gráfico a seguir:</p>
+
+<p><figure><img src="/iluminacao_avancada/correcao_gama/images/gamma_correction_gamma_curves.png" alt="GitHub Logo"></figure></p>
+
+<p>A linha pontilhada representa valores de cor/luz no espaço linear e a linha cheia representa o espaço de cor que o monitor mostra. Se dobrarmos a cor no espaço linear, o resultado é de fato o dobro do valor. Por exemplo, pegue o vetor cor da luz <span  class="math">\((0.5, 0.0, 0.0)\)</span> que representa uma luz vermelha semiescura. Se fossemos dobrar esta luz no espaço linear teríamos <span  class="math">\((1.0, 0.0, 0.0)\)</span>, como podemos ver no gráfico. Entretanto, a cor original é mostrada no monitor como <span  class="math">\((0.218, 0.0, 0.0)\)</span>. Aqui é onde começam a surgir os problemas: uma vez que dobramos a luz vermelha escura no espaço linear, esta se torna mais de <span  class="math">\(4.5\)</span> vezes mais brilhante no monitor!</p>
+
+<p>Até este capítulo, nós assumimos trabalhar no espaço linear, mas estivemos de fato trabalhando no espaço da saída do monitor, então todas variáveis de cor e iluminação que configuramos não estavam fisicamente corretas, mas mal pareciam (quase) certas no nosso monitor. Por esta razão, nós (e os artistas) geralmente definimos os valores de iluminação mais brilhantes do que deveriam ser (já que o monitor as escurece), que resulta em invalidar todos calculos feitos no espaço linear. Note que ambos o monitor (CRT) e o gráfico linear, começam e acabam na mesma posição: são os valores intermediários que são escurecidos pela tela.</p>
+
+<p>Como as cores são baseadas na saída do monitor, todos cálculos (de iluminação) intermediários no espaço linear são fisicamente incorretos. Isto se torna óbvio quando utilizamos algoritmos de iluminação mais avançados, como podemos ver a seguir:</p>
+
+<p><figure><img src="/iluminacao_avancada/correcao_gama/images/gamma_correction_example.png" alt="GitHub Logo"></figure></p>
+
+<p>Você pode ver que a correção gama, os valores de cor (atualizados) funcionam melhor juntos e áreas mais escuras apresentam mais detalhes. No geral, um imagem de melhor qualidade com algumas poucas modificações.</p>
+
+<p>Sem corrigir corretamente o gama do monitor, a iluminação parece errada e artistas terão um trabalho difícil para obter resultados realísticos. A solução é aplicar a <strong>correção gama</strong>.</p>
+
+<h1 id="correção-gama">Correção Gama</h1>
+
+<p>A ideia da correção gama é aplicar o inverso do gama do monitor a cor final de saída andes de apresentá-la na tela. Relembrando a curva do gama no gráfico observamos uma outra linha tracejada que é a inversa da curva gama do monitor. Multiplicamos cada uma das cores lineares de saída pela sua curva inversa (tornando-as mais brilhantes) e, logo que são mostradas no monitor, a curva gama do monitor é aplicada e as cores resultantes se tornam lineares. Essencialmente, nós deixamos as cores intermediarias mais brilhantes para que assim que o monitor as escureçam, os valores fiquem balanceados.</p>
+
+<p>Vamos a outro exemplo. Temos novamente o vermelho escuro <span  class="math">\((0.5, 0.0, 0.0)\)</span>. Antes de imprimi-lo na tela, aplicamos a curva de correção gama ao valor da cor. Cores lineares mostradas por um monitor são aproximadamente escaladas por uma potência de <span  class="math">\(2.2\)</span>, então o inverso requer que as cores sejam escaladas a uma potência de <span  class="math">\(1/2.2\)</span>. O vermelho escuro corrigido então se torna
+<span  class="math">\((0.5,0.0,0.0)^{1/2.2}=(0.5,0.0,0.0)^{0.45}=(0.73,0.0,0.0)\)</span>. As cores corrigidas são então enviadas para o monitor e como resultado a cor é mostrada como <span  class="math">\((0.73,0.0,0.0)2.2=(0.5,0.0,0.0)\)</span>. Você pode ver que usando a correção gama, o monitor agora finalmente mostra as cores como as configuramos linearmente na aplicação.</p>
+
+
+<div class="notices note" ><p>Um valor gama de 2.2 é um valor padrão que aproximadamente estima o gama médio da maior parte dos monitores. O espaço de cor resultante do gama de valor 2.2 é chamado de espaço de cor sRGB (não 100% exato, mas próximo). Cada monitor tem sua própria curva gama, mas o gama de valor 2.2 gera bons resultados na maior parte dos monitores. Por essa razão, jogos normalmente permitem jogadores escolher a configuração para o gama do jogo já que este varia levemente entre monitores diferentes.</p>
+</div>
+
+
+<p>Existem dois jeitos de se aplicar a correção gama a sua cena:</p>
+
+<ul>
+<li>Usar o suporte nativo da OpenGL de framebuffer sRGB</li>
+<li>Fazer a correção gama nós mesmos, no shader de fragmento.</li>
+</ul>
+
+<p>A primeira opção é provavelmente a mais fácil, mas dá menos liberdade. Ao habilitar <code>GL_FRAMEBUFFER_SRGB</code> você diz a OpenGL para aplicar a correção gama aos pixels (do espaço de cor sRGB) antes de armazená-los no buffer de cor. O sRGB é um espaço de cor que corresponde aproximadamente a um gama <span  class="math">\(2.2\)</span> e um padrão para maioria dos dispositivos. Depois de habilitar <code>GL_FRAMEBUFFER_SRGB</code>, a OpenGL automaticamente aplica a correção gama após executar cada shader de fragmento para todos os framebuffer subsequentes, incluindo o framebuffer padrão.</p>
+
+<p>Habilitar <code>GL_FRAMEBUFFER_SRGB</code> é tão simples quanto chamar <code>glEnable</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glEnable(GL_FRAMEBUFFER_SRGB); 
+</code></pre></div>
+<p>De agora em diante, as imagens renderizadas serão corrigidas e como isso é feito no hardware então é completamente de graça. Algo que você deve se lembrar neste método (e no outro também) é que a correção gama (também) transforma as cores do espaço linear para o espaço não linear, então é muito importante que você só aplique a correção no último passo. Se fizer a correção antes do último passo, todas operações posteriores nas cores resultantes irão trabalhar com valores incorretos. Por exemplo, se estiver usando múltiplos framebuffers, provavelmente vai querer que os resultados intermediários passados entre os framebuffers permaneçam no espaço linear e que a correção gama seja aplicada apenas ao último framebuffer antes de enviá-lo a tela do monitor.</p>
+
+<p>O segundo jeito requer um pouco mais de trabalho, mas também nos dá mais controle sobre as operações de correção gama. Aplicamos a correção gama no final de cada execução de shader de fragmento relevante para que as cores finais estejam corrigidas antes de enviá-las ao monitor:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#75715e">// do super fancy lighting in linear space
+</span><span style="color:#75715e"></span>    [...]
+    <span style="color:#75715e">// apply gamma correction
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">float</span> gamma <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.2</span>;
+    FragColor.rgb <span style="color:#f92672">=</span> pow(fragColor.rgb, vec3(<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span>gamma));
+}
+</code></pre></div>
+<p>A ultima linha de código efetivamente aumenta cada componente individual da cor <code>fragColor</code> para 1.0/gamma, corrigindo a cor de saída deste shader de fragmento.</p>
+
+<p>Um problema com esse método é que para manter consistência você tem que aplicar a correção gama para cada shader de fragmento que contribui para a imagem final. Se você tiver uma dúzia de shaders de fragmento para múltiplos objetos, você deve adicionar o código para correção gama para cada um desses shaders. Uma solução mais fácil seria inserir um estágio de pós-processamento no seu loop de renderização e aplicar a correção gama no quadrilátero pós-processado como último passo, do qual você precisa fazer apenas uma vez.</p>
+
+<p>Essa única linha representa a implementação técnica da correção gama. Nem um pouco impressionante, mas existem algumas coisas extras que deve considerar ao fazer a correção gama.</p>
+
+<h1 id="srgb-textures">sRGB textures</h1>
+
+<p>Pelo fato dos monitores aplicarem o gama ao exibir as cores, toda vez que você desenha, edita, ou pinta uma imagem no seu computador, você deve escolher cores baseando-se no que exerga em seu monitor. Isso significa que todas imagens que você cria ou edita não estão no espaço linear, mas sim no espaço <code>sRGB</code> (ou seja, ao dobrar um vermelho escuro na sua tela baseando-se no brilho perceptivel, não é igual a simplesmente dobrar o valor da componente vermelha).</p>
+
+<p>Como resultado, quando artistas de textura criam arte pela visão, todas os valores de texture estão no espaço <code>sRGB</code>, então se usarmos essas texturas na nossa aplicação devemos levar isso em conta. Antes de saber o que era correção gama, isso não era um problema, porque as textureas pareciam boas no espaço <code>sRGB</code> do qual era o mesmo com o qual trabalhávamos; as texturas eram exibidas exatamente do jeito que são. Entretanto, agora que estamos exibindo tudo no espaço linear, as cores dessas texturas ficarão estranhas como na imagem a seguir:</p>
+
+<p><figure><img src="/iluminacao_avancada/correcao_gama/images/gamma_correction_srgbtextures.png" alt="GitHub Logo"></figure></p>
+
+<p>A imagem da textura é muito mais brilhante e isso acontece porque esta sendo corrigida duas vezes! Pense sobre isto, quando criamos uma imagem baseando-se no que enxergamos no monitor, efetivamente corrigimos os valores de cor da imagem de tal forma que pareça certa no monitor. Mas como aplicamos a correção gama ao renderizar, a imagem acaba ficando muito brilhante.</p>
+
+<p>Para resolver este problema, deveríamos assegurar que os artistas de textura trabalhassem no espaço linear. Mas, já que é mais fácil trabalhar no espaço <code>sRGB</code> e a maioria das ferramentas nem suportam direito texturização linear, esta solução não é muito boa.</p>
+
+<p>A solução mais plausível é recorrigir ou transformar essas texturas <code>sRGB</code> para o espaço linear antes de fazer qualquer cálculo com suas cores. Podemos fazer assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> gamma <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.2</span>;
+vec3 diffuseColor <span style="color:#f92672">=</span> pow(texture(diffuse, texCoords).rgb, vec3(gamma));
+</code></pre></div>
+<p>Para fazer isso com cada texture no espaço <code>sRGB</code> dá muito trabalho. Por sorte a OpenGL nos oferece uma outra solução para os nossos problemas ao nos permitir os formatos internos de textura <code>GL_SRGB</code> e <code>GL_SRGB_ALPHA</code>.</p>
+
+<p>Se criarmos uma textura em OpenGL com qualquer um desses dois formatos de textura <code>sRGB</code>, a OpenGL vai automaticamente corrigir as cores para o espaço linear assim que forem usadas, nos possibilitando trabalhar no espaço linear. Podemos especificar uma textura como <code>sRGB</code> desse jeito:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glTexImage2D(GL_TEXTURE_2D, <span style="color:#ae81ff">0</span>, GL_SRGB, width, height, <span style="color:#ae81ff">0</span>, GL_RGB, GL_UNSIGNED_BYTE, data);  
+</code></pre></div>
+<p>Se você também quiser incluir componentes alfa na sua textura terá então que especificar o formato interno da textura como <code>GL_SRGB_ALPHA</code>.</p>
+
+<p>Devemos tomar cuidado ao especificar texturas no espaço <code>sRGB</code> já que nem todas texturas estarão de fato no espaço <code>sRGB</code>. Texturas utilizadas para colorir objetos (como texturas difusas) são quase sempre do tipo <code>sRGB</code>. Texturas usadas para recuperar parâmetros de iluminação (como mapas especulares e mapas de normais) estão quase sempre no espaço linear, então se configurássemos estas texturas como <code>sRGB</code> a iluminação vai ficar bem estranha. Seja cuidadoso com qual texturas configurar como <code>sRGB</code>.</p>
+
+<p>Com as texturas difusas definidas como <code>sRGB</code> você terá o resultado visual esperado, mas dessa vez a correção gama ocorre apenas uma vez.</p>
+
+<h1 id="atenuação">Atenuação</h1>
+
+<p>Outra coisa que fica diferente com a correção gama é a atenuação da iluminação. No mundo real físico, a iluminação atenua aproximadamente inversamente proporcional a distancia quadrada da fonte de luz. Em português normal, isso significa que a força da luz reduz quadraticamente com a distancia a fonte de luz, como a seguir:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> attenuation <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">/</span> (distance <span style="color:#f92672">*</span> distance); 
+</code></pre></div>
+<p>Todavia, quando usamos essa equação o efeito de atenuação é normalmente muito forte, dando as luzes um raio pequeno que não parece fisicamente correto. Por esta razão outras funções de atenuação são utilizadas (como discutimos no capítulo de iluminação básica) que dão muito mais controle, ou o equivalente linear pode ser usado:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> attenuation <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">/</span> distance; 
+</code></pre></div>
+<p>O equivalente linear dá resultados mais plausíveis comparados a sua variante quadrática se a correção gama, mas quando habilitamos a correção gama a atenuação linear parece muito fraca e a atenuação quadrática fisicamente correta de repente oferece melhores resultados. A imagem abaixo mostras as diferenças:</p>
+
+<p><figure><img src="/iluminacao_avancada/correcao_gama/images/gamma_correction_attenuation.png" alt="GitHub Logo"></figure></p>
+
+<p>O porquê desta diferença é que as funções de atenuação da luz mudam o brilho, e como não estávamos visualizando nossa cena no espaço linear, escolhemos as funções de atenuação que pareciam melhores no nosso monitor, mas não eram fisicamente corretas. Pense na função de atenuação quadrática: se usássemos esta função sem a correção gama, a função se torna: <span  class="math">\((1.0/distance^2)^{2.2}\)</span> ao exibirmos no monitor. Isso cria uma atenuação muito maior do que originalmente teríamos antecipado. Isso também explica porque o equivalente linear faz muito mais sentido sem a correção gama já que se torna <span  class="math">\((1.0/distance)^{2.2}=1.0/distance^{2.2}\)</span>, a qual se assemelha muito mais com sua equivalente física.</p>
+
+
+<div class="notices note" ><p>A função de atenuação mais avançada discutida no capítulo <a href="{{site.url}}">iluminação básica</a> ainda tem seu lugar em cenas com gama corrigido dado que ela dá mais controle sobre a atenuação exata (mas claro que requer diferentes parâmetros em uma cena com gama corrigido).</p>
+</div>
+
+
+<p>Você pode encontrar o código fonte desta cena demo simples <a href="https://learnopengl.com/code_viewer_gh.php?code=src/5.advanced_lighting/2.gamma_correction/gamma_correction.cpp">aqui</a>. Pressionando a barra de espaço trocamos entre uma cena com gama corrigido e uma cena sema a correção gama, com ambas cenas utilizando suas texturas e atenuação equivalentes. Não é a demonstração mais incrível, mas mostra como aplicar todas técnicas.</p>
+
+<p>Em suma, a correção gama nos possibilita fazer todos nossos cálculos de shader/iluminação no espaço linear. Como o espaço linear faz sentido no mundo físico, a maioria das equações físicas passam a dar bons resultados (como uma atenuação real de luz). Quanto mais avançada sua iluminação se torna, mais fácil é conseguir resultados bonitos (e realísticos) com a correção gama. É por isso que também se é aconselhável que se ajuste os parametros de iluminacao só depois que tiver a correção gama no lugar.</p>
+
+<h1 id="recursos-adicionais">Recursos adicionais</h1>
+
+<ul>
+<li><a href="http://blog.johnnovak.net/2016/09/21/what-every-coder-should-know-about-gamma/">O que todo programador deveria saber sobre gama</a>: um artigo aprofundado e muito bem escrito por John Novak sobre correção gama.</li>
+<li><a href="https://www.cambridgeincolour.com/tutorials/gamma-correction.htm">www.cambridgeincolour.com</a>: mais sobre gama e correção gama.</li>
+<li><a href="http://blog.wolfire.com/2010/02/Gamma-correct-lighting">www.wolfire.com</a>: post por David Rosen sobre os benefícios da correção gama na renderização de gráficos.</li>
+<li><a href="http://renderwonk.com/blog/index.php/archive/adventures-with-gamma-correct-rendering/">renderwonk.com</a>: algumas considerações práticas extras.</li>
+</ul>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/iluminacao_avancada/sombras/" title="Sombras" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605373825"></script>
+    <script src="/js/jquery.sticky.js?1605373825"></script>
+    <script src="/js/featherlight.min.js?1605373825"></script>
+    <script src="/js/highlight.pack.js?1605373825"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605373825"></script>
+    <script src="/js/learn.js?1605373825"></script>
+    <script src="/js/hugo-learn.js?1605373825"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1605373825"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</html>
+

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Criando uma Janela :: Aprenda OpenGL</title>
+
+    
+    <link href="/css/nucleus.css?1605373825" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605373825" rel="stylesheet">
+    <link href="/css/hybrid.css?1605373825" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605373825" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605373825" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605373825" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605373825" rel="stylesheet">
+    <link href="/css/theme.css?1605373825" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605373825" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1605373825" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605373825"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/ponto_de_partida/criando_uma_janela/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+<img src="images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605373825"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605373825"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/example.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605373825"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/" title="Iluminação" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://example.org/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>home</a> > <a href='/ponto_de_partida/'>Ponto de Partida</a> > Criando uma Janela
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#glfw">GLFW</a></li>
+    <li><a href="#compilando-a-glfw">Compilando a GLFW</a></li>
+    <li><a href="#cmake">CMake</a></li>
+    <li><a href="#compilação">Compilação</a></li>
+    <li><a href="#nosso-primeiro-projeto">Nosso Primeiro Projeto</a></li>
+    <li><a href="#linking">Linking</a></li>
+    <li><a href="#biblioteca-opengl-no-windows">Biblioteca OpenGL no Windows</a></li>
+    <li><a href="#biblioteca-opengl-no-linux">Biblioteca OpenGL no Linux</a></li>
+    <li><a href="#glad">GLAD</a></li>
+    <li><a href="#configurando-a-glad">Configurando a GLAD</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Criando uma Janela
+            </h1>
+          
+
+        
+
+
+
+	<p><a href="https://learnopengl.com/Getting-started/Creating-a-window">Post Original</a></p>
+<p>A primeira coisa que precisamos fazer antes de começar a criar gráficos incríveis é criar um contexto OpenGL e uma janela da aplicação na qual desenhar. No entanto, essas operações são específicas para cada sistema operacional e a OpenGL propositalmente tenta se abstrair dessas operações. Isso significa que temos que criar uma janela, definir um contexto e lidar com a entrada do usuário por conta própria.</p>
+<p>Felizmente, existem algumas bibliotecas por aí que fornecem a funcionalidade que buscamos, algumas voltadas especificamente para OpenGL. Essas bibliotecas nos poupam todo o trabalho específico do sistema operacional e nos fornecem uma janela e um contexto OpenGL para renderizar. Algumas das bibliotecas mais populares são GLUT, SDL, SFML e GLFW. No AprendaOpenGL estaremos usando a <strong>GLFW</strong>. Sinta-se à vontade para usar qualquer uma das outras bibliotecas, a configuração para a maioria é semelhante à configuração da GLFW.</p>
+<h2 id="glfw">GLFW</h2>
+<p>A GLFW é uma biblioteca, escrita em C, voltada especificamente para OpenGL. A GLFW nos dá o as funções básicas necessárias para renderizar objetos na tela. Ela nos permite criar um contexto OpenGL, definir parâmetros de janela e lidar com a entrada do usuário, o que é suficiente para nossos propósitos.</p>
+<p>O foco desta e da próxima seção é colocar a GLFW em funcionamento, certificando-se de que ela crie corretamente um contexto OpenGL e exiba uma janela simples para podermos nos divertir. Este capítulo apresenta uma abordagem passo a passo para baixar, compilar e <em>linkar</em> a biblioteca GLFW. Usaremos o Microsoft Visual Studio 2019 no momento desta escrita (observe que o processo é o mesmo nas versões mais recentes do Visual Studio). Se você não estiver usando o Visual Studio (ou uma versão mais antiga), não se preocupe, o processo será semelhante na maioria das outras IDEs.</p>
+<h2 id="compilando-a-glfw">Compilando a GLFW</h2>
+<p>A GLFW pode ser obtida na sua própria página de <a href="http://www.glfw.org/download.html">download</a>. A GLFW já tem binários pré-compilados e arquivos de cabeçalho para Visual Studio 2012 até 2019, mas para fins de completude, iremos compilar a GLFW a partir do código-fonte. Isso é para lhe dar uma ideia do processo de compilar bibliotecas de código aberto você mesmo, pois nem todas as bibliotecas terão binários pré-compilados disponíveis. Então, vamos baixar o <em>pacote de código-fonte</em>.</p>
+
+<div class="notices warning" ><p>Estaremos compilando todas bibliotecas como binários de 64-bits, então tenha certeza de pegar as versões de 64-bits caso vá usar os binários pré-compilados.</p>
+</div>
+
+<p>Depois de baixar o pacote, extraia-o e abra seu conteúdo. Estamos interessados ​​apenas em alguns itens:</p>
+<pre><code>* A biblioteca resultante da compilação.
+* A pasta **include**.
+</code></pre>
+<p>Compilar a partir do código-fonte garante que a biblioteca resultante seja perfeitamente ajustada para sua CPU/OS, um luxo que os binários pré-compilados nem sempre oferecem (às vezes, binários pré-compilados nem estão disponíveis para seu sistema). O problema de fornecer código-fonte para o mundo todo, entretanto, é que nem todo mundo usa a mesma IDE ou sistema de compilação para desenvolver suas aplicações, o que significa que os arquivos de projeto/solução fornecidos podem não ser compatíveis com a configuração de outras pessoas. Portanto, as pessoas têm que configurar seu próprio projeto/solução com os arquivos .c/.cpp e .h/.hpp, o que é complicado. Exatamente por essas razões existe uma ferramenta chamada CMake.</p>
+<h2 id="cmake">CMake</h2>
+<p>CMake é uma ferramenta que pode gerar arquivos de projeto/solução de escolha do usuário (por exemplo, Visual Studio, Code::Blocks, Eclipse) a partir de uma coleção de arquivos de código-fonte usando scripts CMake pré-definidos. Isso nos permite gerar um arquivo de projeto do Visual Studio 2019 a partir do pacote da GLFW do qual podemos usar para compilar a biblioteca. Primeiro, precisamos baixar e instalar o CMake, que pode ser baixado em sua página de <a href="http://www.cmake.org/cmake/resources/software.html">download</a>.</p>
+<p>Assim que o CMake estiver instalado, você pode optar por executar o CMake a partir da linha de comando ou através de sua GUI. Como não estamos tentando complicar as coisas, vamos usar a GUI. O CMake requer uma pasta de código-fonte e uma pasta de destino para os binários. Para a pasta do código-fonte, vamos escolher a pasta raiz do pacote de origem da GLFW baixado e, para a pasta de compilação, criaremos umo novo diretório <em>build</em> e, em seguida, selecionaremos esse diretório.</p>
+<p><img src="/inicio/criando_uma_janela/images/cmake.png" alt="GitHub Logo"></p>
+<p>Uma vez que as pastas de origem e destino tenham sido definidas, clique no botão <strong>Configure</strong> para que o CMake possa ler as configurações necessárias e o código-fonte. Temos então que escolher o gerador para o projeto e, como estamos usando o Visual Studio 2019, vamos escolher a opção <strong>Visual Studio 16</strong> (Visual Studio 2019 também é conhecido como Visual Studio 16). O CMake irá então exibir as opções de compilação possíveis para configurar a biblioteca. Podemos deixá-las com seus valores padrão e clicar em <strong>Configure</strong> novamente para armazenar as configurações. Depois de definir as configurações, clicamos em <strong>Generate</strong> e os arquivos de projeto resultantes serão gerados em sua pasta de <strong>build</strong>.</p>
+<h2 id="compilação">Compilação</h2>
+<p>Na pasta <strong>build</strong>, um arquivo chamado <strong>GLFW.sln</strong> pode ser encontrado e o abrimos com o Visual Studio 2019. Como o CMake gerou um arquivo de projeto que já contém as configurações adequadas, só temos que compilar a solução. O CMake deveria ter configurado automaticamente a solução para que compile uma biblioteca de 64 bits; agora clique em <strong>build solution</strong>. Isso nos dará um arquivo de biblioteca compilado que pode ser encontrado em <strong>build/src/Debug</strong> denominado <strong>glfw3.lib</strong>.</p>
+<p>Depois de gerar a biblioteca, precisamos ter certeza de que a IDE sabe onde encontrar a biblioteca e os arquivos de inclusão para nosso programa OpenGL. Existem duas abordagens comuns para fazer isso:</p>
+<ol>
+<li>Encontramos as pastas <strong>/lib</strong> e <strong>/include</strong> da IDE/compilador e adicionamos o conteúdo da pasta <strong>include</strong> ds GLFW à pasta <strong>/include</strong> da IDE e, da mesma forma, adicionamos <strong>glfw3.lib</strong> à pasta <strong>/lib</strong> ds IDE. Isso funciona, mas não é a abordagem recomendada. É difícil de manter sua biblioteca e incluir arquivos, e uma nova instalação da sua IDE/compilador resultaria em você ter que fazer todo este processo novamente.</li>
+<li>Outra abordagem (recomendada) é criar um novo conjunto de diretórios em um local de sua escolha que contenha todos os arquivos de cabeçalho/bibliotecas de terceiros aos quais você pode se referir a partir de sua IDE/compilador. Você pode, por exemplo, criar uma única pasta que contém uma pasta <strong>Libs</strong> e <strong>Include</strong> e armazenar todos os nossos arquivos de biblioteca e cabeçalho, respectivamente, para projetos OpenGL. Agora todas as bibliotecas de terceiros são organizadas em um único local (que pode ser compartilhado por vários computadores). O requisito, entretanto, é que cada vez que criarmos um novo projeto, teremos que dizer a IDE onde encontrar esses diretórios.</li>
+</ol>
+<p>Assim que os arquivos necessários forem armazenados em um local de sua escolha, podemos começar a criar nosso primeiro projeto OpenGL GLFW.</p>
+<h2 id="nosso-primeiro-projeto">Nosso Primeiro Projeto</h2>
+<p>Primeiro, vamos abrir o Visual Studio e criar um novo projeto. Escolha <code>C++</code> se várias opções forem fornecidas e pegue o <strong>Projeto Vazio</strong> (Empty Project) (não se esqueça de dar ao seu projeto um nome adequado). Como faremos tudo em 64 bits e o padrão do projeto é de 32 bits, precisaremos alterar o menu na parte superior, próximo a Depurar (Debug) de x86 para x64:</p>
+<p><img src="/inicio/criando_uma_janela/images/x64.png" alt="GitHub Logo"></p>
+<p>Agora temos uma área de trabalho para criar nossa primeiríssima aplicação OpenGL!</p>
+<h2 id="linking">Linking</h2>
+<p>Para que o projeto use a GLFW, precisamos <span style="color:green">linkar </span>
+ (link) a biblioteca ao nosso projeto. Isso pode ser feito especificando o arquivo <strong>glfw3.lib</strong> nas configurações do linker, mas nosso projeto ainda não sabe onde encontrar o arquivo <strong>glfw3.lib</strong>, pois armazenamos nossas bibliotecas de terceiros em um diretório diferente. Portanto, precisamos primeiro adicionar este diretório ao projeto.</p>
+<p>Podemos dizer a IDE para levar esse diretório em consideração quando precisar procurar por arquivos de biblioteca e incluir arquivos. Clique com o botão direito do mouse no nome do projeto no <em>solution explorer</em> e vá para os diretórios <strong>VC++</strong>, conforme mostrado na imagem abaixo:</p>
+<p><img src="/inicio/criando_uma_janela/images/vc_directories.png" alt="GitHub Logo"></p>
+<p>A partir daí, você pode adicionar seus próprios diretórios para que o projeto saiba onde pesquisar. Isso pode ser feito inserindo-os manualmente no texto ou clicando na <em>string</em> de localização apropriada e selecionando a opção <strong>&lt;Edit ..&gt;</strong>. Faça isso para os <strong>Diretórios da Biblioteca</strong> (Library Directories) e <strong>Incluir Diretórios</strong> (Include Directories):</p>
+<p><img src="/inicio/criando_uma_janela/images/include_directories.png" alt="GitHub Logo"></p>
+<p>Aqui você pode adicionar quantos diretórios extras desejar e, a partir desse ponto, a IDE também pesquisará esses diretórios ao procurar por arquivos de biblioteca e de cabeçalho. Assim que sua pasta <strong>Include</strong> da GLFW for incluída, você poderá encontrar todos os arquivos de cabeçalho para a GLFW incluindo <strong>&lt;GLFW / ..&gt;</strong>. O mesmo se aplica aos diretórios da biblioteca.</p>
+<p>Uma vez que o VS agora pode encontrar todos os arquivos necessários, podemos finalmente linkar a GLFW ao projeto acessando as guias <strong>Linker</strong> e <strong>Input</strong>:</p>
+<p><img src="/inicio/criando_uma_janela/images/linker_input.png" alt="GitHub Logo"></p>
+<p>Para linkar a uma biblioteca, você deve especificar o nome da biblioteca para o <em>linker</em>. Como o nome da biblioteca é glfw3.lib, adicionamos isso ao campo <strong>Dependências adicionais</strong> (Additional Dependencies) (manualmente ou usando a opção <strong>&lt;Edit ..&gt;</strong>) e a partir desse ponto o GLFW será linkado quando compilarmos. Além da GLFW, também devemos adicionar um link para a biblioteca OpenGL, mas isso pode variar de acordo com o sistema operacional:</p>
+<h2 id="biblioteca-opengl-no-windows">Biblioteca OpenGL no Windows</h2>
+<p>Se você estiver no Windows, a biblioteca OpenGL <strong>opengl32.lib</strong> vem com o Microsoft SDK, que é instalado por padrão quando você instala o Visual Studio. Como este capítulo usa o compilador VS e está no Windows, adicionamos <strong>opengl32.lib</strong> às configurações do linker. Observe que o equivalente de 64 bits da biblioteca OpenGL é chamado <strong>opengl32.lib</strong>, assim como o equivalente de 32 bits, que é um nome um tanto infeliz.</p>
+<h2 id="biblioteca-opengl-no-linux">Biblioteca OpenGL no Linux</h2>
+<p>Em sistemas Linux, você precisa se linkar à biblioteca <strong>libGL.so</strong> adicionando <strong>-lGL</strong> às configurações do linker. Se você não conseguir encontrar a biblioteca, provavelmente precisará instalar qualquer um dos pacotes de desenvolvimento Mesa, NVidia ou AMD.</p>
+<p>Então, depois de adicionar as bibliotecas GLFW e OpenGL às configurações do linker, você pode incluir os arquivos de cabeçalho para GLFW da seguinte maneira:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GLFW\glfw3.h&gt;</span><span style="color:#75715e">
+</span></code></pre></div>
+<div class="notices tip" ><p>Para usuários Linux compilando com GCC, as seguintes opções de linha de comando podem ajudá-lo a compilar o projeto: -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl. Não linkar corretamente as bibliotecas correspondentes irá gerar muitos erros de referências indefinidas (<em>undefined references</em>).</p>
+</div>
+
+<p>Isso conclui a instalação e configuração da GLFW.</p>
+<h2 id="glad">GLAD</h2>
+<p>Ainda não chegamos lá, pois ainda há outra coisa que precisamos fazer. Como a OpenGL é realmente apenas um padrão/especificação, cabe ao fabricante do driver implementar a especificação em um driver compatível com a placa de vídeo específica. Como existem muitas versões diferentes de drivers OpenGL, a localização da maioria de suas funções não é conhecida no tempo de compilação e precisa ser consultada em tempo de execução. É então tarefa do desenvolvedor recuperar a localização das funções de que precisa e armazená-las em ponteiros de função para uso posterior. A recuperação desses locais é <a href="https://www.khronos.org/opengl/wiki/Load_OpenGL_Functions">específica do sistema operacional</a>. No Windows, é mais ou menos assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// define o prototipo das funcoes
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">void</span> (<span style="color:#f92672">*</span>GL_GENBUFFERS) (GLsizei, GLuint<span style="color:#f92672">*</span>);
+<span style="color:#75715e">// encontra a funcao e a armazena em um ponteiro de funcao
+</span><span style="color:#75715e"></span>GL_GENBUFFERS glGenBuffers  <span style="color:#f92672">=</span> (GL_GENBUFFERS)wglGetProcAddress(<span style="color:#e6db74">&#34;glGenBuffers&#34;</span>);
+<span style="color:#75715e">// a funcao agora pode ser chamada normalmente
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> buffer;
+glGenBuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>buffer);
+</code></pre></div><p>Como você pode ver, o código parece complexo e é um processo complicado fazer isso para cada função que você pode precisar que ainda não foi declarada. Felizmente, existem bibliotecas para este propósito também, onde a GLAD é uma biblioteca popular e atualizada.</p>
+<h2 id="configurando-a-glad">Configurando a GLAD</h2>
+<p>GLAD é uma biblioteca de <a href="https://github.com/Dav1dde/glad">código aberto</a> que gerencia todo o trabalho pesado de que falamos. A GLAD tem uma configuração ligeiramente diferente da maioria das bibliotecas de código aberto comuns. A GLAD usa um <a href="http://glad.dav1d.de/">serviço da web</a> onde podemos dizer a GLAD para qual versão do OpenGL gostaríamos de definir e carregar todas as funções OpenGL relevantes de acordo com essa versão.</p>
+<p>Vá para o <a href="http://glad.dav1d.de/">serviço da web</a> da GLAD, certifique-se de que a linguagem esteja definida como <code>C++</code> e, na seção API, selecione uma versão OpenGL de pelo menos 3.3 (que é o que usaremos; versões superiores também servem). Certifique-se também de que o <em>profile</em> esteja definido como <em>Core</em> e que a opção <em>Generate a loader</em> esteja marcada. Ignore as extensões (por enquanto) e clique em <em>Generate</em> para produzir os arquivos da biblioteca.</p>
+<p>A GLAD agora deve ter fornecido a você um arquivo zip contendo duas pastas de <em>include</em> e um único arquivo <strong>glad.c</strong>. Copie ambas as pastas de inclusão (<strong>glad</strong> e <strong>KHR</strong>) em seu diretório de inclusão (ou adicione um item extra apontando para essas pastas) e adicione o arquivo <strong>glad.c</strong> ao seu projeto.</p>
+<p>Após as etapas anteriores, você deve ser capaz de adicionar a seguinte diretiva de inclusão acima do arquivo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;glad/glad.h&gt; </span><span style="color:#75715e">
+</span></code></pre></div><p>Apertar o botão de compilação não deveria dar a você nenhum erro, e nesse ponto iremos para o próximo capítulo, onde discutiremos como podemos realmente usar a GLFW e a GLAD para configurar um contexto OpenGL e gerar uma janela. Certifique-se de verificar se todos os seus diretórios de inclusão e biblioteca estão corretos e se os nomes das bibliotecas nas configurações do linker correspondem às bibliotecas correspondentes.</p>
+<h1 id="recursos-adicionais">Recursos adicionais</h1>
+<ul>
+<li><a href="http://www.glfw.org/docs/latest/window_guide.html">GLFW: Window Guide</a>: guia oficial da GLFW sobre como instalar e configurar uma janela da GLFW.</li>
+<li><a href="http://www.opengl-tutorial.org/miscellaneous/building-your-own-c-application/">Building applications</a>: fornece ótimas informações sobre o processo de compilação/linkagem da sua aplicação e uma lista grande de possíveis erros (mais soluções) que podem surgir.</li>
+<li><a href="http://wiki.codeblocks.org/index.php?title=Using_GLFW_with_Code::Blocks">GLFW with Code::Blocks</a>: compilando a GLFW na IDE Code::Blocks.</li>
+<li><a href="http://www.cmake.org/runningcmake/">Running CMake</a>: breve visão geral de como executar o CMake no Windows e no Linux.</li>
+<li><a href="https://learnopengl.com/demo/autotools_tutorial.txt">Writing a build system under Linux</a>: um tutorial de autotools por Wouter Verholst sobre como escrever um sistema de compilação no Linux.</li>
+<li><a href="https://github.com/Polytonic/Glitter">Polytonic/Glitter</a>: um projeto simples que vem pré-configurado com todas as bibliotecas relevantes; ótimo se você deseja um projeto de base sem o incômodo de ter que compilar todas as bibliotecas você mesmo.</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/ponto_de_partida/opengl/" title="OpenGL"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/ponto_de_partida/ola_janela/" title="Olá Janela" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605373825"></script>
+    <script src="/js/jquery.sticky.js?1605373825"></script>
+    <script src="/js/featherlight.min.js?1605373825"></script>
+    <script src="/js/highlight.pack.js?1605373825"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605373825"></script>
+    <script src="/js/learn.js?1605373825"></script>
+    <script src="/js/hugo-learn.js?1605373825"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1605373825"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+  
+</html>

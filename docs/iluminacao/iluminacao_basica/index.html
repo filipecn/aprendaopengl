@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Iluminação Básica :: Aprenda OpenGL</title>
+
+    
+    <link href="/css/nucleus.css?1605373825" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605373825" rel="stylesheet">
+    <link href="/css/hybrid.css?1605373825" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605373825" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605373825" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605373825" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605373825" rel="stylesheet">
+    <link href="/css/theme.css?1605373825" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605373825" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1605373825" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605373825"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/iluminacao/iluminacao_basica/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+<img src="images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605373825"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605373825"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/example.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605373825"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/" title="Iluminação" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://example.org/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>home</a> > <a href='/iluminacao/'>Iluminação</a> > Iluminação Básica
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Iluminação Básica
+            </h1>
+          
+
+        
+
+
+
+	<p><a href="https://learnopengl.com/Lighting/Basic-Lighting">Post Original</a></p>
+
+<p>Iluminação no mundo real é extremamente complicada e depende de muitos fatores, algo que não podemos dar ao luxo de calcular com o poder de processamento limitado que temos. Iluminação em OpenGL é, portanto, feita com base em aproximações da realidade, utilizando modelos simplificados que são muito mais fáceis de se processar e se parece relativamente similar. Estes modelos de iluminação são baseados na física da luz como a entendemos. Um desses modelos é chamado o <span style="color:green">modelo de iluminação Phong </span>
+. O modelo de iluminação Phong é composto de 3 componentes: iluminações ambiente, difusa e especular. Abaixo você pode ver o que esses componentes de iluminação fazem sozinhos e combinados:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/basic_lighting_phong.png" alt="altlogo"></figure></p>
+
+<ul>
+<li><p><span style="color:green">Iluminação Ambiente </span>
+: mesmo quando está escuro, geralmente ainda há alguma luz em algum lugar no mundo (a lua, uma luz distante), então os objetos quase nunca estão completamente no escuro. Para simular isso, usamos uma constante de iluminação ambiente que sempre dá ao objeto um pouco de cor.</p></li>
+
+<li><p><span style="color:green">Iluminação Difusa </span>
+: simula o impacto direcional que um objeto luz tem sobre um objeto. Este é a componente mais visualmente significativa do modelo de iluminação. Quanto mais uma parte de um objeto se alinha a fonte de luz, mais clara se torna.</p></li>
+
+<li><p><span style="color:green">Iluminação Especular </span>
+: simula o ponto brilhante de uma luz que aparece em objetos brilhantes. <span style="color:blueviolet">Highlights</span>
+ especulares são mais inclinados à cor da luz do que a cor do objeto.</p></li>
+</ul>
+
+<p>Para criar cenas visualmente interessantes queremos, pelo menos, simular estas 3 componentes de iluminação. Vamos começar com a mais simples: <em>iluminação ambiente</em>.</p>
+
+<h2 id="iluminação-ambiente-ambient-lighting">Iluminação Ambiente (Ambient lighting)</h2>
+
+<p>A luz geralmente não vem de uma única fonte, mas a partir de muitas fontes de luz espalhadas ao redor de nós, mesmo quando elas não são imediatamente visíveis. Uma das propriedades da luz é que ela pode se espalhar e rebater em muitas direções, atingindo pontos que não são diretamente visíveis; a luz pode, assim, refletir sobre outras superfícies e ter um impacto indireto sobre a iluminação de um objeto. Algoritmos que levam isso em consideração são chamados algoritmos de <span style="color:green">iluminação global </span>
+ ( <span style="color:green">global illumination </span>
+, mas estes são complicados e caros para calcular.</p>
+
+<p>Uma vez que não somos grandes fãs de algoritmos complicados e caros, vamos começar usando um modelo muito simplista de iluminação global, ou seja, <span style="color:green">iluminação ambiente </span>
+. Como você viu na seção anterior, usamos uma pequena cor (de luz) constante que podemos adicionar à cor final resultante dos fragmentos do objeto, fazendo parecer que há sempre alguma luz difusa, mesmo quando não há uma fonte de luz direta.</p>
+
+<p>Adicionando iluminação ambiente a cena é realmente fácil. Pegamos a cor da luz, a multiplicamos por um pequeno fator constante de ambiente, multiplicamos então com a cor do objeto, e que o usamos o resultado como cor do fragmento no shader do cubo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    <span style="color:#66d9ef">float</span> ambientStrength <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>;
+    vec3 ambient <span style="color:#f92672">=</span> ambientStrength <span style="color:#f92672">*</span> lightColor;
+
+    vec3 result <span style="color:#f92672">=</span> ambient <span style="color:#f92672">*</span> objectColor;
+    FragColor <span style="color:#f92672">=</span> vec4(result, <span style="color:#ae81ff">1.0</span>);
+}  
+</code></pre></div>
+<p>Se você executar o programa agora, vai perceber que a primeira fase de iluminação é agora aplicada ao objeto com sucesso. O objeto está bastante escuro, mas não totalmente, uma vez que a iluminação ambiente é aplicada (note que o cubo de luz não é afetado porque usamos um shader diferente). O resultado então é algo assim:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/ambient_lighting.png" alt="altlogo"></figure></p>
+
+<h2 id="iluminação-difusa-diffuse-lighting">Iluminação Difusa (Diffuse lighting)</h2>
+
+<p>A iluminação ambiente por si só não produz os resultados mais interessantes, mas a iluminação difusa no entanto vai começar a dar um impacto visual significativo sobre o objeto. A Iluminação difusa dá ao objeto mais brilho quanto mais perto os seus fragmentos estão alinhados com os raios de luz a partir de uma fonte de luz. Para lhe dar uma melhor compreensão dê uma olhada a seguinte imagem:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/diffuse_light.png" alt="altlogo"></figure></p>
+
+<p>Na esquerda, encontramos uma fonte de luz com um raio de luz dirigido a um único fragmento de nosso objeto. Precisamos medir em que ângulo o raio de luz atinge o fragmento. Se o raio de luz é perpendicular à superfície do objeto a luz tem o maior impacto. Para medir o ângulo entre o raio de luz e o fragmento usamos algo chamado um de <span style="color:green">vetor normal </span>
+ ( <span style="color:green">normal vector </span>
+), que é um vetor perpendicular à superfície do fragmento (aqui representada como uma seta amarela); nós vamos falar disso mais tarde. O ângulo entre os dois vetores pode então ser facilmente calculado com o produto escalar.</p>
+
+<p>Você pode se lembrar do capítulo de <a href="/ponto_de_partida/transformacoes/" title="Transformações">transformações</a> que, quanto menor o ângulo entre dois vetores unitários, mais o produto escalar é inclinado para um valor de 1. Quando o ângulo entre os dois vetores é de 90 graus, o produto escalar se torna 0. O mesmo se aplica a $\theta$: quanto maior $\theta$ é, menos impacto a luz deve ter na cor do fragmento.</p>
+
+
+<div class="mynotices tip" ><p>Note que para se obter (apenas) o cosseno do ângulo entre os dois vetores, iremos trabalhar com <em>vetores unitários</em> (vetores de comprimento $1$), de modo que precisamos garantir que todos os vetores são normalizados, caso contrário, o produto escalar nos retornará mais do que apenas o cosseno (veja <a href="/ponto_de_partida/transformacoes/" title="Transformações">transformações</a>).</p>
+</div>
+
+
+<p>O produto escalar resultante é, portanto, um escalar que podemos utilizar para calcular o impacto da luz sobre a cor do fragmento, resultando em fragmentos de diferente brilhos com base na sua orientação para a luz.</p>
+
+<p>Então, o que precisamos para calcular a iluminação difusa é:</p>
+
+<ul>
+<li><p>Vetor normal: um vetor que é perpendicular à superfície do vértice.</p></li>
+
+<li><p>O raio de luz direcionado: um vetor de direção que é o vetor de diferença entre a posição da luz e a posição do fragmento. Para calcular este raio de luz, precisamos do vetor posição da luz e vetor posição do fragmento.</p></li>
+</ul>
+
+<h2 id="vetores-normais-normal-vectors">Vetores Normais (Normal Vectors)</h2>
+
+<p>Um vetor normal é um vetor (unitário) que é perpendicular à superfície de um vértice. Como um vértice, por si só, não tem superfície (é apenas um único ponto no espaço) temos que extrair um vetor normal usando seus vértices vizinhos e descobrir a superfície do vértice. Podemos usar um pequeno truque para calcular os vetores normais para todos os vértices do cubo usando o produto vetorial ( <span style="color:blueviolet">cross product</span>
+), mas já que um cubo 3D não é uma forma complicada podemos simplesmente adicioná-los manualmente para os dados de vértice. o array de dados de vértice atualizado pode ser encontrado [aqui]((/code_viewer.php?code=lighting/basic_lighting_vertex_data). Tente perceber que as normais são na verdade vetores perpendiculares à superfície de cada plano (um cubo consiste em 6 planos).</p>
+
+<p>Como adicionamos dados extra ao array de vértice devemos atualizar shader de vértice do cubo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span>layout (location <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) in vec3 aPos;
+layout (location <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) in vec3 aNormal;
+...
+</code></pre></div>
+<p>Agora que nós adicionamos um vetor normal a cada um dos vértices e atualizamos o shader de vértice devemos atualizar os ponteiros de atributos vértice também. Note que o cubo de luz usa o mesmo array de vértices para seus dados de vértice, mas o shader da lâmpada não usa nenhum dos vetores normais recém-adicionados. Não temos que atualizar os shaders da lâmpada ou configurações de atributos, mas temos que, pelo menos, modificar os ponteiros de atributos de  vértice para refletir o tamanho do novo array de vértice:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glVertexAttribPointer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)<span style="color:#ae81ff">0</span>);
+glEnableVertexAttribArray(<span style="color:#ae81ff">0</span>);
+</code></pre></div>
+<p>Nós só queremos usar os primeiros <strong>3</strong> <code>floats</code> de cada vértice e ignorar os últimos <strong>3</strong> <code>floats</code> por isso só precisamos atualizar o parâmetro de <em>stride</em> para <strong>6</strong> vezes o tamanho de um <code>float</code>.</p>
+
+
+<div class="mynotices tip" ><p>Pode parecer ineficiente usar dados de vértice que não são completamente utilizados pelo shader da lâmpada, mas os dados de vértice já estão armazenados na memória da GPU do objeto de modo que não temos que armazenar novos dados. Isso realmente faz com que seja mais eficiente em comparação com a alocação de um novo VBO especificamente para a lâmpada.</p>
+</div>
+
+
+<p>Todos os cálculos de iluminação são feitos no shader de fragmento e por isso precisamos transmitir os vetores normais do shader vértice para o shader de fragmento. Vamos fazer isso:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">out vec3 Normal;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    gl_Position <span style="color:#f92672">=</span> projection <span style="color:#f92672">*</span> view <span style="color:#f92672">*</span> model <span style="color:#f92672">*</span> vec4(aPos, <span style="color:#ae81ff">1.0</span>);
+    Normal <span style="color:#f92672">=</span> aNormal;
+} 
+</code></pre></div>
+<p>O que resta fazer agora é declarar a variável de entrada correspondente no shader de fragmento:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">in vec3 Normal;  
+</code></pre></div>
+<h2 id="calculando-a-cor-difusa">Calculando a Cor Difusa</h2>
+
+<p>Agora temos o vetor normal para cada vértice, mas ainda precisamos do vetor posição da luz e o vetor posição do fragmento. Como a posição da luz é uma única variável estática podemos declará-lo como um uniforme no shader de fragmento:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">uniform vec3 lightPos;  
+</code></pre></div>
+<p>E, em seguida, atualizar o uniforme no loop de renderização (ou fora, uma vez que não muda a todo quadro ( <span style="color:blueviolet">frame</span>
+). Usamos o vetor <span style="color:blue">lightPos</span>
+ declarado no capítulo anterior como a localização da fonte de luz difusa:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">lightingShader.setVec3(<span style="color:#e6db74">&#34;lightPos&#34;</span>, lightPos);  
+</code></pre></div>
+<p>Então a última coisa que precisamos é a verdadeira posição do fragmento. Nós vamos fazer todos os cálculos de iluminação no espaço de mundo, por isso queremos primeiramente uma posição de vértice que também está no espaço de mundo. Podemos fazer isso através da multiplicação do atributo de posição vértice com apenas a matriz de modelo (não a matriz de visão nem a matriz de projeção) para transformá-lo em coordenadas espaciais de mundo. Isto pode ser facilmente realizado no shader de vértice, então vamos declarar uma variável de saída e calcular suas coordenadas espaciais de mundo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">out vec3 FragPos;  
+out vec3 Normal;
+  
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    gl_Position <span style="color:#f92672">=</span> projection <span style="color:#f92672">*</span> view <span style="color:#f92672">*</span> model <span style="color:#f92672">*</span> vec4(aPos, <span style="color:#ae81ff">1.0</span>);
+    FragPos <span style="color:#f92672">=</span> vec3(model <span style="color:#f92672">*</span> vec4(aPos, <span style="color:#ae81ff">1.0</span>));
+    Normal <span style="color:#f92672">=</span> aNormal;
+}
+</code></pre></div>
+<p>E, por último adicione a variável de entrada correspondente ao shader de fragmento:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">in vec3 FragPos;  
+</code></pre></div>
+<p>Esta variável <code>in</code> irá ser interpolada a partir dos 3 vetores de posição de mundo do triângulo para formar o vetor <span style="color:blue">FragPos</span>
+, que é a posição de mundo por fragmento. Agora que todas as variáveis ​​necessárias estão  definidas podemos começar os cálculos de iluminação.</p>
+
+<p>A primeira coisa que precisamos calcular é o vetor de direção entre a fonte luminosa e a posição do fragmento. Da seção anterior, sabemos que o vetor direção da luz é o vetor diferença entre o vetor posição da luz e vetor posição do fragmento. Como você pode se lembrar do capítulo de <a href="/ponto_de_partida/transformacoes/" title="Transformações">transformações</a> podemos facilmente calcular essa diferença subtraindo os dois vetores um do outro. Nós também queremos garantir que todos os vetores relevantes acabem como vetores unitários, então normalizamos tanto a normal e o vetor direção resultantes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 norm <span style="color:#f92672">=</span> normalize(Normal);
+vec3 lightDir <span style="color:#f92672">=</span> normalize(lightPos <span style="color:#f92672">-</span> FragPos);  
+</code></pre></div>
+
+<div class="mynotices tip" ><p>Ao calcular a iluminação, normalmente não nos preocupamos com a magnitude de um vetor ou de sua posição; só nos preocupamos com a sua direção. Portanto, quase todos os cálculos são feitos com vetores unitários uma vez que isso os simplifica (como o produto escalar). Portanto, ao fazer cálculos de iluminação, certifique-se sempre de normalizar os vetores relevantes para assegurar que eles são vetores unitários de verdade. Esquecendo-se de normalizar um vetor é um erro bastante comum.</p>
+</div>
+
+
+<p>Em seguida, precisamos calcular o impacto da luz difusa sobre o fragmento atual, tomando o produto escalar entre os vetores <span style="color:blue">norma</span>
+ e <span style="color:blue">lightDir</span>
+. O valor resultante é então multiplicado com a cor da luz para se obter a componente difusa, resultando em uma componente difusa mais escura quanto maior o ângulo entre os dois vetores:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> diff <span style="color:#f92672">=</span> max(dot(norm, lightDir), <span style="color:#ae81ff">0.0</span>);
+vec3 diffuse <span style="color:#f92672">=</span> diff <span style="color:#f92672">*</span> lightColor;
+</code></pre></div>
+<p>Se o ângulo entre os dois vetores é superior a <strong>90</strong> graus, então o resultado do produto escalar será negativo e vamos acabar com uma componente difusa negativa.
+  Por essa razão, usamos a função <a href=""><span style="color:red">max </span></a>
+ que retorna o maior de seus parâmetros para garantir que a componente difusa (e, portanto, as cores) nunca se torne negativa. A iluminação para cores negativas não é definida de fato, por isso é melhor ficar longe dela, a menos que você seja um daqueles artistas excêntricos.</p>
+
+<p>Agora que temos tanto uma componente ambiente e uma componente difusa, somamos as duas cores e, em seguida, multiplicamos o resultado com a cor do objeto para obter a cor de saída do fragmento:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 result <span style="color:#f92672">=</span> (ambient <span style="color:#f92672">+</span> diffuse) <span style="color:#f92672">*</span> objectColor;
+FragColor <span style="color:#f92672">=</span> vec4(result, <span style="color:#ae81ff">1.0</span>);
+</code></pre></div>
+<p>Se o sua aplicação (e shaders) compilaram com sucesso você deve ver algo assim:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/basic_lighting_diffuse.png" alt="altlogo"></figure></p>
+
+<p>Você pode ver que com a iluminação difusa o cubo começa a parecer um cubo real novamente. Tente visualizar os vetores normais em sua cabeça e mover a câmera ao redor do cubo para ver que quanto maior o ângulo entre o vetor normal e vetor de direção da luz, mais escuro fica o fragmento.</p>
+
+<p>Se estiver travado, sinta-se livre para comparar o seu código-fonte com o código-fonte completo <a href="code_viewer_gh.php?code=src/2.lighting/2.1.basic_lighting_diffuse/basic_lighting_diffuse.cpp">aqui</a>.</p>
+
+<h2 id="uma-última-coisa">Uma Última Coisa</h2>
+
+<p>Na seção anterior, passamos o vetor normal diretamente do shader de vértice ao shader de fragmento. No entanto, os cálculos no shader de fragmento são todos feitos no espaço de mundo, por isso não deveríamos transformar os vetores normais a coordenadas espaciais de mundo também? Basicamente sim, mas não é tão simples como simplesmente multiplicá-los com a matriz de modelo.</p>
+
+<p>Primeiro de tudo, vetores normais são apenas vetores de direção e não representam uma posição específica no espaço. Em segundo lugar, os vetores normais não têm uma coordenada homogênea (a componente <code>w</code> de uma posição de vértice). Isto significa que translações não deveriam ter nenhum efeito sobre os vetores normais. Portanto, se queremos multiplicar os vetores normais com uma matriz de modelo, devemos remover a parte de translação da matriz pegando a matriz <strong>3x3</strong> superior esquerde da matriz de modelo (note que nós também poderíamos definir o componente <code>w</code> de um vetor normal para <strong>0</strong> e multiplicar com a matriz de <strong>4x4</strong>).</p>
+
+<p>Em segundo lugar, se a matriz de modelo realizasse uma escala não-uniforme, os vértices seriam alterados de tal maneira que o vetor normal não mais seria perpendicular à superfície. A figura seguinte mostra o efeito que uma matriz de modelo (com a escala não uniforme) tem sobre um vetor normal:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/basic_lighting_normal_transformation.png" alt="altlogo"></figure></p>
+
+<p>Sempre que aplicamos uma escala não-uniforme (nota: uma escala uniforme só muda magnitude da normal, não a sua direção, o que é facilmente corrigida com sua normalização) os vetores normais não são mais perpendiculares à superfície correspondente, o que distorce a iluminação.</p>
+
+<p>O truque para corrigir este comportamento é a utilização de uma matriz de modelo diferente especificamente adaptada para vetores normais. Esta matriz é chamada de <span style="color:green">matriz normal </span>
+ ( <span style="color:green">normal matrix </span>
+) e usa algumas operações algébricas lineares para remover o efeito de escalar de forma errada os vetores normais. Se você quiser saber como essa matriz é calculada sugiro o seguinte <a href="http://www.lighthouse3d.com/tutorials/glsl-tutorial/the-normal-matrix/">artigo</a>.</p>
+
+<p>A matriz normal é definida como &quot;a transposta da inversa da parte 3x3 superior esquerda da matriz de modelo&quot;. Ufa, é um bocado de palavra aí e se você realmente não entender o que isso significa, não se preocupe; não discutimos inversas e matrizes de transposição ainda. Note que a maioria dos recursos definem a matriz normal como calculada a partir da matriz de modelo-visão, mas uma vez que estamos trabalhando no espaço de mundo (e não no espaço de visão), vamos derivá-la a partir da matriz de modelo.</p>
+
+<p>No shader de vértice podemos gerar a matriz normal, utilizando as funções <a href=""><span style="color:red">inverse </span></a>
+ e <a href=""><span style="color:red">transpose </span></a>
+ no shader de vértice que funcionam em qualquer tipo de matriz. Note que damos um <code>cast</code> na matriz para uma matriz <strong>3x3</strong> para garantir que ela perca suas propriedades de translação e para que possamos multiplicá-la com o vetor normal <code>vec3</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Normal <span style="color:#f92672">=</span> mat3(transpose(inverse(model))) <span style="color:#f92672">*</span> aNormal;  
+</code></pre></div>
+
+<div class="mynotices warning" ><p>Inverter matrizes é uma operação custosa para os shaders, por isso sempre que possível tente evitar fazer operações de inversas, uma vez que tem que ser feito em cada vértice da sua cena. Para fins de aprendizagem isso é bom, mas para uma aplicação eficiente que você provavelmente vai querer calcular a matriz normal na CPU e enviá-la para os shaders via um uniforme antes de desenhar (assim como a matriz de modelo).</p>
+</div>
+
+
+<p>Na seção de iluminação difusa a iluminação ficou boa porque nós não fizemos nenhuma escala no objeto, de modo que não era realmente necessário usar uma matriz normal e nós poderíamos ter apenas multiplicado as normais com a matriz de modelo. No entanto, se você estiver fazendo uma escala não uniforme, é essencial que você multiplique seus vetores normais com a matriz normal.</p>
+
+<h2 id="iluminação-especular-specular-lighting">Iluminação Especular (Specular Lighting)</h2>
+
+<p>Se você não já estiver esgotado(a) com toda essa conversa de iluminação podemos terminar o modelo de iluminação Phong adicionando reflexos especulares.</p>
+
+<p>Semelhante a iluminação difusa, a iluminação especular é baseada no vetor de direção da luz e os vetores normais do objeto, mas, desta vez, também na direção da visão, isto é, na direção em que o jogador está olhando para o fragmento. A iluminação especular baseia-se nas propriedades de reflexão das superfícies. Se pensarmos na superfície do objeto como um espelho, a iluminação especular é mais forte onde víssemos a luz refletida na superfície. Você pode ver este efeito na imagem a seguir:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/basic_lighting_specular_theory.png" alt="altlogo"></figure></p>
+
+<p>Calculamos um vetor de reflexão, refletindo a direção da luz em torno do vetor normal. Em seguida, calculamos a distância angular entre este vector de reflexão e a direção da visão. Quanto mais próximo o ângulo entre eles, maior o impacto da luz especular. O efeito resultante é que vemos um pouco de <span style="color:blueviolet">highlight</span>
+ quando nós estamos olhando para a direção da luz refletida através da superfície.</p>
+
+<p>O vetor de visão (da câmera) é a variável extra que precisamos para a iluminação especular, a qual podemos calcular usando a posição no espaço de mundo do espectador e a posição do fragmento. Em seguida, calculamos a intensidade da especular, multiplicamos esta intensidade com a cor da luz e adicionamos as componentes de ambiente e difusa.</p>
+
+
+<div class="mynotices tip" ><p>Escolhemos fazer os cálculos de iluminação no espaço de mundo, mas a maioria das pessoas tende a preferir fazer a iluminação no espaço de visão ( <span style="color:blueviolet">view space</span>
+. Uma vantagem do espaço de visão é que a posição do espectador é sempre na origem <code>(0,0,0)</code>, de modo que você já tem a posição do espectador de forma gratuita. No entanto, eu acho o cálculo de iluminação no espaço de mundo mais intuitivo para fins de aprendizagem. Se você ainda quiser calcular a iluminação no espaço de visão, você terá que transformar todos os vetores relevantes com a matriz de visão (não se esqueça de mudar a matriz normal também).</p>
+</div>
+
+
+<p>Para obter as coordenadas espaciais de mundo do espectador nós simplesmente tomamos o vetor posição da câmera (que é o espectador é claro). Então, vamos adicionar outro uniforme para o shader de fragmento e passar o vetor posição da câmera para o shader:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">uniform vec3 viewPos;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">lightingShader.setVec3(<span style="color:#e6db74">&#34;viewPos&#34;</span>, camera.Position); 
+</code></pre></div>
+<p>Agora que temos todas as variáveis ​​necessárias podemos calcular a intensidade especular. Primeiro vamos definir um valor de intensidade especular para dar uma cor meio brilhante ao brilho especular para que ele não tenha muito impacto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> specularStrength <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>;
+</code></pre></div>
+<p>Se escolhêssemos o valor de <code>1.0f</code> teríamos uma componente especular muito brilhante que é um pouco demais para um cubo coral. No <a href="/iluminacao/materiais/" title="Materiais">próximo</a> capítulo vamos falar sobre como definir corretamente todas essas intensidades de iluminação e como elas afetam os objetos. Em seguida calculamos o vetor direção da câmera e o vetor correspondente de reflexão ao longo do eixo normal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 viewDir <span style="color:#f92672">=</span> normalize(viewPos <span style="color:#f92672">-</span> FragPos);
+vec3 reflectDir <span style="color:#f92672">=</span> reflect(<span style="color:#f92672">-</span>lightDir, norm);  
+</code></pre></div>
+<p>Note que negamos o vetor <code>lightDir</code>. A função <code>reflect</code> espera que o primeiro vetor apontar <strong>da</strong> fonte de luz para a posição do fragmento, mas o vetor <code>lightDir</code> está apontando na direção contrária: a partir do fragmento <strong>para</strong> a fonte de luz (isto depende da ordem de subtração anterior quando calculamos o vetor <code>lightDir</code>). Para ter certeza de que obteremos o vetor <code>reflect</code> correto, invertemos a sua direção, negando o vetor <code>lightDir</code> primeiro. O segundo argumento espera um vetor normal, então fornecemos o vetor normal normalizado.</p>
+
+<p>Então o que resta a fazer é realmente calcular a componente especular. Isto é feito com a seguinte fórmula:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> spec <span style="color:#f92672">=</span> pow(max(dot(viewDir, reflectDir), <span style="color:#ae81ff">0.0</span>), <span style="color:#ae81ff">32</span>);
+vec3 specular <span style="color:#f92672">=</span> specularStrength <span style="color:#f92672">*</span> spec <span style="color:#f92672">*</span> lightColor;  
+</code></pre></div>
+<p>Calculamos primeiro o produto escalar entre a direção da câmera e a direção de reflexão (e certifique-se que este vetor não é negativo) e, em seguida, elevamos o resultado a potência de <strong>32</strong>. Este valor de <strong>32</strong> é o valor de <span style="color:green">brilhosidade </span>
+ ( <span style="color:green">shininess </span>
+ do highlight. Quanto maior o valor de brilhosidade de um objeto, mais ele reflete adequadamente a luz em vez de espalhá-la ao seu redor e, portanto, menor o highlight se torna. Abaixo você pode ver uma imagem que mostra o impacto visual de diferentes valores de brilhosidade:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/basic_lighting_specular_shininess.png" alt="altlogo"></figure></p>
+
+<p>Nós não queremos que a componente especular chame muito a atenção, então mantemos o expoente de <strong>32</strong>. A única coisa que resta a fazer é adicioná-la as componentes de ambiente e difusa e multiplicar o resultado combinando com a cor do objeto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 result <span style="color:#f92672">=</span> (ambient <span style="color:#f92672">+</span> diffuse <span style="color:#f92672">+</span> specular) <span style="color:#f92672">*</span> objectColor;
+FragColor <span style="color:#f92672">=</span> vec4(result, <span style="color:#ae81ff">1.0</span>);
+</code></pre></div>
+<p>Nós agora calculamos todos as componentes de iluminação do modelo de iluminação Phong. Com base no seu ponto de vista você deve ver algo como isto:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/basic_lighting_specular.png" alt="altlogo"></figure></p>
+
+<p>Você pode encontrar o código-fonte completo <a href="/code_viewer_gh.php?code=src/2.lighting/2.2.basic_lighting_specular/basic_lighting_specular.cpp">aqui</a>.</p>
+
+
+<div class="mynotices tip" ><p>Nos primórdios dos shaders de iluminação, os desenvolvedores implementavam o modelo de iluminação Phong no shader de vértice. A vantagem de fazer iluminação no shader de vértice é que é muito mais eficiente, uma vez que geralmente existem muito menos vértices do que fragmentos, de modo que os cálculos de iluminação são feitos com menos frequência. No entanto, o valor da cor resultante no shader de vértice é o da iluminação de cor resultante somente no vértice e os valores de cor dos fragmentos vizinhos são, em seguida, o resultado de cores de iluminação interpolados. O resultado era que a iluminação não era muito realista, a menos que fossem utilizadas grandes quantidades de vértices:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/basic_lighting_gouruad.png" alt="altlogo"></figure></p>
+
+<p>Quando o modelo de iluminação Phong é implementado no shader de vértice ele é chamado <span style="color:green">shading de Gouraud </span>
+ ( <span style="color:green">Gouraud shading </span>
+) em vez de <span style="color:green">Phong shading </span>
+. Note-se que devido à interpolação a iluminação parece um pouco fora do lugar. O Phong shading dá resultados iluminação muito mais suaves.</p>
+</div>
+
+
+<p>A partir de agora você deve estar começando a ver quão poderosos são os shaders. Com pouca informação, shaders são capazes de calcular como a iluminação afeta as cores de fragmento para todos os nossos objetos. Nos <a href="/iluminacao/materiais/" title="Materiais">próximos</a> capítulos vamos nos aprofundar muito mais no que podemos fazer com o modelo de iluminação.</p>
+
+<h1 id="exercícios">Exercícios</h1>
+
+<ul>
+<li><p>A nossa fonte de luz é uma fonte de luz estática muito chata. Tente mover a fonte de luz ao redor da cena ao longo do tempo usando um <a href=""><span style="color:red">sin </span></a>
+ ou <a href=""><span style="color:red">cos </span></a>
+. Observando a mudança de iluminação ao longo do tempo lhe dará uma boa compreensão do modelo de iluminação de Phong: <a href="/code_viewer_gh.php?code=src/2.lighting/2.3.basic_lighting_exercise1/basic_lighting_exercise1.cpp">solução</a>.</p></li>
+
+<li><p>Brinque com diferentes valores para as componentes de ambiente, difusa e especular e veja como impactam o resultado. Também experimente com o fator de brilhosidade. Tente compreender por que certos valores têm uma certa saída visual.</p></li>
+
+<li><p>Faça shading de Phong no espaço de visão em vez do espaço de mundo: <a href="/code_viewer_gh.php?code=src/2.lighting/2.4.basic_lighting_exercise2/basic_lighting_exercise2.cpp">solução</a>.</p></li>
+
+<li><p>Implemente o shading de Gouraud em vez do shading de Phong. Se você fez as coisas direito a iluminação deve parecer um pouco fora do lugar (especialmente os reflexos especulares) com o objeto do cubo. Tente pensar por que parece tão estranho: <a href="/code_viewer_gh.php?code=src/2.lighting/2.5.basic_lighting_exercise3/basic_lighting_exercise3.cpp">solução</a></p></li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/iluminacao/cores/" title="Cores"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/iluminacao/materiais/" title="Materiais" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605373825"></script>
+    <script src="/js/jquery.sticky.js?1605373825"></script>
+    <script src="/js/featherlight.min.js?1605373825"></script>
+    <script src="/js/highlight.pack.js?1605373825"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605373825"></script>
+    <script src="/js/learn.js?1605373825"></script>
+    <script src="/js/hugo-learn.js?1605373825"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1605373825"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</html>

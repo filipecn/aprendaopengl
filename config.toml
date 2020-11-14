@@ -2,7 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "pt-br"
 title = "Aprenda OpenGL"
 theme = "learn"
-
+publishDir = "docs"
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Github repo"

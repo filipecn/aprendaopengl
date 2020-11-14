@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>home :: Aprenda OpenGL</title>
+
+    
+    <link href="/css/nucleus.css?1605373825" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605373825" rel="stylesheet">
+    <link href="/css/hybrid.css?1605373825" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605373825" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605373825" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605373825" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605373825" rel="stylesheet">
+    <link href="/css/theme.css?1605373825" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605373825" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1605373825" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605373825"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+<img src="images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605373825"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605373825"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/example.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605373825"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/" title="Iluminação" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://example.org/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+
+        
+
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
+</span>
+
+ 
+<h1 id="aprenda-opengl">APRENDA OPENGL</h1>
+<p>Bem vindo(a) <strong>:)</strong>,</p>
+<p>Este website é uma tradução direta e <em>quase inteiramente</em> fiel do website <a href="https://learnopengl.com/">https://learnopengl.com/</a>, originalmente escrito por Joey de Vries. O site oferece o conteúdo original do livro <strong>Learn OpenGL - Graphics Programming</strong>, disponível de graça no próprio site e que também tem sua versão impressa vendida por aí.</p>
+<p>Este conteúdo é direcionado para quem quer aprender programação gráfica por meio da OpenGL. Mas também para aqueles(as) que quiserem aprender um pouco de Computação Gráfica na prática.</p>
+<p>A intenção aqui é ajudar quem tem dificuldades em ler textos em inglês ou simplesmente se sente mais confortável com a língua portuguesa.</p>
+<p>Como não sou nenhum <em>expert</em> em inglês, e MENOS ainda em português, espere encontrar algum erro de vez em quando. Não exite em apontar os erros, dar sugestões, fazer críticas e até desabafos&hellip; sou todo a ouvidos! Acredito sinceramente que mesmo com alguns errinhos aqui e ali, o aprendizado e informação transmitidos por esta tradução não serão afetados, então nada para se preocupar!</p>
+<h2 id="como-é-feita-a-tradução">Como é feita a tradução?</h2>
+<p>Com sono, muito sono. De madrugada. MAS juro que é com 100% de cérebro que me sobra nessas horas.</p>
+<p>No início traduzia a partir do zero, frase por frase, escrevendo tudo. Mas de repente ficou claro pra mim que iria demorar uns 100 anos pra escrever tudo na minha velocidade e cansaço! Então tomei a única decisão que alguém preguiçoso como eu tomaria: usar o
+<em>google translate</em>. Mas logo me deparei com frases do tipo <strong>&ldquo;We only want to use the first 3 floats of each vertex&rdquo;</strong> sendo traduzidas para
+<strong>&ldquo;Nós só quer usar os primeiros 3 carros alegóricos de cada vértice&rdquo;</strong> (lágrimas). No fim o trabalho árduo continuou, mas pelo menos agora dou risada no processo.</p>
+<p>Apesar de todas conjugações erradas, frases sem sentido nenhum e termos malucos, ainda é mais rápido revisar o texto todo esquisito e consertá-lo do que escrever todo ele do zero, então <em>google translate</em> é o melhor <em>pior</em> esquema que pude encontrar nos 5 minutos que lutei contra meu dilema.</p>
+<h2 id="quero-ajudar">Quero ajudar!</h2>
+<p>Caso deseje me ajudar nessa empreitada, ou simplesmente achou o texto/site tão ruins que tem vontade de corrigir por conta própria, ou qualquer outra razão que tenha, eu serei eternamente grato!</p>
+<p>As contribuições são feitas via o <a href="https://github.com/filipecn/aprendaopengl">repositório do github</a>. É realmente muito simples, basta criar/modificar os arquivos markdown que estão na pasta <code>content</code> na pasta raiz do repositório. O sistema de pastas/arquivos dentro de <code>content</code> estão organizadas de um jeito bem fácil e intuitivo.</p>
+<p>Para aqueles(as) que quiserem se basear nas traduções do <em>google translate</em> eu lhes dou de presente o <code>translate.py</code> (que também se encontra na raiz do repositório), script mão na roda para traduzir o post inteiro e gerar o markdown de saída. Por exemplo, digamos que você queira traduzir a seção de materiais <a href="https://learnopengl.com/Lighting/Materials">https://learnopengl.com/Lighting/Materials</a> e salvar a tradução direto no seu respectivo arquivo (que neste caso deve ser <code>content/iluminacao/materiais/_index.md</code>). O script aceita vários argumentos, mas apenas dois são realmente necessários: o link do post e o arquivo de saída. Bastaria então fazer algo do tipo (partindo da pasta raiz do repositório):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> python3 translate.py https://learnopengl.com/Lighting/Materials content/iluminacao/materiais/_index.md
+</code></pre></div><p>e esperar a porcentagem chegar a <code>100%</code>.</p>
+
+<div class="mynotices warning" ><p><strong>Esse script pode falhar, e provavelmente vai</strong> :). Todo texto que ele não consegue traduzir ele coloca o texto em inglês original no lugar, por isso mais um motivo para realmente revisar tudo. E não preciso reforçar o fato de que muitas frases vêm erradas, sem sentido&hellip; então a revisão é realmente necessária!</p>
+</div>
+
+<h2 id="status">Status</h2>
+<p>A seguir, temos a lista de todas seções do site com cores indicando quais <span style="color:green">já foram traduzidas e revisadas </span>
+, quais estão <span style="color:blueviolet">sendo traduzidas no momento</span>
+, quais <span style="color:blue">já foram traduzidas mas precisam de revisão</span>
+ e por fim quais <a href=""><span style="color:red">ainda nem foram traduzidas </span></a>
+:</p>
+<table>
+<thead>
+<tr>
+<th>Capítulo</th>
+<th>Seções</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:green">Introdução </span>
+</td>
+<td></td>
+</tr>
+<tr>
+<td><span style="color:blueviolet">Ponto de Partida</span>
+</td>
+<td><span style="color:blue">Criando uma Janela</span>
+, <span style="color:blue">Olá Janela</span>
+, <span style="color:blue">Olá Triângulo</span>
+, <a href=""><span style="color:red">Shaders </span></a>
+, <a href=""><span style="color:red">Texturas </span></a>
+, <span style="color:blueviolet">Transformações</span>
+, <a href=""><span style="color:red">Sistemas de Coordenadas </span></a>
+, <a href=""><span style="color:red">Câmera </span></a>
+, <a href=""><span style="color:red">Revisão </span></a>
+</td>
+</tr>
+<tr>
+<td><span style="color:blueviolet">Iluminação</span>
+</td>
+<td><span style="color:blue">Cores</span>
+, <span style="color:blue">Iluminação Básica</span>
+, <span style="color:blueviolet">Materiais</span>
+, <a href=""><span style="color:red">Mapas de Iluminação </span></a>
+, <a href=""><span style="color:red">Lançadores de Luz </span></a>
+, <a href=""><span style="color:red">Múltiplas Luzes </span></a>
+, <a href=""><span style="color:red">Revisão </span></a>
+</td>
+</tr>
+<tr>
+<td><a href=""><span style="color:red">Carregamento de Modelos </span></a>
+</td>
+<td><a href=""><span style="color:red">Assimp </span></a>
+, <a href=""><span style="color:red">Malha </span></a>
+, <a href=""><span style="color:red">Modelo </span></a>
+</td>
+</tr>
+<tr>
+<td><a href=""><span style="color:red">OpenGL Avançada </span></a>
+</td>
+<td><a href=""><span style="color:red">Teste de Profundidade </span></a>
+, <a href=""><span style="color:red">Teste de Estêncil </span></a>
+, <a href=""><span style="color:red">Mistura </span></a>
+, <a href=""><span style="color:red">Seleção de Faces </span></a>
+, <a href=""><span style="color:red">Framebuffers </span></a>
+, <a href=""><span style="color:red">Mapas Cúbicos </span></a>
+, <a href=""><span style="color:red">Dados Avançados </span></a>
+, <a href=""><span style="color:red">GLSL Avançada </span></a>
+, <a href=""><span style="color:red">Shader de Geometria </span></a>
+, <a href=""><span style="color:red">Instanciação </span></a>
+, <a href=""><span style="color:red">Anti-Aliasing </span></a>
+</td>
+</tr>
+<tr>
+<td><span style="color:blueviolet">Iluminação Avançada</span>
+</td>
+<td><span style="color:blue">Iluminação Avançada</span>
+, <span style="color:blue">Correção Gama</span>
+, <a href=""><span style="color:red">Sombras - Mapeamento de Sombra </span></a>
+, <a href=""><span style="color:red">Sombras - Sombras Pontuais </span></a>
+, <a href=""><span style="color:red">Mappeamento de Normais </span></a>
+, <a href=""><span style="color:red">Mapeamento de Paralaxe </span></a>
+, <a href=""><span style="color:red">HDR </span></a>
+, <a href=""><span style="color:red">Bloom </span></a>
+, <a href=""><span style="color:red">Deferred Shading </span></a>
+, <a href=""><span style="color:red">SSAO </span></a>
+</td>
+</tr>
+<tr>
+<td><a href=""><span style="color:red">PBR </span></a>
+</td>
+<td><a href=""><span style="color:red">Teoria </span></a>
+, <a href=""><span style="color:red">Iluminação </span></a>
+, <a href=""><span style="color:red">IBL - Irradiância Difusa </span></a>
+, <a href=""><span style="color:red">IBL - IBL Especular </span></a>
+</td>
+</tr>
+<tr>
+<td><a href=""><span style="color:red">Na Prática </span></a>
+</td>
+<td><a href=""><span style="color:red">Depurando </span></a>
+, <a href=""><span style="color:red">Renderização de Texto </span></a>
+, <a href=""><span style="color:red">Jogo 2D </span></a>
+, <a href=""><span style="color:red">- Breakout </span></a>
+, <a href=""><span style="color:red">- Preparação </span></a>
+, <a href=""><span style="color:red">Renderizando Sprites </span></a>
+, <a href=""><span style="color:red">- Fases </span></a>
+, <a href=""><span style="color:red">- Colisões </span></a>
+, <a href=""><span style="color:red">-- Bola </span></a>
+, <a href=""><span style="color:red">-- Detecção de Colisão </span></a>
+, <a href=""><span style="color:red">-- Resolução de Colisão </span></a>
+, <a href=""><span style="color:red">- Particulas </span></a>
+, <a href=""><span style="color:red">- Pós-Processamento </span></a>
+, <a href=""><span style="color:red">- Powerups </span></a>
+, <a href=""><span style="color:red">- Áudio </span></a>
+, <a href=""><span style="color:red">- Renderizar Texto </span></a>
+, <a href=""><span style="color:red">- Considerações Finais </span></a>
+</td>
+</tr>
+<tr>
+<td><a href=""><span style="color:red">Repositório do Código </span></a>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+	
+  
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+		
+			<a class="nav nav-next" href="/introducao/" title="Introdução" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605373825"></script>
+    <script src="/js/jquery.sticky.js?1605373825"></script>
+    <script src="/js/featherlight.min.js?1605373825"></script>
+    <script src="/js/highlight.pack.js?1605373825"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605373825"></script>
+    <script src="/js/learn.js?1605373825"></script>
+    <script src="/js/hugo-learn.js?1605373825"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1605373825"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+  
+</html>
+

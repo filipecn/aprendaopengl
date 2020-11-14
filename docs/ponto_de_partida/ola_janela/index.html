@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Olá Janela :: Aprenda OpenGL</title>
+
+    
+    <link href="/css/nucleus.css?1605373825" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605373825" rel="stylesheet">
+    <link href="/css/hybrid.css?1605373825" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605373825" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605373825" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605373825" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605373825" rel="stylesheet">
+    <link href="/css/theme.css?1605373825" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605373825" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1605373825" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605373825"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/ponto_de_partida/ola_janela/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+<img src="images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605373825"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605373825"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/example.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605373825"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/" title="Iluminação" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://example.org/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>home</a> > <a href='/ponto_de_partida/'>Ponto de Partida</a> > Olá Janela
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Olá Janela
+            </h1>
+          
+
+        
+
+
+
+	<p><a href="https://learnopengl.com/Getting-started/Hello-Window">Post Original</a></p>
+
+<p>Vamos ver se conseguimos fazer a GLFW rodar. Primeiro, crie um arquivo <strong>.cpp</strong> e adicione as seguintes linhas no seu início.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;glad/glad.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;GLFW/glfw3.h&gt;</span><span style="color:#75715e">
+</span></code></pre></div>
+
+<div class="notices tip" ><p>Certifique-se de incluir a GLAD antes da GLFW. O arquivo de inclusão para a GLAD inclui os cabeçalhos OpenGL necessários nos bastidores (como <strong>GL/gl.h</strong>), portanto, certifique-se de incluir o GLAD antes de outros arquivos de cabeçalho que requerem OpenGL (como GLFW).</p>
+</div>
+
+
+<p>A seguir, criamos a função <a href=""><span style="color:red">main </span></a>
+ onde instanciaremos a janela GLFW:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+{
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, <span style="color:#ae81ff">3</span>);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, <span style="color:#ae81ff">3</span>);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    <span style="color:#75715e">//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+</span><span style="color:#75715e"></span>  
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+<p>Na função main, primeiro inicializamos a GLFW com <a href=""><span style="color:red">glfwInit </span></a>
+, após o qual podemos configurar a GLFW usando <a href=""><span style="color:red">glfwWindowHint </span></a>
+. O primeiro argumento de <a href=""><span style="color:red">glfwWindowHint </span></a>
+ nos diz qual opção queremos configurar, onde podemos selecionar a opção de um  enum de opções possíveis prefixadas com <strong>GLFW_</strong>. O segundo argumento é um inteiro que define o valor de nossa opção. Uma lista de todas as opções possíveis e seus valores correspondentes pode ser encontrada na documentação sobre <a href="http://www.glfw.org/docs/latest/window.html#window_hints">manipulação de janelas da GLFW</a>. Se você tentar executar o programa agora e houver muitos erros de referência indefinida, isso significa que você não linkou a biblioteca GLFW com sucesso.</p>
+
+<p>Como o foco deste livro está na OpenGL versão 3.3, gostaríamos de dizer a GLFW que 3.3 é a versão OpenGL que queremos usar. Desta forma, a GLFW pode fazer os arranjos apropriados ao criar o contexto OpenGL. Isso garante que, quando um usuário não tiver a versão adequada do OpenGL, a GLFW não será executado. Definimos as versões principal e secundária para 3. Também informamos a GLFW que queremos usar explicitamente o <em>core-profile</em>. Dizer a GLFW que queremos usar o <em>core-profile</em> significa que teremos acesso a um subconjunto menor de recursos da OpenGL sem compatibilidade com versões anteriores de que não precisamos mais. Observe que no Mac OS X você precisa adicionar <a href=""><span style="color:red">glfwWindowHint </span></a>
+(<pre><code></code></pre>, <span style="color:blue">GL_TRUE</span>
+); ao seu código de inicialização para que isso funcione.</p>
+
+
+<div class="notices tip" ><p>Certifique-se de ter a OpenGL versão 3.3 ou superior instalada em seu sistema/hardware, caso contrário, o aplicativo irá travar ou exibir um comportamento indefinido. Para encontrar a versão OpenGL em sua máquina, chame <strong>glxinfo</strong> em máquinas Linux ou use um utilitário como o <a href="http://download.cnet.com/OpenGL-Extensions-Viewer/3000-18487_4-34442.html">OpenGL Extension Viewer</a> para Windows. Se sua versão suportada for inferior, tente verificar se sua placa de vídeo suporta OpenGL 3.3+ (caso contrário, ela é muito antiga) e/ou atualize seus drivers.</p>
+</div>
+
+
+<p>Em seguida, somos obrigados a criar um objeto de janela. Este objeto de janela contém todos os dados de janelas e é exigido pela maioria das outras funções do GLFW.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">GLFWwindow<span style="color:#f92672">*</span> window <span style="color:#f92672">=</span> glfwCreateWindow(<span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">600</span>, <span style="color:#e6db74">&#34;LearnOpenGL&#34;</span>, NULL, NULL);
+<span style="color:#66d9ef">if</span> (window <span style="color:#f92672">==</span> NULL)
+{
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Failed to create GLFW window&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+    glfwTerminate();
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+}
+glfwMakeContextCurrent(window);
+</code></pre></div>
+<p>A função <a href=""><span style="color:red">glfwCreateWindow </span></a>
+ requer a largura e altura da janela como seus dois primeiros argumentos, respectivamente. O terceiro argumento nos permite criar um nome para a janela; por enquanto, o chamamos de <strong>&quot;LearnOpenGL&quot;</strong>, mas você tem permissão para nomeá-lo como quiser. Podemos ignorar os 2 últimos parâmetros. A função retorna um objeto <a href=""><span style="color:red">GLFWwindow </span></a>
+ que mais tarde precisaremos para outras operações GLFW. Depois disso, dizemos a GLFW para tornar o contexto de nossa janela o contexto principal na <em>thread</em> corrente.</p>
+
+<h2 id="glad">GLAD</h2>
+
+<p>No capítulo anterior, mencionamos que a GLAD gerencia ponteiros de função para OpenGL, portanto, queremos inicializar a GLAD antes de chamar qualquer função OpenGL:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+{
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Failed to initialize GLAD&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+}  
+</code></pre></div>
+<h2 id="janela-de-exibição-viewport">Janela de exibição (Viewport)</h2>
+
+<p>Antes de começarmos a renderizar, temos que fazer uma última coisa. Temos que dizer a OpenGL o tamanho da janela de renderização para que a OpenGL saiba como queremos exibir os dados e as coordenadas em relação à janela. Podemos definir essas dimensões por meio da função <a href=""><span style="color:red">glViewport </span></a>
+:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glViewport(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">800</span>, <span style="color:#ae81ff">600</span>); 
+</code></pre></div>
+<p>Os primeiros dois parâmetros de <a href=""><span style="color:red">glViewport </span></a>
+ definem a localização do canto esquerdo inferior da janela. O terceiro e quarto parâmetros definem a largura e a altura da janela de renderização em pixels, que definimos igual ao tamanho da janela da GLFW.</p>
+
+<p>Na verdade, poderíamos definir as dimensões da janela de visualização com valores menores do que as dimensões da GLFW; então, toda a renderização da OpenGL seria exibida em uma janela menor e poderíamos, por exemplo, exibir outros elementos fora da janela de exibição OpenGL.</p>
+
+
+<div class="notices tip" ><p>Nos bastidores, a OpenGL usa os dados especificados via <a href=""><span style="color:red">glViewport </span></a>
+ para transformar as coordenadas 2D que processou em coordenadas na tela. Por exemplo, um ponto processado de localização $(-0.5,0.5)$ seria (como sua transformação final) mapeado para $(200,450)$ nas coordenadas da tela. Observe que as coordenadas processadas em OpenGL estão entre $-1$ e $1$, portanto, mapeamos efetivamente do intervalo ($-1$ a $1$) a $(0, 800)$ e $(0, 600)$.</p>
+</div>
+
+
+<p>No entanto, no momento em que um usuário redimensiona a janela, a janela de visualização também deve ser ajustada. Podemos registrar uma função de <em>callback</em> na janela toda vez que a janela é redimensionada. Esta função tem a seguinte assinatura:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">framebuffer_size_callback</span>(GLFWwindow<span style="color:#f92672">*</span> window, <span style="color:#66d9ef">int</span> width, <span style="color:#66d9ef">int</span> height);  
+</code></pre></div>
+<p>A função de tamanho do <em>framebuffer</em> leva um <a href=""><span style="color:red">GLFWwindow </span></a>
+ como seu primeiro argumento e dois inteiros indicando as novas dimensões da janela. Sempre que a janela muda de tamanho, a GLFW chama esta função e preenche os argumentos apropriados para você processar.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">framebuffer_size_callback</span>(GLFWwindow<span style="color:#f92672">*</span> window, <span style="color:#66d9ef">int</span> width, <span style="color:#66d9ef">int</span> height)
+{
+    glViewport(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, width, height);
+}  
+</code></pre></div>
+<p>Nós temos que dizer a GLFW que queremos chamar esta função em todo redimensionamento da janela registrando a função:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);   
+</code></pre></div>
+<p>Quando a janela é exibida pela primeira vez, <a href=""><span style="color:red">framebuffer_size_callback </span></a>
+ é chamada também com as novas dimensões da janela. Para telas de retina, a largura <span style="color:blue">width</span>
+ e a altura <span style="color:blue">height</span>
+ serão significativamente maiores do que os valores de entrada originais.</p>
+
+<p>Existem muitas funções <span style="color:blueviolet">callback</span>
+ que podemos definir para registrar nossas próprias funções. Por exemplo, podemos fazer uma função para processar as mudanças na entrada do joystick, mensagens de erro do processo, etc. Registramos as funções <span style="color:blueviolet">callback</span>
+ depois de criarmos a janela e antes do loop de renderização ser iniciado.</p>
+
+<h2 id="prepare-seus-motores">Prepare seus motores</h2>
+
+<p>Não queremos que o programa desenhe uma única imagem e então feche imediatamente. Queremos que o programa continue desenhando imagens e manipulando a entrada do usuário até que ele seja explicitamente instruído a parar. Por esta razão, temos que criar um <span style="color:blueviolet">loop</span>
+, que agora chamamos de <span style="color:green">loop </span>
+ <span style="color:green">de </span>
+ <span style="color:green">renderização </span>
+ (<span style="color:blueviolet">rendering</span>
+ <span style="color:blueviolet">loop</span>
+), que continua em execução até que digamos a GLFW para parar. O código a seguir mostra um loop de renderização muito simples:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>glfwWindowShouldClose(window))
+{
+    glfwSwapBuffers(window);
+    glfwPollEvents();    
+} 
+</code></pre></div>
+<p>A função <a href=""><span style="color:red">glfwWindowShouldClose </span></a>
+ verifica no início de cada iteração do loop se a GLFW foi instruída a fechar. Nesse caso, a função retorna <strong>true</strong> e o loop de renderização para de executar, e podemos fechar a aplicação.</p>
+
+<p>A função <a href=""><span style="color:red">glfwPollEvents </span></a>
+ verifica se algum evento é acionado (como entrada do teclado ou eventos de movimento do mouse), atualiza o estado da janela e chama as funções correspondentes (que podemos registrar por meio de <span style="color:blueviolet">callbacks</span>
+). O <a href=""><span style="color:red">glfwSwapBuffers </span></a>
+ irá trocar o <span style="color:blueviolet">buffer</span>
+ de cor (um grande buffer 2D que contém valores de cor para cada pixel na janela da GLFW) que é usado para renderizar durante esta iteração de renderização e mostrá-lo como saída na tela.</p>
+
+
+<div class="notices tip" ><p><strong>Buffer Duplo</strong>:
+Quando um programa desenha em um único buffer, a imagem final pode exibir problemas de oscilação. Isso ocorre porque a imagem de saída não é desenhada em um instante, mas desenhada pixel por pixel e geralmente da esquerda para a direita e de cima para baixo. Como essa imagem não é exibida imediatamente para o usuário enquanto ainda está sendo renderizada, o resultado pode conter artefatos. Para contornar esses problemas, as aplicações aplicam um buffer duplo para a renderização. O buffer <strong>frontal</strong> (<span style="color:blueviolet">front</span>
+ contém a imagem de saída final que é mostrada na tela, enquanto todos os comandos de renderização são direcionados ao buffer <strong>posterior</strong> (<span style="color:blueviolet">back</span>
+). Assim que todos os comandos de renderização forem concluídos, trocamos (<strong>swap</strong>) o buffer traseiro para o buffer frontal para que a imagem possa ser exibida sem ainda ter sido renderizada, removendo todos os artefatos mencionados acima.</p>
+</div>
+
+
+<h2 id="para-terminar">Para terminar</h2>
+
+<p>Assim que sairmos do loop de renderização, gostaríamos de limpar/deletar adequadamente todos os recursos da GLFW que foram alocados. Podemos fazer isso por meio da função <a href=""><span style="color:red">glfwTerminate </span></a>
+ que chamamos no final da função principal.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glfwTerminate ();
+<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</code></pre></div>
+<p>Isso limpará todos os recursos e sairá do programa corretamente. Agora tente compilar sua aplicação e se tudo correr bem, você verá a seguinte saída:</p>
+
+<p><figure><img src="/inicio/ola_janela/images/hellowindow.png" alt="GitHub Logo"></figure></p>
+
+<p>Se for uma imagem preta sem graça e entediante, você fez as coisas certas! Se você não obteve a imagem certa ou está confuso sobre como tudo se encaixa, verifique o código-fonte completo <a href="https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/1.1.hello_window/hello_window.cpp">aqui</a>.</p>
+
+<p>Se você tiver problemas para compilar, primeiro certifique-se de que todas as opções do linker estejam definidas corretamente e de que incluiu corretamente os diretórios corretos na sua IDE (conforme explicado no capítulo anterior). Verifique também se o seu código está correto; você pode verificá-lo comparando-o com o código-fonte completo.</p>
+
+<h2 id="entrada">Entrada</h2>
+
+<p>Também queremos ter alguma forma de controle de entrada na GLFW e podemos fazer isso com várias funções de entrada da GLFW. Vamos usar a função <a href=""><span style="color:red">glfwGetKey </span></a>
+ da GLFW que recebe a janela como entrada junto com uma chave. A função retorna se esta tecla está sendo pressionada. Estamos criando uma função <a href=""><span style="color:red">processInput </span></a>
+ para manter todo o código de entrada organizado:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">processInput</span>(GLFWwindow <span style="color:#f92672">*</span>window)
+{
+    <span style="color:#66d9ef">if</span>(glfwGetKey(window, GLFW_KEY_ESCAPE) <span style="color:#f92672">==</span> GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+</code></pre></div>
+<p>Aqui verificamos se o usuário pressionou a tecla <span style="color:blueviolet">escape</span>
+ (se não for pressionada, <a href=""><span style="color:red">glfwGetKey </span></a>
+ retorna <span style="color:blue">GLFW_RELEASE</span>
+). Se o usuário pressionou a tecla escape, fechamos a GLFW definindo sua propriedade <span style="color:blue">WindowShouldClose</span>
+ como <strong>true</strong> usando <a href=""><span style="color:red">glfwSetwindowShouldClose </span></a>
+. A próxima verificação de condição do loop <strong>while</strong> principal falhará e o aplicativo será fechado.</p>
+
+<p>Em seguida, chamamos <a href=""><span style="color:red">processInput </span></a>
+ a cada iteração do loop de renderização:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>glfwWindowShouldClose(window))
+{
+    processInput(window);
+
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+} 
+</code></pre></div>
+<p>Isso nos dá uma maneira fácil de verificar se há ações de teclas específicas e reagir de acordo a cada <span style="color:green">frame </span>
+ (quadro). Uma iteração do loop de renderização é mais comumente chamada de <span style="color:green">frame </span>
+.</p>
+
+<h2 id="renderização">Renderização</h2>
+
+<p>Queremos colocar todos os comandos de renderização no loop de renderização, já que queremos executar todos os comandos de renderização a cada iteração ou quadro do loop. Isso seria mais ou menos assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// loop de renderizacao
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>glfwWindowShouldClose(window))
+{
+    <span style="color:#75715e">// entrada
+</span><span style="color:#75715e"></span>    processInput(window);
+
+    <span style="color:#75715e">// comandos de renderizacao aqui
+</span><span style="color:#75715e"></span>    ...
+
+    <span style="color:#75715e">// checar e chamar eventos e troca de buffers
+</span><span style="color:#75715e"></span>    glfwPollEvents();
+    glfwSwapBuffers(window);
+}
+</code></pre></div>
+<p>Apenas para testar se as coisas realmente funcionam, queremos limpar a tela com uma cor de nossa escolha. No início do frame, queremos limpar a tela. Caso contrário, ainda veríamos os resultados do quadro anterior (pode ser o efeito que você está procurando, mas normalmente não). Podemos limpar o buffer de cor da tela usando <a href=""><span style="color:red">glClear </span></a>
+, onde passamos os bits de buffer para especificar qual buffer gostaríamos de limpar. Os bits possíveis que podemos definir são <span style="color:blue">GL_COLOR_BUFFER_BIT</span>
+, <span style="color:blue">GL_DEPTH_BUFFER_BIT</span>
+ e <span style="color:blue">GL_STENCIL_BUFFER_BIT</span>
+. No momento, só nos importamos com os valores das cores, portanto, apenas limpamos o buffer de cores.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glClearColor (<span style="color:#ae81ff">0.2f</span>, <span style="color:#ae81ff">0.3f</span>, <span style="color:#ae81ff">0.3f</span>, <span style="color:#ae81ff">1.0f</span>);
+glClear (GL_COLOR_BUFFER_BIT);
+</code></pre></div>
+<p>Observe que também especificamos a cor para limpar a tela usando <a href=""><span style="color:red">glClearColor </span></a>
+. Sempre que chamamos <a href=""><span style="color:red">glClear </span></a>
+ e limpamos o buffer de cor, todo o buffer de cor será preenchido com a cor configurada por <a href=""><span style="color:red">glClearColor </span></a>
+. Isso resultará em uma cor verde-azulada escura.</p>
+
+
+<div class="notices tip" ><p>Como você deve se lembrar do capítulo OpenGL, a função <a href=""><span style="color:red">glClearColor </span></a>
+ é uma função de configuração de estado e <a href=""><span style="color:red">glClear </span></a>
+ é uma função que usa o estado atual para pegar a cor de compensação.</p>
+</div>
+
+
+<p><figure><img src="/inicio/ola_janela/images/hellowindow2.png" alt="GitHub Logo"></figure></p>
+
+<p>O código fonte completo da aplicação pode ser encontrado <a href="https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/1.2.hello_window_clear/hello_window_clear.cpp">aqui</a>.</p>
+
+<p>Agora temos tudo pronto para preencher o loop de renderização com um monte de chamadas de renderização, mas isso fica para o próximo capitulo. Acho que estamos divagando há tempo suficiente aqui.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605373825"></script>
+    <script src="/js/jquery.sticky.js?1605373825"></script>
+    <script src="/js/featherlight.min.js?1605373825"></script>
+    <script src="/js/highlight.pack.js?1605373825"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605373825"></script>
+    <script src="/js/learn.js?1605373825"></script>
+    <script src="/js/hugo-learn.js?1605373825"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1605373825"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</html>

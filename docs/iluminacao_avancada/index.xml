@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iluminação Avançada on Aprenda OpenGL</title>
+    <link>http://example.org/iluminacao_avancada/</link>
+    <description>Recent content in Iluminação Avançada on Aprenda OpenGL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Thu, 29 Oct 2020 15:25:21 -0300</lastBuildDate>
+    
+	<atom:link href="http://example.org/iluminacao_avancada/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Correção Gama</title>
+      <link>http://example.org/iluminacao_avancada/correcao_gama/index_/</link>
+      <pubDate>Thu, 29 Oct 2020 15:28:58 -0300</pubDate>
+      
+      <guid>http://example.org/iluminacao_avancada/correcao_gama/index_/</guid>
+      <description>Post original
+Logo que calculamos as cores finais de cada pixel, temos que mostrá-los em um monitor. Antigamente a maioria dos monitores utilizavam tubos de raios catódicos (cathode-ray tube - CRT) para gerar imagens na tela. Nesses monitores, dobrar a tensão de entrada não resultava no dobro da quantidade de brilho. Dobrar a tensão de entrada resultava em um brilho que seguia uma relação exponencial de aproximadamente 2.2, conhecida como o gama do monitor.</description>
+    </item>
+    
+  </channel>
+</rss>

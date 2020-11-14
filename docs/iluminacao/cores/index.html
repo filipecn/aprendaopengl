@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Cores :: Aprenda OpenGL</title>
+
+    
+    <link href="/css/nucleus.css?1605373825" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605373825" rel="stylesheet">
+    <link href="/css/hybrid.css?1605373825" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605373825" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605373825" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605373825" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605373825" rel="stylesheet">
+    <link href="/css/theme.css?1605373825" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605373825" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1605373825" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605373825"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/iluminacao/cores/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+<img src="images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605373825"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605373825"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/example.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605373825"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/" title="Iluminação" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/cores/" title="Cores" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://example.org/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>home</a> > <a href='/iluminacao/'>Iluminação</a> > Cores
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Cores
+            </h1>
+          
+
+        
+
+
+
+	<p>Usamos e manipulamos rapidamente as cores nos capítulos anteriores, mas nunca as definimos adequadamente. Aqui, discutiremos o que são as cores e começaremos a preparar o terreno para os próximos capítulos de Iluminação.</p>
+
+<p>No mundo real, as cores podem assumir qualquer valor de cor conhecido, com cada objeto tendo sua(s) própria(s) cor(es). No mundo digital, precisamos mapear as (infinitas) cores reais para valores digitais (limitados) e, portanto, nem todas as cores do mundo real podem ser representadas digitalmente. As cores são representadas digitalmente usando uma componente <strong>vermelha</strong>, <strong>verde</strong> e <strong>azul</strong> comumente abreviadas como <strong>RGB</strong>. Usando diferentes combinações apenas desses 3 valores, dentro de um intervalo de <code>[0,1]</code>, podemos representar quase qualquer cor que existe. Por exemplo, para obter uma cor de coral, definimos um vetor de cor como:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glm<span style="color:#f92672">::</span>vec3 coral(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.31f</span>);   
+</code></pre></div>
+<p>A cor de um objeto que vemos na vida real não é a cor que ele realmente tem, mas é a cor <span style="color:green">refletida </span>
+ ( <span style="color:green">reflected </span>
+ do objeto. As cores que não são absorvidas (rejeitadas) pelo objeto são as cores que percebemos dele. Por exemplo, a luz do sol é percebida como uma luz branca que é a soma combinada de muitas cores diferentes (como você pode ver na imagem). Se jogarmos essa luz branca em um brinquedo azul, ele absorverá todas as subcores da cor branca, exceto a cor azul. Como o brinquedo não absorve a parte de cor azul, ela é refletida. Essa luz refletida entra em nossos olhos, fazendo com que pareça que o brinquedo tem uma cor azul. A imagem a seguir mostra isso para um brinquedo de cor coral, onde reflete várias cores com intensidade diferentes:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/light_reflection.png" alt="altlogo"></figure></p>
+
+<p>Você pode ver que a luz do sol branca é uma coleção de todas as cores visíveis e o objeto absorve uma grande parte dessas cores. Ele reflete apenas as cores que representam a cor do objeto e a combinação delas é o que percebemos (neste caso, uma cor coral).</p>
+
+
+<div class="mynotices tip" ><p>Tecnicamente, é um pouco mais complicado, mas chegaremos a isso nos capítulos de PBR.</p>
+</div>
+
+
+<p>Essas regras de reflexão de cores se aplicam diretamente no <em>mundo dos gráficos</em>. Quando definimos uma fonte de luz em OpenGL, queremos dar uma cor a essa fonte de luz. No parágrafo anterior, tínhamos uma cor branca, então daremos à fonte de luz uma cor branca também. Se multiplicássemos a cor da fonte de luz pelo valor da cor de um objeto, a cor resultante seria a cor refletida do objeto (e, portanto, sua cor percebida). Vamos revisitar nosso brinquedo (desta vez com um valor coral) e ver como calcularíamos sua cor percebida no <em>mundo dos gráficos</em>. Obtemos o vetor de cor resultante fazendo uma multiplicação de componentes entre os vetores de luz e cor do objeto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glm<span style="color:#f92672">::</span>vec3 lightColor(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">1.0f</span>);
+glm<span style="color:#f92672">::</span>vec3 toyColor(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.31f</span>);
+glm<span style="color:#f92672">::</span>vec3 result <span style="color:#f92672">=</span> lightColor <span style="color:#f92672">*</span> toyColor; <span style="color:#75715e">// = (1.0f, 0.5f, 0.31f);
+</span></code></pre></div>
+<p>Podemos ver que a cor do brinquedo <em>absorve</em> grande parte da luz branca, mas reflete vários valores de vermelho, verde e azul com base em seu próprio valor de cor. Esta é uma representação de como as cores funcionariam na vida real. Podemos, portanto, definir a cor de um objeto como a quantidade de cada componente de cor que ele reflete de uma fonte de luz. Agora, o que aconteceria se usássemos uma luz verde?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glm<span style="color:#f92672">::</span>vec3 lightColor(<span style="color:#ae81ff">0.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.0f</span>);
+glm<span style="color:#f92672">::</span>vec3 toyColor(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.31f</span>);
+glm<span style="color:#f92672">::</span>vec3 result <span style="color:#f92672">=</span> lightColor <span style="color:#f92672">*</span> toyColor; <span style="color:#75715e">// = (0.0f, 0.5f, 0.0f);
+</span></code></pre></div>
+<p>Como podemos ver, o brinquedo não possui luz vermelha e azul para absorver e / ou refletir. O brinquedo também absorve metade do valor da componente verde da luz, mas também reflete metade desse valor. A cor do brinquedo que percebemos seria então uma cor esverdeada escura. Podemos ver que se usarmos uma luz verde, apenas as componentes da cor verde podem ser refletidas e, portanto, percebidas; nenhuma cor vermelha e azul é percebida. Como resultado, o objeto coral subitamente se torna um objeto esverdeado escuro. Vamos tentar mais um exemplo com uma luz de cor verde-oliva escura:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glm<span style="color:#f92672">::</span>vec3 lightColor(<span style="color:#ae81ff">0.33f</span>, <span style="color:#ae81ff">0.42f</span>, <span style="color:#ae81ff">0.18f</span>);
+glm<span style="color:#f92672">::</span>vec3 toyColor(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.31f</span>);
+glm<span style="color:#f92672">::</span>vec3 result <span style="color:#f92672">=</span> lightColor <span style="color:#f92672">*</span> toyColor; <span style="color:#75715e">// = (0.33f, 0.21f, 0.06f);
+</span></code></pre></div>
+<p>Como você pode ver, podemos obter cores interessantes de objetos usando cores de luz diferentes. Não é difícil ser criativo com as cores.</p>
+
+<p>Mas chega de cores, vamos começar a construir uma cena onde possamos fazer experiências.</p>
+
+<h2 id="uma-cena-de-iluminação">Uma Cena de Iluminação</h2>
+
+<p>Nos próximos capítulos, criaremos visuais interessantes simulando a iluminação do mundo real fazendo uso extensivo de cores. Como agora usaremos fontes de luz, queremos exibi-las como objetos visuais na cena e adicionar pelo menos um objeto para simular a iluminação.</p>
+
+<p>A primeira coisa de que precisamos é um objeto para lançar a luz e usaremos o infame cubo contêiner dos capítulos anteriores. Também precisaremos de um objeto de luz para mostrar onde a fonte de luz está localizada na cena 3D. Para simplificar, representaremos a fonte de luz com um cubo também (já temos os <a href="https://learnopengl.com/code_viewer.php?code=getting-started/cube_vertices_pos">dados do vértice</a>, certo?).</p>
+
+<p>Portanto, preencher um objeto de buffer de vértices, definir ponteiros de atributo de vértice e tudo mais deve ser familiar para você agora, portanto, não o(a) conduziremos por essas etapas. Se você ainda não faz idéia sobre esses assuntos envolvendo vértices, sugiro que reveja os capítulos <a href="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo">anteriores</a> e trabalhe com os exercícios, se possível, antes de continuar.</p>
+
+<p>Portanto, a primeira coisa de que precisaremos é um shader de vértice para desenhar o contêiner. As posições dos vértices do contêiner permanecem as mesmas (embora não precisemos de coordenadas de textura neste momento), portanto, o código não deve ser nada novo. Estaremos usando uma versão simplificada do shader de vértice dos últimos capítulos:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span>layout (location <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) in vec3 aPos;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    gl_Position <span style="color:#f92672">=</span> projection <span style="color:#f92672">*</span> view <span style="color:#f92672">*</span> model <span style="color:#f92672">*</span> vec4(aPos, <span style="color:#ae81ff">1.0</span>);
+} 
+</code></pre></div>
+<p>Certifique-se de atualizar os dados dos vértices e os ponteiros de atributos para corresponder ao novo shader de vértice (se quiser, você pode realmente manter os dados de textura e ponteiros de atributo ativos; apenas não os estamos usando agora).</p>
+
+<p>Como também iremos renderizar um cubo de fonte de luz, queremos gerar um novo VAO especificamente para a fonte de luz. Poderíamos renderizar a fonte de luz com o mesmo VAO e, em seguida, fazer algumas transformações de posição de luz na matriz <span style="color:blue">model</span>
+, mas nos próximos capítulos iremos alterar os dados de vértice e os ponteiros de atributo do objeto com bastante frequência e não queremos que essas alterações se propaguem para o objeto de fonte de luz (nos preocupamos apenas com as posições dos vértices do cubo de luz), então criaremos um novo VAO:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> lightVAO;
+glGenVertexArrays(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>lightVAO);
+glBindVertexArray(lightVAO);
+<span style="color:#75715e">// we only need to bind to the VBO, the container&#39;s VBO&#39;s data already contains the data.
+</span><span style="color:#75715e"></span>glBindBuffer(GL_ARRAY_BUFFER, VBO);
+<span style="color:#75715e">// set the vertex attribute 
+</span><span style="color:#75715e"></span>glVertexAttribPointer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)<span style="color:#ae81ff">0</span>);
+glEnableVertexAttribArray(<span style="color:#ae81ff">0</span>);
+</code></pre></div>
+<p>O código deve ser relativamente simples. Agora que criamos o contêiner e o cubo da fonte de luz, resta uma coisa a definir: o shader de fragmento para o recipiente e a fonte de luz:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span>out vec4 FragColor;
+  
+uniform vec3 objectColor;
+uniform vec3 lightColor;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    FragColor <span style="color:#f92672">=</span> vec4(lightColor <span style="color:#f92672">*</span> objectColor, <span style="color:#ae81ff">1.0</span>);
+}
+</code></pre></div>
+<p>O shader de fragmento aceita uma cor de objeto e uma cor de luz de variáveis uniformes. Aqui, multiplicamos a cor da luz pela cor (refletida) do objeto, como discutimos no início deste capítulo. Novamente, esse shader deve ser fácil de entender. Vamos definir a cor do objeto para a cor coral da última seção com uma luz branca:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// nao se esqueca de ativar o programa de shader correspondente primeiro (para configurar os uniformes)
+</span><span style="color:#75715e"></span>lightingShader.use();
+lightingShader.setVec3(<span style="color:#e6db74">&#34;objectColor&#34;</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.31f</span>);
+lightingShader.setVec3(<span style="color:#e6db74">&#34;lightColor&#34;</span>,  <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">1.0f</span>);
+</code></pre></div>
+<p>Uma coisa a se notar é que quando começarmos a atualizar esses <em>shaders de iluminação</em> nos próximos capítulos, o cubo da fonte de luz também será afetado, e não é isso que queremos. Não queremos que a cor do objeto da fonte de luz seja afetada nos cálculos de iluminação, mas sim manter a fonte de luz isolada do resto. Queremos que a fonte de luz tenha uma cor brilhante constante, não afetada por outras mudanças de cor (isso faz com que pareça que o cubo da fonte de luz realmente é a fonte da luz).</p>
+
+<p>Para resolver isso, precisamos criar um segundo conjunto de shaders que usaremos para desenhar o cubo da fonte de luz, portanto, protegidos de quaisquer mudanças nos shaders de iluminação. O shader de vértice é o mesmo que o shader de vértice de iluminação, então você pode simplesmente copiar o código-fonte. O shader de fragmento do cubo da fonte de luz garante que a cor do cubo permaneça brilhante, definindo uma cor branca constante na lâmpada:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span>out vec4 FragColor;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    FragColor <span style="color:#f92672">=</span> vec4(<span style="color:#ae81ff">1.0</span>); <span style="color:#75715e">// define todos 4 valores do vetor para 1.0
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+<p>Quando quisermos renderizar, queremos renderizar o objeto recipiente (ou possivelmente muitos outros objetos) usando o shader de iluminação que acabamos de definir, e quando quisermos desenhar a fonte de luz, usamos os shaders da fonte de luz. Durante os capítulos de Iluminação, estaremos atualizando gradativamente os shaders de iluminação para obter resultados mais realistas.</p>
+
+<p>O objetivo principal do cubo da fonte de luz é mostrar de onde vem a luz. Normalmente definimos a posição de uma fonte de luz em algum lugar da cena, mas esta é simplesmente uma posição sem significado visual. Para mostrar onde a fonte de luz realmente está, renderizamos um cubo no mesmo local da fonte de luz. Renderizamos este cubo com o shader de cubo de fonte de luz para garantir que o cubo sempre permaneça branco, independentemente das condições de luz da cena.</p>
+
+<p>Então, vamos declarar uma variável <code>vec3</code> global que representa a localização da fonte de luz nas coordenadas de mundo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glm<span style="color:#f92672">::</span>vec3 lightPos(<span style="color:#ae81ff">1.2f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">2.0f</span>);
+</code></pre></div>
+<p>Em seguida, transladamos o cubo da fonte de luz para a posição da fonte de luz e o redimensionamos antes de renderizá-lo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">model <span style="color:#f92672">=</span> glm<span style="color:#f92672">::</span>mat4(<span style="color:#ae81ff">1.0f</span>);
+model <span style="color:#f92672">=</span> glm<span style="color:#f92672">::</span>translate(model, lightPos);
+model <span style="color:#f92672">=</span> glm<span style="color:#f92672">::</span>scale(model, glm<span style="color:#f92672">::</span>vec3(<span style="color:#ae81ff">0.2f</span>)); 
+</code></pre></div>
+<p>O código de renderização resultante para o cubo da fonte de luz deve ser semelhante a este:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">lightCubeShader.use();
+<span style="color:#75715e">// define os uniformes das matrizes de model, view e projection
+</span><span style="color:#75715e"></span>[...]
+<span style="color:#75715e">// desenhe o objeto do cubo de luz
+</span><span style="color:#75715e"></span>glBindVertexArray(lightCubeVAO);
+glDrawArrays(GL_TRIANGLES, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">36</span>);			
+</code></pre></div>
+<p>O posicionamento de todos os fragmentos de código em seus locais apropriados resultaria em uma aplicação OpenGL devidamente configurada para fazer experiências com iluminação. Se tudo compilar, deve ficar assim:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/colors_scene.png" alt="altlogo"></figure></p>
+
+<p>Não há muito o que ver agora, mas prometo que ficará mais interessante nos próximos capítulos.</p>
+
+<p>Se você tiver dificuldades para descobrir onde todos os fragmentos de código se encaixam no programa como um todo, verifique o código-fonte <a href="/code_viewer_gh.php?code=src/2.lighting/1.colors/colors.cpp">aqui</a> e consulte  cuidadosamente o código / comentários.</p>
+
+<p>Agora que temos um bom conhecimento sobre as cores e criamos uma cena básica para fazer experiências com iluminação, podemos pular para o <a href="/iluminacao/iluminacao_basica/" title="Iluminação Básica">próximo</a> capítulo, onde começa a verdadeira magia.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/iluminacao/" title="Iluminação"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/iluminacao/iluminacao_basica/" title="Iluminação Básica" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605373825"></script>
+    <script src="/js/jquery.sticky.js?1605373825"></script>
+    <script src="/js/featherlight.min.js?1605373825"></script>
+    <script src="/js/highlight.pack.js?1605373825"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605373825"></script>
+    <script src="/js/learn.js?1605373825"></script>
+    <script src="/js/hugo-learn.js?1605373825"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1605373825"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</html>

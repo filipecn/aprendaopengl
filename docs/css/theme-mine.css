@@ -1,0 +1,66 @@
+
+
+div.mynotices {
+    margin: 2rem 0;
+    position: relative;
+}
+div.mynotices p {
+    padding: 15px;
+    display: block;
+    font-size: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    color: #666;
+}
+div.mynotices figure {
+    margin: 0rem 0;
+    padding: 1px;
+    display: block;
+    font-size: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    color: #666;
+}
+div.mynotices h3 {
+    margin: 2rem 0;
+    padding: 15px;
+    display: block;
+    #font-size: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    color: #666;
+}
+div.mynotices p:first-child:before {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06a";
+    left: 10px;
+}
+div.mynotices p:first-child:after {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    left: 2rem;
+}
+div.mynotices.tip p:first-child {
+    border-top: 30px solid rgba(92, 184, 92, 0.8);
+    background: #E6F9E6;
+}
+div.mynotices.tip p,div.mynotices figure, div.mynotices h3 {
+    
+    background: #E6F9E6;
+}
+div.mynotices.tip p:first-child:after {
+    content: 'Tip';
+}
+
+div.mynotices.warning p {
+    border-top: 30px solid rgba(217, 83, 79, 0.8);
+    background: #FAE2E2;
+}
+div.mynotices.warning p:first-child:after {
+    content: 'Warning';
+}

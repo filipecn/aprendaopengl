@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Materiais :: Aprenda OpenGL</title>
+
+    
+    <link href="/css/nucleus.css?1605373825" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605373825" rel="stylesheet">
+    <link href="/css/hybrid.css?1605373825" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605373825" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605373825" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605373825" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605373825" rel="stylesheet">
+    <link href="/css/theme.css?1605373825" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605373825" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1605373825" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605373825"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/iluminacao/materiais/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+<img src="images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605373825"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605373825"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/example.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605373825"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/" title="Iluminação" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/materiais/" title="Materiais" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://example.org/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>home</a> > <a href='/iluminacao/'>Iluminação</a> > Materiais
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Materiais
+            </h1>
+          
+
+        
+
+
+
+	<p><a href="https://learnopengl.com/Lighting/Materials">Post Original</a></p>
+
+<p>No mundo real, cada objeto tem uma reação diferente à luz. objetos de aço são muitas vezes mais brilhante do que um vaso de argila, por exemplo, e um recipiente de madeira não reage da mesma à luz como um recipiente de aço. Alguns objetos refletem a luz sem muita dispersão resultando em pequenos reflexos especulares e outros espalhar um monte dando o destaque um raio maior. Se quisermos simular vários tipos de objetos em OpenGL temos que definir as propriedades do material específico para cada superfície.</p>
+
+<p>No capítulo anterior, definido um objecto e cor da luz para definir a saída visual do objecto, combinado com um componente de intensidade ambiente e especular. Quando se descreve uma superfície que pode definir uma cor de material para cada um dos 3 componentes de iluminação ambiente, difusa e especular iluminação. Ao especificar uma cor para cada um dos componentes nós temos o controle de grão fino sobre a saída de cor da superfície. Agora adicione um componente brilho aos 3 cores e temos todas as propriedades do material que precisamos:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Material</span> {
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+    <span style="color:#66d9ef">float</span> shininess;
+}; 
+  
+uniform Material material;
+</code></pre></div>
+<p>No sombreador fragmento que criar uma estrutura para armazenar as propriedades do material da superfície. Nós também pode armazená-los como valores uniformes individuais, mas armazená-los como um struct mantém-lo mais organizado. Nós primeiro definir o layout da estrutura e depois simplesmente declarar uma variável uniforme com a estrutura recém-criada como seu tipo.</p>
+
+<p>Como você pode ver, nós definimos um vetor de cor para cada um dos componentes da iluminação Phong. Os materiais define vector ambiente o que a cor da superfície reflecte sob iluminação ambiente; este é geralmente o mesmo que a cor da superfície. O vector de material difuso define a cor da superfície sob iluminação difusa. A cor é difusa (tal como a iluminação ambiente) ajustado a cor da superfície desejada. O material de vetor especular define a cor do realce especular sobre a superfície (ou possivelmente até mesmo refletir uma cor específica de superfície). Por último, os impactos brilho a dispersão / raio do realce especular.</p>
+
+<p>Com estes 4 componentes que definem o material de um objeto que pode simular muitos materiais do mundo real. Uma tabela como encontrado em shows devernay.free.fr uma lista das propriedades dos materiais que simulam materiais reais encontrados no mundo exterior. A seguinte imagem mostra o efeito de vários desses valores materiais do mundo real tem na sua cubo:</p>
+
+<p>(<a href="http://devernay.free.fr/cours/opengl/materials.html">http://devernay.free.fr/cours/opengl/materials.html</a>)</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/materials_real_world.png" alt="altlogo"></figure></p>
+
+<p>Como você pode ver, especificando corretamente as propriedades do material de uma superfície que parece mudar a percepção que temos do objeto. Os efeitos são claramente visíveis, mas para os resultados mais realistas precisaremos substituir o cubo com algo mais complicado. Nos Carregando capítulos modelo vamos discutir formas mais complicadas.</p>
+
+<p>(<a href="https://learnopengl.com/Model-Loading/Assimp">https://learnopengl.com/Model-Loading/Assimp</a>)</p>
+
+<p>Descobrir as configurações de material certo para um objeto é um feito difícil que requer principalmente a experimentação e muita experiência. Não é incomum para destruir completamente a qualidade visual de um objeto por um material extraviado.</p>
+
+<p>Vamos tentar implementar um sistema de tal material nos shaders.</p>
+
+<h1 id="setting-materials">Setting materials</h1>
+
+<p>Nós criamos uma estrutura de material uniforme no shader de fragmento tão próxima que queremos mudar os cálculos de iluminação para cumprir com as novas propriedades dos materiais. Uma vez que todas as variáveis ​​relevantes são armazenados em uma estrutura que pode acessá-los a partir do uniforme de material:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{    
+    <span style="color:#75715e">// ambient
+</span><span style="color:#75715e"></span>    vec3 ambient <span style="color:#f92672">=</span> lightColor <span style="color:#f92672">*</span> material.ambient;
+  	
+    <span style="color:#75715e">// diffuse 
+</span><span style="color:#75715e"></span>    vec3 norm <span style="color:#f92672">=</span> normalize(Normal);
+    vec3 lightDir <span style="color:#f92672">=</span> normalize(lightPos <span style="color:#f92672">-</span> FragPos);
+    <span style="color:#66d9ef">float</span> diff <span style="color:#f92672">=</span> max(dot(norm, lightDir), <span style="color:#ae81ff">0.0</span>);
+    vec3 diffuse <span style="color:#f92672">=</span> lightColor <span style="color:#f92672">*</span> (diff <span style="color:#f92672">*</span> material.diffuse);
+    
+    <span style="color:#75715e">// specular
+</span><span style="color:#75715e"></span>    vec3 viewDir <span style="color:#f92672">=</span> normalize(viewPos <span style="color:#f92672">-</span> FragPos);
+    vec3 reflectDir <span style="color:#f92672">=</span> reflect(<span style="color:#f92672">-</span>lightDir, norm);  
+    <span style="color:#66d9ef">float</span> spec <span style="color:#f92672">=</span> pow(max(dot(viewDir, reflectDir), <span style="color:#ae81ff">0.0</span>), material.shininess);
+    vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color:#f92672">*</span> (spec <span style="color:#f92672">*</span> material.specular);  
+        
+    vec3 result <span style="color:#f92672">=</span> ambient <span style="color:#f92672">+</span> diffuse <span style="color:#f92672">+</span> specular;
+    FragColor <span style="color:#f92672">=</span> vec4(result, <span style="color:#ae81ff">1.0</span>);
+}
+</code></pre></div>
+<p>Como você pode ver que agora acessar todas as propriedades do material de struct onde quer que precisamos deles e desta vez calcular a cor de saída resultante com a ajuda de cores do material. Cada um dos atributos materiais do objeto são multiplicados com os respectivos componentes de iluminação.</p>
+
+<p>Podemos definir o material do objeto no aplicativo, definindo os uniformes apropriados. A estrutura em GLSL, contudo, não é especial em qualquer consideração ao definir uniformes; uma estrutura realmente só funciona como um espaço de nomes de variáveis ​​uniformes. Se queremos preencher a estrutura que terá que definir os uniformes individuais, mas prefixado com o nome do struct:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">lightingShader.setVec3(<span style="color:#e6db74">&#34;material.ambient&#34;</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.31f</span>);
+lightingShader.setVec3(<span style="color:#e6db74">&#34;material.diffuse&#34;</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.31f</span>);
+lightingShader.setVec3(<span style="color:#e6db74">&#34;material.specular&#34;</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.5f</span>);
+lightingShader.setFloat(<span style="color:#e6db74">&#34;material.shininess&#34;</span>, <span style="color:#ae81ff">32.0f</span>);
+</code></pre></div>
+<p>Vamos definir o ambiente e difusa componente para a cor que gostaria que o objeto a tem e definir o componente especular do objeto para uma cor meio-brilhante; não queremos que o componente especular a ser muito forte. Nós também manter o brilho em 32.</p>
+
+<p>Agora podemos influenciar facilmente o material do objeto da aplicação. Executando o programa dá-lhe algo como isto:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/materials_with_material.png" alt="altlogo"></figure></p>
+
+<p>Realmente não olhar embora certo?</p>
+
+<h2 id="light-properties">Light properties</h2>
+
+<p>O objeto é muito brilhante. A razão para o objeto a ser demasiado brilhante é que o ambiente, difusa e cores especulares são refletidas com força total a partir de qualquer fonte de luz. As fontes de luz também têm diferentes intensidades para o seu ambiente, difusa e componentes especulares respectivamente. No capítulo anterior, nós resolvemos isso, variando as intensidades ambiente e especular com um valor de força. Queremos fazer algo semelhante, mas desta vez especificando vetores de intensidade para cada um dos componentes de iluminação. Se tivéssemos visualizar LightColor como vec3 (1.0) o código ficaria assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 ambient  <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">*</span> material.ambient;
+vec3 diffuse  <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">*</span> (diff <span style="color:#f92672">*</span> material.diffuse);
+vec3 specular <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">*</span> (spec <span style="color:#f92672">*</span> material.specular); 
+</code></pre></div>
+<p>Assim, cada propriedade do material do objeto é retornado com plena intensidade para cada um dos componentes da luz. Estes valores vec3 (1.0) pode ser influenciada individualmente, bem como para cada fonte de luz e este é geralmente o que queremos. Neste momento, o componente do ambiente do objecto é influenciar totalmente a cor do cubo. O componente de ambiente não deve realmente ter um impacto tão grande sobre a cor final para que possamos restringir a cor ambiente, definindo intensidade ambiente da luz para um valor mais baixo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 ambient <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">0.1</span>) <span style="color:#f92672">*</span> material.ambient;  
+</code></pre></div>
+<p>Podemos influenciar o difuso e intensidade especular da fonte de luz da mesma forma. Isto é muito semelhante ao que fizemos no capítulo anterior; você poderia dizer que já criou algumas propriedades de luz para influenciar cada componente de iluminação individualmente. Nós vamos querer criar algo semelhante para a estrutura material para as propriedades de luz:</p>
+
+<p>(<a href="https://learnopengl.com/Lighting/Basic-Lighting">https://learnopengl.com/Lighting/Basic-Lighting</a>)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Light</span> {
+    vec3 position;
+  
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+};
+
+uniform Light light;  
+</code></pre></div>
+<p>Uma fonte de luz tem uma intensidade diferente para o seu ambiente, difusa e componentes especulares. A luz ambiente é geralmente definida como uma baixa intensidade, porque não queremos que a cor do ambiente a ser demasiado dominante. O componente difuso de uma fonte de luz é geralmente definida como a cor exata que gostaria de uma luz para ter; muitas vezes uma cor branca brilhante. O componente especular é normalmente mantida a vec3 (1.0) que brilha com intensidade máxima. Note que nós também adicionamos da luz vetor posição para a estrutura.</p>
+
+<p>Assim como com o uniforme de material que precisamos para atualizar o shader de fragmento:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 ambient  <span style="color:#f92672">=</span> light.ambient <span style="color:#f92672">*</span> material.ambient;
+vec3 diffuse  <span style="color:#f92672">=</span> light.diffuse <span style="color:#f92672">*</span> (diff <span style="color:#f92672">*</span> material.diffuse);
+vec3 specular <span style="color:#f92672">=</span> light.specular <span style="color:#f92672">*</span> (spec <span style="color:#f92672">*</span> material.specular);  
+</code></pre></div>
+<p>Em seguida, deseja definir as intensidades de luz na aplicação:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> 
+lightingShader.setVec3(<span style="color:#e6db74">&#34;light.ambient&#34;</span>,  <span style="color:#ae81ff">0.2f</span>, <span style="color:#ae81ff">0.2f</span>, <span style="color:#ae81ff">0.2f</span>);
+lightingShader.setVec3(<span style="color:#e6db74">&#34;light.diffuse&#34;</span>,  <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.5f</span>); <span style="color:#75715e">// darken diffuse light a bit
+</span><span style="color:#75715e"></span>lightingShader.setVec3(<span style="color:#e6db74">&#34;light.specular&#34;</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">1.0f</span>); 
+</code></pre></div>
+<p>Agora que nós modulada como as influências claras de material do objeto tenhamos uma saída visual que se parece muito com a saída do capítulo anterior. Desta vez, no entanto, tem o controle total sobre a iluminação e o material do objeto:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/materials_light.png" alt="altlogo"></figure></p>
+
+<p>Alterando os aspectos visuais de objetos é relativamente fácil agora. de deixar as coisas apimentar um pouco!</p>
+
+<h2 id="different-light-colors">Different light colors</h2>
+
+<p>Até agora usamos cores claras apenas variar a intensidade de seus componentes individuais, escolhendo cores que variam do branco ao cinza ao preto, não afetando as cores reais do objeto (somente sua intensidade). Uma vez que agora têm acesso fácil às propriedades da luz que pode mudar suas cores ao longo do tempo para obter alguns efeitos muito interessantes. Uma vez que tudo já está configurado no shader de fragmento, mudando as cores da luz é fácil e imediatamente cria alguns efeitos funk:</p>
+
+<p><figure><img src="https://learnopengl.com/img/lighting/materials_light_colors.png" alt="altlogo"></figure></p>
+
+<p>Como você pode ver, uma cor clara diferente influencia grandemente a saída de cores do objeto. Desde a cor da luz influencia diretamente as cores que o objeto pode refletir (como você pode se lembrar do capítulo cores) tem um impacto significativo sobre a saída visual.</p>
+
+<p>(<a href="https://learnopengl.com/Lighting/Colors">https://learnopengl.com/Lighting/Colors</a>)</p>
+
+<p>Nós podemos facilmente mudar as cores da luz ao longo do tempo, alterando cores ambientais e difusos da luz através do pecado e glfwGetTime:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glm<span style="color:#f92672">::</span>vec3 lightColor;
+lightColor.x <span style="color:#f92672">=</span> sin(glfwGetTime() <span style="color:#f92672">*</span> <span style="color:#ae81ff">2.0f</span>);
+lightColor.y <span style="color:#f92672">=</span> sin(glfwGetTime() <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.7f</span>);
+lightColor.z <span style="color:#f92672">=</span> sin(glfwGetTime() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1.3f</span>);
+  
+glm<span style="color:#f92672">::</span>vec3 diffuseColor <span style="color:#f92672">=</span> lightColor   <span style="color:#f92672">*</span> glm<span style="color:#f92672">::</span>vec3(<span style="color:#ae81ff">0.5f</span>); 
+glm<span style="color:#f92672">::</span>vec3 ambientColor <span style="color:#f92672">=</span> diffuseColor <span style="color:#f92672">*</span> glm<span style="color:#f92672">::</span>vec3(<span style="color:#ae81ff">0.2f</span>); 
+  
+lightingShader.setVec3(<span style="color:#e6db74">&#34;light.ambient&#34;</span>, ambientColor);
+lightingShader.setVec3(<span style="color:#e6db74">&#34;light.diffuse&#34;</span>, diffuseColor);
+</code></pre></div>
+<p>Experimente e experimentar com vários iluminação e valores materiais e ver como eles afetam a saída visual. Você pode encontrar o código-fonte do aplicativo aqui.</p>
+
+<p>(/code_viewer_gh.php?code=src/2.lighting/3.1.materials/materials.cpp)</p>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>você pode fazer com que a mudança da cor da luz muda a cor do objeto de cubo da luz?</p>
+
+<p>você pode simular alguns dos objetos do mundo real através da definição de seus respectivos materiais como vimos no início deste capítulo? Note-se que os valores do ambiente da tabela não são os mesmos que os valores difusos; eles não levaram intensidades de luz em conta. Para definir corretamente seus valores você teria que definir todas as intensidades de luz para vec3 (1.0) para obter o mesmo resultado: solução de recipiente de plástico ciano.</p>
+
+<p>(<a href="http://devernay.free.fr/cours/opengl/materials.html">http://devernay.free.fr/cours/opengl/materials.html</a>)</p>
+
+<p>(/code_viewer_gh.php?code=src/2.lighting/3.2.materials_exercise1/materials_exercise1.cpp)</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/iluminacao/iluminacao_basica/" title="Iluminação Básica"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/iluminacao_avancada/" title="Iluminação Avançada" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605373825"></script>
+    <script src="/js/jquery.sticky.js?1605373825"></script>
+    <script src="/js/featherlight.min.js?1605373825"></script>
+    <script src="/js/highlight.pack.js?1605373825"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605373825"></script>
+    <script src="/js/learn.js?1605373825"></script>
+    <script src="/js/hugo-learn.js?1605373825"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1605373825"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</html>

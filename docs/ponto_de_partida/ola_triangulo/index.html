@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Olá Triângulo :: Aprenda OpenGL</title>
+
+    
+    <link href="/css/nucleus.css?1605373825" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1605373825" rel="stylesheet">
+    <link href="/css/hybrid.css?1605373825" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1605373825" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1605373825" rel="stylesheet">
+    <link href="/css/auto-complete.css?1605373825" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1605373825" rel="stylesheet">
+    <link href="/css/theme.css?1605373825" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1605373825" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1605373825" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1605373825"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/ponto_de_partida/ola_triangulo/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+<img src="images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1605373825"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1605373825"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/example.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1605373825"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/" title="Iluminação" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://example.org/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>home</a> > <a href='/ponto_de_partida/'>Ponto de Partida</a> > Olá Triângulo
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Olá Triângulo
+            </h1>
+          
+
+        
+
+
+
+	<p>Na OpenGL tudo está no espaço 3D, mas a tela ou janela é uma matriz 2D de pixels, então uma grande parte do trabalho da OpenGL é transformar todas as coordenadas 3D em pixels 2D que cabem na sua tela. O processo de transformação de coordenadas 3D em pixels 2D é gerenciado pelo <span style="color:green"> pipeline  gráfico  </span>
+ ( <span style="color:blueviolet"> graphic pipeline </span>
+) da OpenGL. O pipeline gráfico pode ser dividido em duas grandes partes: a primeira transforma suas coordenadas 3D em coordenadas 2D e a segunda transforma as coordenadas 2D em pixels coloridos. Neste capítulo, discutiremos brevemente o pipeline gráfico e como podemos usá-lo a nosso favor para criar pixels sofisticados.</p>
+
+<p>O pipeline gráfico recebe como entrada um conjunto de coordenadas 3D e as transforma em pixels 2D coloridos na tela. Ele pode ser dividido em várias etapas onde cada etapa requer a saída da etapa anterior como sua entrada. Todas essas etapas são altamente especializadas (têm uma função específica) e podem ser facilmente executadas em paralelo. Por causa de sua natureza paralela, as placas gráficas de hoje têm milhares de pequenos núcleos de processamento para processar rapidamente seus dados dentro do pipeline gráfico. Os núcleos de processamento executam pequenos programas na GPU para cada etapa do pipeline. Esses pequenos programas são chamados de <span style="color:green"> shaders  </span>
+.</p>
+
+<p>Alguns desses shaders são configuráveis, o que nos permite escrever nossos próprios shaders para substituir os shaders existentes. Isso nos dá um controle muito mais refinado sobre partes específicas do pipeline e, como elas são executadas na GPU, também podem economizar um valioso tempo de CPU. Os shaders são escritos em <span style="color:green"> OpenGL  Shading  Language  </span>
+ (<span style="color:green"> GLSL  </span>
+) e vamos nos aprofundar mais nisso no próximo capítulo.</p>
+
+<p>Abaixo você encontrará uma representação abstrata de todos os estágios do pipeline gráfico. Observe que as seções em azul representam seções onde podemos injetar nossos próprios shaders.</p>
+
+<p><figure><img src="https://learnopengl.com/img/getting-started/pipeline.png" alt="altlogo"></figure></p>
+
+<p>Como você pode ver, o pipeline gráfico contém um número grande de seções em que cada uma lida com uma parte específica da conversão dos dados dos seus vértices em um pixel totalmente renderizado. Explicaremos resumidamente cada parte do pipeline de uma forma simplificada para fornecer uma boa visão geral de como o pipeline funciona.</p>
+
+<p>Como entrada do pipeline gráfico, passamos uma lista de três coordenadas 3D que devem formar um triângulo em um <span style="color:blueviolet"> array </span>
+ aqui chamado de <strong>Vertex Data</strong>; esse <em>vertex data</em> é uma coleção de vértices. Um <span style="color:green"> vértice  </span>
+ ( <span style="color:green"> vertex  </span>
+) é uma coleção de dados por coordenada 3D. Os dados de cada vértice são representados por <span style="color:green"> atributos  de  vértice  </span>
+ ( <span style="color:green"> vertex  attributes  </span>
+) que podem conter quaisquer dados que desejarmos, mas para simplificar vamos assumir que cada vértice consiste em apenas uma posição 3D e algum valor de cor.</p>
+
+
+<div class="mynotices " ><p>Para que a OpenGL saiba o que fazer com sua coleção de coordenadas e valores de cor, você deve indicar a natureza dos tipos de renderização que deseja formar com os dados. Queremos os dados renderizados como uma coleção de pontos, uma coleção de triângulos ou talvez apenas uma longa linha? Essas dicas são chamadas de <span style="color:green"> primitivas  </span>
+ (<span style="color:green"> primitives  </span>
+) e são fornecidas a OpenGL ao chamar qualquer um dos comandos de desenho. Algumas dessas dicas são <span style="color:blue">GL_POINTS</span>
+, <span style="color:blue">GL_TRIANGLES</span>
+ e <span style="color:blue">GL_LINE_STRIP</span>
+.</p>
+</div>
+
+
+<p>A primeira parte do pipeline é o <span style="color:green"> shader  de  vértice  </span>
+ ( <span style="color:green"> vertex  shader  </span>
+) que recebe como entrada um único vértice. O objetivo principal do shader de vértice é transformar coordenadas 3D em diferentes coordenadas 3D (mais sobre isso mais tarde) e também nos permite fazer algum processamento básico nos atributos de vértice.</p>
+
+<p>O estágio de <span style="color:green"> montagem  de  primitivas  </span>
+ ( <span style="color:green"> primitive  assembly  </span>
+) recebe como entrada todos os vértices (ou vértice se <span style="color:blue">GL_POINTS</span>
+ for escolhido) do shader de vértice que pertencem a uma primitiva e reúne todos os pontos para formar a primitiva fornecida; neste caso, um triângulo.</p>
+
+<p>A saída do estágio de montagem de primitivas é passada para o <span style="color:green"> shader  de  geometria  </span>
+ ( <span style="color:green"> geometry  shader  </span>
+). O shader de geometria recebe como entrada uma coleção de vértices que formam uma primitiva e tem a capacidade de gerar outras formas, emitindo novos vértices para formar novas (ou outras) primitivas. Neste caso de exemplo, ele gera um segundo triângulo com a forma fornecida.</p>
+
+<p>A saída do shader de geometria é então passada para o <span style="color:green"> estágio  de  rasterização  </span>
+ ( <span style="color:green"> rasterization  stage  </span>
+), onde mapeia a(s) primitiva(s) resultante(s) para os pixels correspondentes na tela final, resultando em fragmentos para o shader de fragmento usar. Antes que os shaders de fragmento sejam executados, um <span style="color:green"> recorte  </span>
+ ( <span style="color:green"> clipping  </span>
+) é executado. O clipping descarta todos os fragmentos que estão fora de sua visão, aumentando o desempenho.</p>
+
+
+<div class="notices tip" ><p>Um fragmento em OpenGL são todos os dados necessários para que a OpenGL renderize um único pixel.</p>
+</div>
+
+
+<p>O principal objetivo do <span style="color:green"> shader  de  fragmento  </span>
+ ( <span style="color:green"> fragment  shader  </span>
+) é calcular a cor final de um pixel e geralmente é o estágio em que todos os efeitos OpenGL avançados ocorrem. Normalmente, o shader de fragmento contém dados sobre a cena 3D que pode usar para calcular a cor final do pixel (como luzes, sombras, cor da luz e assim por diante).</p>
+
+<p>Depois que todos os valores de cor correspondentes foram determinados, o objeto final passará por mais um estágio que chamamos de <span style="color:green"> teste  alfa  </span>
+ ( <span style="color:green"> alpha  test  </span>
+) e estágio de <span style="color:green"> mistura  </span>
+ ( <span style="color:green"> blending  </span>
+). Este estágio verifica o valor de profundidade ( <span style="color:blueviolet"> depth </span>
+) (e estêncil ( <span style="color:blueviolet"> stencil </span>
+)) correspondente (veremos mais tarde) do fragmento e os usa para verificar se o fragmento resultante está na frente ou atrás de outros objetos e portanto ser descartado ou não. O estágio também verifica os valores <span style="color:green"> alfa  </span>
+ (os valores alfa definem a opacidade de um objeto) e combina ( <span style="color:green"> blend  </span>
+) os objetos de acordo. Portanto, mesmo que a cor de saída de um pixel seja calculada no shader de fragmento, a cor final do pixel ainda pode ser algo totalmente diferente ao renderizar vários triângulos.</p>
+
+<p>Como você pode ver, o pipeline gráfico é bastante complexo e contém muitas partes configuráveis. Porém, para quase todos os casos, só temos que trabalhar com os shaders de vértice e fragmento. O shader de geometria é opcional e geralmente configurado em seu padrão. Há também o estágio de tesselação e o loop de feedback de transformação que não representamos aqui, mas isso fica para depois.</p>
+
+<p>Na OpenGL moderna, <strong>precisamos</strong> definir pelo menos um shader de vértice e fragmento por conta própria (não há shaders de vértice / fragmento padrão na GPU). Por esta razão, muitas vezes é muito difícil começar a aprender OpenGL moderna, uma vez que é necessário um grande conhecimento antes de ser capaz de renderizar seu primeiro triângulo. Depois de finalmente renderizar seu triângulo no final deste capítulo, você saberá muito mais sobre programação gráfica.</p>
+
+<h2 id="vertex-input-entrada-de-vértices">Vertex input (Entrada de vértices)</h2>
+
+<p>Para começar a desenhar algo, primeiro temos que fornecer a OpenGL alguns dados de vértice de entrada. A OpenGL é uma biblioteca de gráficos 3D, portanto, todas as coordenadas que especificamos em OpenGL estão em 3D (coordenadas x, y e z). Ela não transforma simplesmente <strong>todas</strong> as suas coordenadas 3D em pixels 2D na tela; só processa coordenadas 3D quando elas estão em um intervalo específico entre $-1.0$ e $1.0$ em todos os 3 eixos (<strong>x</strong>, <strong>y</strong> e <strong>z</strong>). Todas as coordenadas dentro do chamado intervalo de <span style="color:green"> coordenadas  de  dispositivo  normalizadas  </span>
+ ( <span style="color:green"> normalized  device  coordinates  </span>
+) ficarão visíveis na tela (e todas as coordenadas fora desta região não).</p>
+
+<p>Como queremos renderizar um único triângulo, queremos especificar um total de três vértices com cada vértice tendo uma posição 3D. Nós os definimos em coordenadas de dispositivo normalizadas (a região visível da OpenGL) em um array de <code>float</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> vertices[] <span style="color:#f92672">=</span> {
+    <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,
+     <span style="color:#ae81ff">0.5f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,
+     <span style="color:#ae81ff">0.0f</span>,  <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>
+};  
+</code></pre></div>
+<p>Como a OpenGL funciona no espaço 3D, renderizamos um triângulo 2D com cada vértice tendo uma coordenada z de $0.0$. Desta forma, a <em>profundidade</em> do triângulo permanece a mesma, fazendo com que pareça 2D.</p>
+
+
+<div class="mynotices tip" ><p><h3>Coordenadas de dispositivo normalizadas (CDN)</h3></p>
+
+<p>Uma vez que suas coordenadas de vértice foram processadas no shader de vértice, elas devem estar em coordenadas de dispositivo normalizadas, que é um pequeno espaço onde os valores <strong>x</strong>, <strong>y</strong> e <strong>z</strong> variam de $-1.0$ a $1.0$. Quaisquer coordenadas que caiam fora desse intervalo serão descartadas/cortadas e não ficarão visíveis na tela. Abaixo você pode ver o triângulo que especificamos dentro das CDN (ignorando o eixo z):
+<figure><img src="https://learnopengl.com/img/getting-started/ndc.png" alt="altlogo"></figure></p>
+
+<p>Ao contrário das coordenadas normais da tela, os pontos positivos do eixo y apontam para para cima e as coordenadas $(0,0)$ estão no centro do gráfico, em vez de no canto superior esquerdo. Eventualmente, você deseja que todas as coordenadas (transformadas) terminem neste espaço de coordenadas, caso contrário, elas não ficarão visíveis.</p>
+
+<p>Suas coordenadas CDN serão então transformadas em <span style="color:green"> coordenadas de espaço de tela  </span>
+ ( <span style="color:green">screen-space coordinates  </span>
+) por meio da <span style="color:green"> transformação  da  janela  de  visualização  </span>
+ ( <span style="color:green"> viewport  transform  </span>
+) usando os dados fornecidos com a <a href=""><span style="color:red">glViewport </span></a>
+. As coordenadas de espaço de tela resultantes são então transformadas em fragmentos como entradas para o shader de fragmento.</p>
+</div>
+
+
+<p>Com os dados do vértice definidos, gostaríamos de enviá-los como entrada para o primeiro processo do pipeline gráfico: o shader de vértice. Isso é feito criando memória na GPU onde armazenamos os dados de vértice, configurando como a OpenGL deve interpretar a memória e especificando como enviar os dados para a placa gráfica. O shader de vértice então processa tantos vértices quanto lhe dizemos de sua memória.</p>
+
+<p>Gerenciamos essa memória por meio dos chamados <span style="color:green"> objetos  de  buffer  de  vértice  </span>
+ ( <span style="color:green"> vertex  buffer  objects  </span>
+) (VBO), que podem armazenar um grande número de vértices na memória da GPU. A vantagem de usar esses objetos de buffer é que podemos enviar grandes lotes de dados de uma vez para a placa de vídeo e mantê-los lá se houver memória suficiente, sem ter que enviar dados de um vértice de cada vez. O envio de dados da CPU para a placa de vídeo é relativamente lento, portanto, sempre que podemos, tentamos enviar o máximo de dados possível de uma vez. Uma vez que os dados estão na memória da placa gráfica, o shader de vértice tem acesso quase instantâneo aos vértices tornando-o extremamente rápido.</p>
+
+<p>Um VBO é a nosso primeiro encontro com um objeto OpenGL, conforme discutimos no capítulo <a href="https://learnopengl.com/Getting-Started/OpenGL">OpenGL</a>. Assim como qualquer objeto em OpenGL, este objeto de buffer tem um ID exclusivo correspondente ao buffer, então podemos gerar um com um ID de buffer usando a função <a href=""><span style="color:red">glGenBuffers </span></a>
+:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> VBO;
+glGenBuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>VBO);  
+</code></pre></div>
+<p>A OpenGL tem muitos tipos de objetos de buffer e o tipo de buffer de um VBO é <span style="color:blue">GL_ARRAY_BUFFER</span>
+. A OpenGL nos permite conectar a vários buffers de uma vez, desde que eles tenham um tipo de buffer diferente. Podemos associar ( <span style="color:blueviolet"> bind </span>
+) o buffer recém-criado ao alvo <span style="color:blue">GL_ARRAY_BUFFER</span>
+ com a função <a href=""><span style="color:red">glBindBuffer </span></a>
+:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glBindBuffer(GL_ARRAY_BUFFER, VBO);  
+</code></pre></div>
+<p>A partir desse ponto, qualquer chamada de buffer que fizermos (no destino <span style="color:blue">GL_ARRAY_BUFFER</span>
+) será usada para configurar o buffer atualmente associado, que é o VBO. Então podemos fazer uma chamada para a função <a href=""><span style="color:red">glBufferData </span></a>
+ que copia os dados de vértice definidos anteriormente para a memória do buffer:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glBufferData(GL_ARRAY_BUFFER, <span style="color:#66d9ef">sizeof</span>(vertices), vertices, GL_STATIC_DRAW);
+</code></pre></div>
+<p><a href=""><span style="color:red">glBufferData </span></a>
+ é uma função voltada especificamente para copiar dados definidos pelo usuário para o buffer atualmente associado. Seu primeiro argumento é o tipo de buffer para o qual queremos copiar os dados: o objeto buffer de vértices atualmente associado ao alvo <span style="color:blue">GL_ARRAY_BUFFER</span>
+. O segundo argumento especifica o tamanho dos dados (em bytes) que queremos passar para o buffer; um simples <code>sizeof</code> dos dados de vértice é suficiente. O terceiro parâmetro são os dados de fato que queremos enviar.</p>
+
+<p>O quarto parâmetro especifica como queremos que a placa gráfica gerencie os dados fornecidos. Isso pode assumir três formas:</p>
+
+<ul>
+<li><span style="color:blue">GL_STREAM_DRAW</span>
+: os dados são modificados apenas uma vez e utilizados pela GPU poucas vezes.</li>
+<li><span style="color:blue">GL_STATIC_DRAW</span>
+: os dados são modificados uma única vez e utilizados muitas vezes.</li>
+<li><span style="color:blue">GL_DYNAMIC_DRAW</span>
+: os dados são modificados e utilizados muitas vezes.</li>
+</ul>
+
+<p>Os dados de posição do triângulo não mudam, são muito usados ​​e permanecem os mesmos para cada chamada de renderização, então seu tipo de uso deve ser <span style="color:blue">GL_STATIC_DRAW</span>
+. Se, por exemplo, alguém tiver um buffer com dados que provavelmente mudam com frequência, um tipo de uso de <span style="color:blue">GL_DYNAMIC_DRAW</span>
+ garante que a placa gráfica colocará os dados na memória que permite gravações mais rápidas.</p>
+
+<p>A partir de agora, armazenamos os dados de vértice na memória da placa de vídeo gerenciados por um objeto de buffer de vértices chamado VBO. Em seguida, queremos criar um shader de vértice e fragmento que realmente processem esses dados, então vamos começar a construí-los.</p>
+
+<h2 id="shader-de-vértice-vertex-shader">Shader de Vértice (Vertex Shader)</h2>
+
+<p>O shader de vértice é um dos shaders programáveis ​​por pessoas como nós. A OpenGL moderna requer que configuremos pelo menos um shader de vértice e fragmento se quisermos fazer alguma renderização, portanto, apresentaremos rapidamente os shaders e configuraremos dois shaders muito simples para desenhar nosso primeiro triângulo. No próximo capítulo, discutiremos os shaders com mais detalhes.</p>
+
+<p>A primeira coisa que precisamos fazer é escrever o shader de vértice na linguagem de shader <span style="color:green"> GLSL  </span>
+ ( <span style="color:green"> OpenGL  Shading  Language  </span>
+) e, em seguida, compilar esse shader para que possamos usá-lo em nossa aplicação. Abaixo você encontrará o código-fonte de um shader de vértice muito básico em <code>GLSL</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span>layout (location <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) in vec3 aPos;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    gl_Position <span style="color:#f92672">=</span> vec4(aPos.x, aPos.y, aPos.z, <span style="color:#ae81ff">1.0</span>);
+}
+</code></pre></div>
+<p>Como você pode ver, <code>GLSL</code> é semelhante a <code>C</code>. Cada shader começa com uma declaração de sua versão. Desde a OpenGL 3.3 e superior, os números de versão de <code>GLSL</code> correspondem à versão da OpenGL (<code>GLSL</code> versão 420 corresponde a OpenGL versão 4.2, por exemplo). Também mencionamos explicitamente que estamos usando a funcionalidade de <em>core-profile</em>.</p>
+
+<p>Em seguida, declaramos todos os atributos de vértice de entrada no shader de vértice com a palavra-chave <code>in</code>. No momento, só nos importamos com os dados de posição, portanto, precisamos apenas de um único atributo de vértice. A <code>GLSL</code> tem um tipo de dados vetorial que contém de 1 a 4 <code>floats</code> com base em seu dígito de sufixo. Como cada vértice possui uma coordenada 3D, criamos uma variável de entrada <code>vec3</code> com o nome <span style="color:blue">aPos</span>
+. Também definimos especificamente a localização da variável de entrada por meio de <code>layout (location = 0)</code> e você verá mais tarde por que precisaremos dessa localização.</p>
+
+
+<div class="mynotices tip" ><p><strong>Vetor</strong></p>
+
+<p>Na programação gráfica, usamos o conceito matemático de vetor com bastante frequência, uma vez que ele representa claramente as posições / direções em qualquer espaço e tem propriedades matemáticas úteis. Um vetor em <code>GLSL</code> tem um tamanho máximo de 4 e cada um de seus valores pode ser accessado via <code>vec.x</code>, <code>vec.y</code>, <code>vec.z</code> e <code>vec.w</code> respectivamente, onde cada um deles representa uma coordenada no espaço. Observe que a componente <code>vec.w</code> não é usado como uma posição no espaço (estamos lidando com 3D, não 4D), mas é usado para algo chamado <span style="color:green"> divisão  de  perspectiva  </span>
+ ( <span style="color:green"> perspective  division  </span>
+. Discutiremos os vetores com muito mais profundidade em um capítulo posterior.</p>
+</div>
+
+
+<p>Para definir a saída do shader de vértice, temos que atribuir os dados de posição à variável predefinida <span style="color:blue">gl_Position</span>
+ que é um <code>vec4</code>. No final da função <a href=""><span style="color:red">main </span></a>
+, tudo o que definirmos como <span style="color:blue">gl_Position</span>
+ será usado como a saída do shader de vértice. Como nossa entrada é um vetor de tamanho 3, temos que convertê-lo em um vetor de tamanho 4. Podemos fazer isso inserindo os valores de <code>vec3</code> dentro do construtor de <code>vec4</code> e definir sua componente <code>w</code> para <code>1.0f</code> (explicaremos o porquê em um capítulo posterior).</p>
+
+<p>O shader de vértice atual é provavelmente o shader de vértice mais simples que podemos imaginar, porque não fizemos nenhum processamento nos dados de entrada e simplesmente os encaminhamos para a saída do shader. Em aplicações reais, os dados de entrada geralmente não estão em coordenadas de dispositivo normalizadas, portanto, primeiro temos que transformar os dados de entrada em coordenadas que caiam na região visível da OpenGL.</p>
+
+<h2 id="compiling-a-shader">Compiling a shader</h2>
+
+<p>Pegamos o código-fonte do shader de vértice e o armazenamos em uma string <code>const</code> <code>C</code> no topo do arquivo de código por enquanto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>vertexShaderSource <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#version 330 core</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#e6db74">&#34;layout (location = 0) in vec3 aPos;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#e6db74">&#34;void main()</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#e6db74">&#34;{</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#e6db74">&#34;   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#e6db74">&#34;}</span><span style="color:#ae81ff">\0</span><span style="color:#e6db74">&#34;</span>;
+</code></pre></div>
+<p>Para que a OpenGL use o shader, ela precisa compilá-lo dinamicamente em tempo de execução a partir de seu código-fonte. A primeira coisa que precisamos fazer é criar um objeto shader, novamente referenciado por um ID. Portanto, armazenamos o shader de vértice como um <code>unsigned int</code> e criamos o shader com <a href=""><span style="color:red">glCreateShader </span></a>
+:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> vertexShader;
+vertexShader <span style="color:#f92672">=</span> glCreateShader(GL_VERTEX_SHADER);
+</code></pre></div>
+<p>Fornecemos o tipo de shader que queremos criar como um argumento para <a href=""><span style="color:red">glCreateShader </span></a>
+. Como estamos criando um shader de vértice, passamos <span style="color:blue">GL_VERTEX_SHADER</span>
+.</p>
+
+<p>Em seguida, anexamos o código-fonte do shader ao objeto shader e compilamos o shader:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glShaderSource(vertexShader, <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>vertexShaderSource, NULL);
+glCompileShader(vertexShader);
+</code></pre></div>
+<p>A função <a href=""><span style="color:red">glShaderSource </span></a>
+ pega o objeto shader para compilar como seu primeiro argumento. O segundo argumento especifica quantas strings estamos passando como código-fonte, que é apenas uma. O terceiro parâmetro é o código-fonte propriamente dito do shader de vértice e podemos deixar o quarto parâmetro como <code>NULL</code>.</p>
+
+
+<div class="mynotices tip" ><p>Você provavelmente deseja verificar se a compilação foi bem-sucedida após a chamada de glCompileShader e, caso contrário, quais erros foram encontrados para que você possa corrigi-los. A verificação de erros em tempo de compilação é realizada da seguinte maneira:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> success;
+<span style="color:#66d9ef">char</span> infoLog [<span style="color:#ae81ff">512</span>];
+glGetShaderiv (vertexShader, GL_COMPILE_STATUS, <span style="color:#f92672">&amp;</span> sucess);
+</code></pre></div>
+<p>Primeiro, definimos um inteiro para indicar o sucesso e um recipiente de armazenamento para as mensagens de erro (se houver). Em seguida, verificamos se a compilação foi bem-sucedida com glGetShaderiv. Se a compilação falhar, devemos recuperar a mensagem de erro com glGetShaderInfoLog e imprimir a mensagem de erro.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>success)
+{
+    glGetShaderInfoLog (vertexShader, <span style="color:#ae81ff">512</span>, NULL, infoLog);
+    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;ERROR::SHADER::VERTEX::COMPILATION_FAILED</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;&lt;</span> infoLog <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+}
+</code></pre></div>
+<p></p>
+</div>
+
+
+<p>Se nenhum erro foi detectado durante a compilação do shader de vértice, agora ele está compilado.</p>
+
+<h2 id="shader-de-fragmento-fragment-shader">Shader de Fragmento (Fragment shader)</h2>
+
+<p>O shader de fragmento é o segundo e último shader que iremos criar para renderizar um triângulo. O shader de fragmento tem como objetivo calcular a cor de saída de seus pixels. Para manter as coisas simples, o shader de fragmento sempre produzirá uma cor laranja.</p>
+
+
+<div class="mynotices tip" ><p>As cores na Computação Gráfica são representadas como um array de 4 valores: a componente vermelho, verde, azul e alfa (opacidade), comumente chamadas de RGBA. Ao definir uma cor em OpenGL ou <code>GLSL</code>, definimos a influencia de cada componente como um valor entre $0.0$ e $1.0$. Se, por exemplo, definirmos o vermelho como $1.0$ e o verde como $1.0$, obteremos uma mistura de ambas as cores e com isso a cor amarela. Com essas três componentes de cores, podemos gerar mais de 16 milhões de cores diferentes!</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span>out vec4 FragColor;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    FragColor <span style="color:#f92672">=</span> vec4(<span style="color:#ae81ff">1.0f</span>, <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.2f</span>, <span style="color:#ae81ff">1.0f</span>);
+} 
+</code></pre></div>
+<p>O shader de fragmento requer apenas uma variável de saída e essa é um vetor de tamanho 4 que define a cor final de saída que devemos calcular nós mesmos. Podemos declarar valores de saída com a palavra-chave <code>out</code>, que chamamos aqui prontamente de <span style="color:blue">FragColor</span>
+. Em seguida, simplesmente atribuímos um <code>vec4</code> à saída de cor como uma cor laranja com um valor alfa de $1.0$ ($1.0$ sendo completamente opaco).</p>
+
+<p>O processo para compilar um shader de fragmento é semelhante ao shader de vértice, embora desta vez usemos a constante <span style="color:blue">GL_FRAGMENT_SHADER</span>
+ como o tipo de shader:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> fragmentShader;
+fragmentShader <span style="color:#f92672">=</span> glCreateShader(GL_FRAGMENT_SHADER);
+glShaderSource(fragmentShader, <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>fragmentShaderSource, NULL);
+glCompileShader(fragmentShader);
+</code></pre></div>
+<p>Ambos os shaders agora estão compilados e a única coisa que resta a fazer é atrelar os dois objetos de shader em um <span style="color:green">programa de shader </span>
+ (<span style="color:green">shader program </span>
+) que podemos usar para renderização. Certifique-se de verificar se há erros de compilação aqui também!</p>
+
+<h2 id="programa-de-shader-shader-program">Programa de Shader (Shader Program)</h2>
+
+<p>Um objeto de programa de shader é a versão final <em>linkada</em> de vários shaders combinados. Para usar os shaders compilados recentemente, temos que atrelálos-los ( <span style="color:green">link </span>
+) a um objeto de programa de shader e, em seguida, ativar este programa de shader ao renderizar objetos. Os shaders do programa de shader ativado serão usados  quando fizermos chamadas de renderização.</p>
+
+<p>Ao atrelar os shaders a um programa, ele associa as saídas de cada shader às entradas do próximo shader. É aqui também que você obterá erros de <em>linkagem</em> ( <span style="color:blueviolet">linking</span>
+) se suas saídas e entradas não corresponderem.</p>
+
+<p>Criar um objeto de programa é fácil:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> shaderProgram;
+shaderProgram <span style="color:#f92672">=</span> glCreateProgram();
+</code></pre></div>
+<p>A função glCreateProgram cria um programa e retorna a referência ID para o objeto de programa recém-criado. Agora precisamos anexar os shaders compilados anteriormente ao objeto do programa e, em seguida, conectá-los com glLinkProgram:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glAttachShader(shaderProgram, vertexShader);
+glAttachShader(shaderProgram, fragmentShader);
+glLinkProgram(shaderProgram);
+</code></pre></div>
+<p>O código deveria ser autoexplicativo, nós anexamos os shaders ao programa e os associamos via glLinkProgram.</p>
+
+<p>
+<div class="mynotices tip" ><p>Assim como a compilação de shader, também podemos verificar se o <em>linking</em> de um programa de shader falhou e recuperar o <em>log</em> correspondente. No entanto, em vez de usar glGetShaderiv e glGetShaderInfoLog, agora usamos:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glGetProgramiv(shaderProgram, GL_LINK_STATUS, <span style="color:#f92672">&amp;</span>success);
+<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>success) {
+    glGetProgramInfoLog(shaderProgram, <span style="color:#ae81ff">512</span>, NULL, infoLog);
+    ...
+}
+</code></pre></div>
+<p></p>
+</div>
+
+O resultado é um objeto de programa que podemos ativar chamando glUseProgram:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glUseProgram(shaderProgram);
+</code></pre></div>
+<p>Cada shader e chamada de renderização após glUseProgram agora usarão esse objeto de programa (e, portanto, os shaders).</p>
+
+<p>Ah, sim, e não se esqueça de excluir os objetos de shader depois de associá-los ao objeto de programa; não precisamos mais deles:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glDeleteShader(vertexShader);
+glDeleteShader(fragmentShader);  
+</code></pre></div>
+<p>Agora enviamos os dados de vértice de entrada para a GPU e instruímos a GPU como ela deve processar os dados de vértice em um shader de vértice e fragmento. Estamos quase lá, mas ainda não. A OpenGL ainda não sabe como deve interpretar os dados do vértice na memória e como deve conectar os dados do vértice aos atributos do shader de vértice. Seremos legais e diremos a OpenGL como fazer isso.</p>
+
+<h2 id="linkando-attributos-de-vértice-linking-vertex-attributes"><em>Linkando</em> Attributos de Vértice (Linking Vertex Attributes)</h2>
+
+<p>O shader de vértice nos permite especificar qualquer entrada que desejamos na forma de atributos de vértice e, embora isso permita grande flexibilidade, significa que temos que especificar manualmente que parte de nossos dados de entrada vai para qual atributo de vértice no shader de vértice. Isso significa que temos que especificar como a OpenGL deve interpretar os dados do vértice antes da renderização.</p>
+
+<p>Nossos dados de buffer de vértices são formatados da seguinte maneira:</p>
+
+<p><figure><img src="https://learnopengl.com/img/getting-started/vertex_attribute_pointer.png" alt="altlogo"></figure></p>
+
+<ul>
+<li>Os dados de posição são armazenados como valores de ponto flutuante de 32 bits (4 bytes).</li>
+<li>Cada posição é composta por 3 desses valores.</li>
+<li>Não há espaço (ou outros valores) entre cada conjunto de 3 valores. Os valores são compactados (<span style="color:green">tightly packed </span>
+ no array.</li>
+<li>O primeiro valor nos dados está no início do buffer.</li>
+</ul>
+
+<p>Com esse conhecimento, podemos dizer a OpenGL como ela deve interpretar os dados do vértice (por atributo de vértice) usando glVertexAttribPointer:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glVertexAttribPointer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)<span style="color:#ae81ff">0</span>);
+glEnableVertexAttribArray(<span style="color:#ae81ff">0</span>);  
+</code></pre></div>
+<p>A função glVertexAttribPointer tem alguns parâmetros, então vamos examiná-los cuidadosamente:</p>
+
+<ul>
+<li><p>O primeiro parâmetro especifica qual atributo de vértice queremos configurar. Lembre-se de que especificamos a localização do atributo de vértice de posição no shader de vértice com <code>layout (location = 0)</code>. Isso define a localização do atributo de vértice como <code>0</code> e, como queremos passar dados para esse atributo de vértice, passamos <code>0</code>.</p></li>
+
+<li><p>O próximo argumento especifica o tamanho do atributo. É um <code>vec3</code>, portanto, é composto por 3 valores.</p></li>
+
+<li><p>O terceiro argumento especifica o tipo de dado que é <code>GL_FLOAT</code> (um <code>vec*</code> em <code>GLSL</code> consiste em valores de ponto flutuante).</p></li>
+
+<li><p>O próximo argumento especifica se queremos que os dados sejam normalizados. Se estivermos inserindo tipos de dados inteiros (<code>int</code>, <code>byte</code>) e definimos isso como <code>GL_TRUE</code>, os dados inteiros são normalizados para 0 (ou -1 para dados com sinal) e 1 quando convertidos para <code>float</code>. Isso não é relevante para nós, então deixaremos como <code>GL_FALSE</code>.</p></li>
+
+<li><p>O quinto argumento é conhecido como <span style="color:green">stride </span>
+ e nos indica o espaço entre atributos de vértices consecutivos. Como o próximo conjunto de dados de posição está localizado a exatamente 3 vezes o tamanho de um <code>float</code>, especificamos esse valor como o <em>stride</em>. Observe que, como sabemos que o array está compactado (não há espaço entre o próximo valor de atributo do vértice), poderíamos também ter especificado a distância como 0 para permitir que a OpenGL determine a distância (isso só funciona quando os valores estão compactados). Sempre que temos mais atributos de vértice, temos que definir cuidadosamente o espaçamento entre cada atributo, mas veremos mais exemplos disso mais tarde.</p></li>
+
+<li><p>O último parâmetro é do tipo <code>void *</code> e, portanto, requer aquela conversão (<span style="color:blueviolet">cast</span>
+) estranha. Este é o <span style="color:green">deslocamento </span>
+ (<span style="color:green">offset </span>
+) de onde os dados de posição começam no buffer. Uma vez que os dados de posição estão no início do array de dados, este valor é apenas 0. Exploraremos este parâmetro em mais detalhes posteriormente.</p></li>
+</ul>
+
+
+<div class="mynotices tip" ><p>Cada atributo de vértice obtém seus dados da memória gerenciada por um VBO e de qual VBO ele obtém seus dados (você pode ter vários VBOs) é determinado pelo VBO atualmente associado a <span style="color:blue">GL_ARRAY_BUFFER</span>
+ ao chamar glVertexAttribPointer. Como o VBO definido anteriormente ainda está associado antes de chamar glVertexAttribPointer, o atributo de vértice <code>0</code> agora está associado a seus dados de vértice.</p>
+</div>
+
+
+<p>Agora que especificamos como a OpenGL deve interpretar os dados do vértice, devemos também habilitar o atributo do vértice com glEnableVertexAttribArray fornecendo a localização do atributo do vértice como seu argumento; atributos de vértice são desabilitados por padrão. A partir desse ponto, temos tudo configurado: inicializamos os dados de vértice em um buffer usando um objeto de buffer de vértices, configuramos um shader de vértice e fragmento e informamos a OpenGL como conectar os dados de vértice aos atributos de vértice do shader de vértice. Desenhar um objeto em OpenGL agora seria assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 0. copia nosso array de vertices em um buffer para a OpenGL usar
+</span><span style="color:#75715e"></span>glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, <span style="color:#66d9ef">sizeof</span>(vertices), vertices, GL_STATIC_DRAW);
+<span style="color:#75715e">// 1. configure os ponteiros dos atributos de vertice
+</span><span style="color:#75715e"></span>glVertexAttribPointer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)<span style="color:#ae81ff">0</span>);
+glEnableVertexAttribArray(<span style="color:#ae81ff">0</span>);  
+<span style="color:#75715e">// 2. use nosso programa de shader quando quisermos renderizar um objeto
+</span><span style="color:#75715e"></span>glUseProgram(shaderProgram);
+<span style="color:#75715e">// 3. agora desenhe o objeto 
+</span><span style="color:#75715e"></span>someOpenGLFunctionThatDrawsOurTriangle();   
+</code></pre></div>
+<p>Temos que repetir esse processo toda vez que quisermos desenhar um objeto. Pode não parecer muito, mas imagine se tivermos mais de 5 atributos de vértice e talvez centenas de objetos diferentes (o que não é incomum). Associar os objetos de buffer apropriados e configurar todos os atributos de vértice para cada um desses objetos rapidamente se torna um processo complicado. E se houvesse alguma maneira de armazenar todas essas configurações de estado em um objeto e simplesmente associar esse objeto para restaurar seu estado?</p>
+
+<h2 id="objecto-de-array-de-vértices-vertex-array-object">Objecto de <em>Array</em> de Vértices (Vertex Array Object)</h2>
+
+<p>Um <span style="color:green">objeto de array de vértice </span>
+ (<span style="color:green">vertex array object </span>
+) (também conhecido como <span style="color:green">VAO </span>
+) pode ser associado igual a um objeto de buffer de vértices e qualquer chamada de atributo de vértice desse ponto em diante será armazenada dentro do VAO. Isso tem a vantagem de que, ao configurar ponteiros de atributo de vértice, você só precisa fazer essas chamadas uma vez e sempre que quisermos desenhar o objeto, podemos apenas associar o VAO correspondente. Isso torna a troca entre diferentes dados de vértice e configurações de atributo tão fácil quanto associar um VAO diferente. Todo o estado que acabamos de definir é armazenado dentro do VAO.</p>
+
+
+<div class="mynotices warning" ><p>A OpenGL requer que usemos um VAO para que ela saiba o que fazer com nossas entradas de vértice. Se não conseguirmos associar um VAO, a OpenGL provavelmente se recusará a desenhar qualquer coisa.</p>
+</div>
+
+
+<p>Um objeto de array de vértices armazena o seguinte:</p>
+
+<ul>
+<li><p>Chamadas para glEnableVertexAttribArray ou glDisableVertexAttribArray.</p></li>
+
+<li><p>Configurações de atributo de vértice via glVertexAttribPointer.</p></li>
+
+<li><p>Objectos de buffer de vérticess associados com atributos de vértice através de chamadas de glVertexAttribPointer.</p></li>
+</ul>
+
+<p><figure><img src="https://learnopengl.com/img/getting-started/vertex_array_objects.png" alt="altlogo"></figure></p>
+
+<p>O processo para gerar um VAO é semelhante ao de um VBO:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> VAO;
+glGenVertexArrays(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>VAO);  
+</code></pre></div>
+<p>Para usar um VAO, tudo o que você precisa fazer é associar o VAO usando glBindVertexArray. A partir desse ponto, devemos associar/configurar o(s) VBO(s) e o(s) ponteiro(s) de atributo correspondentes e, em seguida, desassociar o VAO para uso posterior. Assim que quisermos desenhar um objeto, simplesmente associamos o VAO com as configurações que quisermos antes de desenhar o objeto e pronto. No código, seria mais ou menos assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// ..:: Codigo de inicializacao (feito uma vez (a menos que seu objeto sofra alteracoes)) :: ..
+</span><span style="color:#75715e">// 1. associe Vertex Array Object
+</span><span style="color:#75715e"></span>glBindVertexArray(VAO);
+<span style="color:#75715e">// 2. copie nosso array de vertices em um buffer para OpenGL usar
+</span><span style="color:#75715e"></span>glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, <span style="color:#66d9ef">sizeof</span>(vertices), vertices, GL_STATIC_DRAW);
+<span style="color:#75715e">// 3. entao defina nossos ponteiros de atributos de vertices
+</span><span style="color:#75715e"></span>glVertexAttribPointer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)<span style="color:#ae81ff">0</span>);
+glEnableVertexAttribArray(<span style="color:#ae81ff">0</span>);  
+
+  
+[...]
+
+<span style="color:#75715e">// ..:: Codigo de desenho (no loop de renderizacao) :: ..
+</span><span style="color:#75715e">// 4. desenhe o objeto
+</span><span style="color:#75715e"></span>glUseProgram(shaderProgram);
+glBindVertexArray(VAO);
+someOpenGLFunctionThatDrawsOurTriangle();   
+</code></pre></div>
+<p>E é isso! Tudo o que fizemos nos últimos milhões de páginas levou a este momento, um VAO que armazena nossa configuração de atributo de vértice e qual VBO usar. Normalmente, quando você tem vários objetos que deseja desenhar, primeiro gera / configura todos os VAOs (e, portanto, o VBO necessário e os ponteiros de atributo) e os armazena para uso posterior. No momento em que queremos desenhar um de nossos objetos, pegamos o VAO correspondente, o associamos e, em seguida, desenhamos o objeto e desassociamos o VAO novamente.</p>
+
+<h2 id="o-triângulo-que-todos-nós-estivemos-esperando">O Triângulo que todos nós estivemos esperando</h2>
+
+<p>Para desenhar nossos objetos de escolha, a OpenGL nos fornece a função glDrawArrays que desenha primitivas usando o shader ativo no momento, a configuração de atributo de vértice definida anteriormente e os dados de vértice do VBO (indiretamente associados por VAO).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glUseProgram(shaderProgram);
+glBindVertexArray(VAO);
+glDrawArrays(GL_TRIANGLES, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>);
+</code></pre></div>
+<p>A função glDrawArrays toma como primeiro argumento o tipo de primitiva OpenGL que gostaríamos de desenhar. Como eu disse no início que queríamos desenhar um triângulo, não gosto de mentir para vocês, passamos <span style="color:blue">GL_TRIANGLES</span>
+. O segundo argumento especifica o índice inicial do array de vértices que gostaríamos de desenhar; apenas deixamos isso em <code>0</code>. O último argumento especifica quantos vértices queremos desenhar, que é <code>3</code> (renderizamos apenas 1 triângulo de nossos dados, que tem exatamente 3 vértices de comprimento).</p>
+
+<p>Agora tente compilar o código e checar seus passos novamente caso apareça algum erro. Assim que sua aplicação for compilada, você verá o seguinte resultado:</p>
+
+<p><figure><img src="https://learnopengl.com/img/getting-started/hellotriangle.png" alt="altlogo"></figure></p>
+
+<p>O código-fonte do programa completo pode ser encontrado <a href="code_viewer_gh.php?code=src/1.getting_started/2.1.hello_triangle/hello_triangle.cpp">aqui</a>.</p>
+
+<p>Se sua saída não parecer a mesma, você provavelmente fez algo errado ao longo do caminho, então verifique o código-fonte completo e veja se você esqueceu alguma coisa.</p>
+
+<h2 id="objetos-de-buffer-de-elementos-element-buffer-objects">Objetos de Buffer de Elementos (Element Buffer Objects)</h2>
+
+<p>Há uma última coisa que gostaríamos de discutir ao renderizar vértices: <span style="color:green">objetos de buffer de elementos </span>
+ ( <span style="color:green">element buffer objects </span>
+) abreviados para EBO. Para explicar como os objetos de buffer de elementos funcionam, é melhor dar um exemplo: suponha que desejamos desenhar um retângulo em vez de um triângulo. Podemos desenhar um retângulo usando dois triângulos (a OpenGL funciona principalmente com triângulos). Isso irá gerar o seguinte conjunto de vértices:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">	
+<span style="color:#66d9ef">float</span> vertices[] <span style="color:#f92672">=</span> {
+    <span style="color:#75715e">// primeiro triangulo
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">0.5f</span>,  <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,  <span style="color:#75715e">// canto superior direito
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">0.5f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,  <span style="color:#75715e">// canto inferior direito
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>,  <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,  <span style="color:#75715e">// canto superior esquerdo 
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// segundo triangulo
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">0.5f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,  <span style="color:#75715e">// canto inferior direito
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,  <span style="color:#75715e">// canto inferior esquerdo
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>,  <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>   <span style="color:#75715e">// canto superior esquerdo
+</span><span style="color:#75715e"></span>}; 
+</code></pre></div>
+<p>Como você pode ver, há alguma sobreposição nos vértices especificados. Especificamos o canto inferior direito e o canto superior esquerdo duas vezes! Isso é um <em>overhead</em> de 50%, já que o mesmo retângulo também pode ser especificado com apenas 4 vértices, em vez de 6. Isso só vai piorar assim que tivermos modelos mais complexos com mais de 1000 triângulos onde haverá grandes pedaços que se sobrepõem. O que seria uma solução melhor é armazenar apenas os vértices únicos e, em seguida, especificar a ordem em que queremos desenhar esses vértices. Nesse caso, teríamos apenas que armazenar 4 vértices para o retângulo e, em seguida, apenas especificar em que ordem gostaríamos de desenhá-los. Não seria ótimo se a OpenGL nos fornecesse um recurso como esse?</p>
+
+<p>Felizmente, os objetos de buffer de elementos funcionam exatamente assim. Um EBO é um buffer, assim como um objeto de buffer de vértices, que armazena índices que a OpenGL usa para decidir quais vértices desenhar. Este chamado <span style="color:green">desenho indexado </span>
+ ( <span style="color:green">indexed drawing </span>
+) é exatamente a solução para o nosso problema. Para começar, primeiro temos que especificar os vértices (únicos) e os índices para desenhá-los como um retângulo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> vertices[] <span style="color:#f92672">=</span> {
+     <span style="color:#ae81ff">0.5f</span>,  <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,  <span style="color:#75715e">// canto superior direito
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">0.5f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,  <span style="color:#75715e">// canto inferior direito
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>,  <span style="color:#75715e">// canto inferior esquerdo
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">-</span><span style="color:#ae81ff">0.5f</span>,  <span style="color:#ae81ff">0.5f</span>, <span style="color:#ae81ff">0.0f</span>   <span style="color:#75715e">// canto superior esquerdo
+</span><span style="color:#75715e"></span>};
+<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> indices[] <span style="color:#f92672">=</span> {  <span style="color:#75715e">// note que comecamos com 0!
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>,   <span style="color:#75715e">// primeiro triangulo
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>    <span style="color:#75715e">// segundo triangulo
+</span><span style="color:#75715e"></span>};  
+</code></pre></div>
+<p>Você pode ver que, ao usar índices, precisamos apenas de 4 vértices em vez de 6. Em seguida, precisamos criar o objeto buffer de elementos:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> EBO;
+glGenBuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>EBO);
+</code></pre></div>
+<p>Semelhante ao VBO, associamos o EBO e copiamos os índices no buffer com glBufferData. Além disso, assim como o VBO, queremos colocar essas chamadas entre uma chamada <code>bind</code> e uma chamada <code>unbind</code>, embora desta vez especifiquemos <span style="color:blue">GL_ELEMENT_ARRAY_BUFFER</span>
+ como o tipo de buffer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, <span style="color:#66d9ef">sizeof</span>(indices), indices, GL_STATIC_DRAW); 
+</code></pre></div>
+<p>Observe que agora estamos fornecendo <span style="color:blue">GL_ELEMENT_ARRAY_BUFFER</span>
+ como o destino do buffer. A última coisa que falta fazer é substituir a chamada de glDrawArrays por glDrawElements para indicar que queremos renderizar os triângulos de um buffer de índices. Ao usar glDrawElements, vamos desenhar usando índices fornecidos no objeto de buffer de elementos atualmente associado:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glDrawElements(GL_TRIANGLES, <span style="color:#ae81ff">6</span>, GL_UNSIGNED_INT, <span style="color:#ae81ff">0</span>);
+</code></pre></div>
+<p>O primeiro argumento especifica o modo que queremos desenhar, semelhante a glDrawArrays. O segundo argumento é a contagem ou número de elementos que gostaríamos de desenhar. Especificamos 6 índices, então queremos desenhar 6 vértices no total. O terceiro argumento é o tipo dos índices que é do tipo GL_UNSIGNED_INT. O último argumento nos permite especificar um deslocamento no EBO (ou passar uma matriz de índice, mas isso é quando você não está usando objetos de buffer de elemento), mas vamos apenas deixar isso em 0.</p>
+
+<p>A função glDrawElements obtém seus índices do EBO atualmente associado ao alvo <span style="color:blue">GL_ELEMENT_ARRAY_BUFFER</span>
+. Isso significa que temos que associar o EBO correspondente cada vez que quisermos renderizar um objeto com índices, o que, novamente, é um pouco complicado. Acontece que um objeto de array de vértices também mantém registro de associações de objeto de buffer de elementos. O último objeto de buffer de elementos que é associado enquanto um VAO está associado é armazenado como o objeto de buffer de elementos do VAO. A associação a um VAO também vincula automaticamente esse EBO.</p>
+
+<p><figure><img src="https://learnopengl.com/img/getting-started/vertex_array_objects_ebo.png" alt="altlogo"></figure></p>
+
+
+<div class="mynotices warning" ><p>Um VAO armazena as chamadas glBindBuffer quando o destino é <span style="color:blue">GL_ELEMENT_ARRAY_BUFFER</span>
+. Isso também significa que ele armazena suas chamadas de desassociação, portanto, certifique-se de não desassociar o buffer de array de elementos antes de desassociar seu VAO, caso contrário, ele não terá um EBO configurado.</p>
+</div>
+
+
+<p>A inicialização resultante e o código de desenho agora se parecem com isto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// ..:: Codigo de inicializacao :: ..
+</span><span style="color:#75715e">// 1. associe o Vertex Array Object
+</span><span style="color:#75715e"></span>glBindVertexArray(VAO);
+<span style="color:#75715e">// 2. copie nosso array de vertices em um buffer de vertices para a OpenGL usar
+</span><span style="color:#75715e"></span>glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, <span style="color:#66d9ef">sizeof</span>(vertices), vertices, GL_STATIC_DRAW);
+<span style="color:#75715e">// 3. copie nosso array de indices em um buffer de elementos para a OpenGL usar
+</span><span style="color:#75715e"></span>glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, <span style="color:#66d9ef">sizeof</span>(indices), indices, GL_STATIC_DRAW);
+<span style="color:#75715e">// 4. entao configure os ponteiros de atributos de vertice
+</span><span style="color:#75715e"></span>glVertexAttribPointer(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, GL_FLOAT, GL_FALSE, <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">float</span>), (<span style="color:#66d9ef">void</span><span style="color:#f92672">*</span>)<span style="color:#ae81ff">0</span>);
+glEnableVertexAttribArray(<span style="color:#ae81ff">0</span>);  
+
+[...]
+  
+<span style="color:#75715e">// ..:: Codigo de desenho (no loop de renderizacao) :: ..
+</span><span style="color:#75715e"></span>glUseProgram(shaderProgram);
+glBindVertexArray(VAO);
+glDrawElements(GL_TRIANGLES, <span style="color:#ae81ff">6</span>, GL_UNSIGNED_INT, <span style="color:#ae81ff">0</span>)
+glBindVertexArray(<span style="color:#ae81ff">0</span>);
+</code></pre></div>
+<p>A execução do programa deve fornecer uma imagem conforme ilustrado abaixo. A imagem da esquerda deve parecer familiar e a imagem da direita é o retângulo desenhado no modo <span style="color:green">wireframe </span>
+. O retângulo de wireframe mostra que o retângulo de fato consiste em dois triângulos.</p>
+
+<p><figure><img src="https://learnopengl.com/img/getting-started/hellotriangle2.png" alt="altlogo"></figure></p>
+
+
+<div class="mynotices tip" ><p><strong>Modo Wireframe</strong></p>
+
+<p>Para desenhar seus triângulos no modo wireframe, você pode configurar como a OpenGL desenha suas primitivas via glPolygonMode (GL_FRONT_AND_BACK, GL_LINE). O primeiro argumento diz que queremos aplicá-lo à frente e atrás de todos os triângulos e a segunda linha nos diz para desenhá-los como linhas. Quaisquer chamadas de desenho subsequentes irão renderizar os triângulos no modo wireframe até que o definamos de volta ao seu padrão usando glPolygonMode (GL_FRONT_AND_BACK, GL_FILL).</p>
+</div>
+
+
+<p>Se você tiver algum erro, retroceda e veja se esqueceu alguma coisa. Você pode encontrar o código-fonte completo <a href="code_viewer_gh.php?code=src/1.getting_started/2.2.hello_triangle_indexed/hello_triangle_indexed.cpp">aqui</a>.</p>
+
+<p>Se você conseguiu desenhar um triângulo ou retângulo exatamente como fizemos, parabéns, você conseguiu passar por uma das partes mais difíceis da OpenGL moderno: desenhar seu primeiro triângulo. Esta é uma parte difícil, pois é necessário um grande conhecimento antes de ser capaz de desenhar o primeiro triângulo. Felizmente, agora superamos essa barreira e os próximos capítulos serão muito mais fáceis de entender.</p>
+
+<h1 id="recursos-adicionais">Recursos Adicionais</h1>
+
+<ul>
+<li><p><a href="http://antongerdelan.net/opengl/hellotriangle.html">antongerdelan.net/hellotriangle</a>: A discussão de Anton Gerdelan sobre a renderização do primeiro triângulo.</p></li>
+
+<li><p><a href="https://open.gl/drawing">open.gl/drawing</a>: Versão do Alexander Overvoorde.</p></li>
+
+<li><p><a href="http://antongerdelan.net/opengl/vertexbuffers.html">antongerdelan.net/vertexbuffers</a>: alguns insights extras sobre objetos de buffer de vértices.</p></li>
+
+<li><p><a href="https://learnopengl.com/In-Practice/Debugging">learnopengl.com/In-Practice/Debugging</a>: há várias etapas envolvidas neste capítulo; se você estiver travado, pode valer a pena ler um pouco sobre depuração em OpenGL (até a seção de saída de depuração).</p></li>
+</ul>
+
+<h1 id="exercícios">Exercícios</h1>
+
+<p>Para realmente ter uma boa compreensão dos conceitos discutidos, alguns exercícios foram preparados. É aconselhável trabalhar com eles antes de passar para o próximo assunto para ter certeza de ter uma boa compreensão do que está acontecendo.</p>
+
+<ol>
+<li><p>Tente desenhar 2 triângulos próximos um do outro usando glDrawArrays adicionando mais vértices aos seus dados: <a href="code_viewer_gh.php?code=src/1.getting_started/2.3.hello_triangle_exercise1/hello_triangle_exercise1.cpp">solução</a>.</p></li>
+
+<li><p>Agora crie os mesmos 2 triângulos usando dois VAOs e VBOs diferentes para seus dados: <a href="code_viewer_gh.php?code=src/1.getting_started/2.4.hello_triangle_exercise2/hello_triangle_exercise2.cpp">solução</a>.</p></li>
+
+<li><p>Crie dois programas de shader onde o segundo programa usa um shader de fragmento diferente que produz a cor amarela; desenhe os dois triângulos novamente, onde um resulta na cor amarela: <a href="/code_viewer_gh.php?code=src/1.getting_started/2.5.hello_triangle_exercise3/hello_triangle_exercise3.cpp">solução</a>.</p></li>
+</ol>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/ponto_de_partida/ola_janela/" title="Olá Janela"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/ponto_de_partida/transformacoes/" title="Transformações" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.min.js?1605373825"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1605373825"></script>
+    <script src="/js/jquery.sticky.js?1605373825"></script>
+    <script src="/js/featherlight.min.js?1605373825"></script>
+    <script src="/js/highlight.pack.js?1605373825"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1605373825"></script>
+    <script src="/js/learn.js?1605373825"></script>
+    <script src="/js/hugo-learn.js?1605373825"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1605373825"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</html>
