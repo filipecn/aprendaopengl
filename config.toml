@@ -3,6 +3,7 @@ languageCode = "pt-br"
 title = "Aprenda OpenGL"
 theme = "learn"
 publishDir = "docs"
+disqusShortname = "aprendaopengl-1"
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Github repo"

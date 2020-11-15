@@ -5,7 +5,7 @@ date: 2020-10-29T15:28:58-03:00
 
 # APRENDA OPENGL
 
-Bem vindo(a) **:)**,
+Bem vindo(a) **:)**
 
 Este website é uma tradução direta e _quase inteiramente_ fiel do website [https://learnopengl.com/](https://learnopengl.com/), originalmente escrito por Joey de Vries. O site oferece o conteúdo original do livro **Learn OpenGL - Graphics Programming**, disponível de graça no próprio site e que também tem sua versão impressa vendida por aí.
 
@@ -40,7 +40,7 @@ Para aqueles(as) que quiserem se basear nas traduções do _google translate_ eu
 ``` shell
  python3 translate.py https://learnopengl.com/Lighting/Materials content/iluminacao/materiais/_index.md
 ```
-e esperar a porcentagem chegar a `100%`.
+e esperar a porcentagem chegar a `100%`. Não precisa se preocupar com as imagens e links contidos no texto original, porque o script cuida deles pra você!
 
 {{% greenbox warning%}}
 **Esse script pode falhar, e provavelmente vai .... com certeza :)**. Todo texto que ele não consegue traduzir ele coloca o texto em inglês original no lugar, por isso mais um motivo para realmente revisar tudo. E não preciso reforçar o fato de que muitas frases vêm erradas, sem sentido... então a revisão é realmente necessária!

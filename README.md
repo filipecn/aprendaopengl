@@ -9,14 +9,20 @@ There is a little tool that you can use to help you translate to your own langua
 
 The script is crafted to handle the [https://learnopengl.com/](https://learnopengl.com/) posts, but should be straightforward to adapt it to your needs. **Always remember to review the google translated output because it comes with LOTS of errors, it is far from perfect!**
 
-The usage of the script is very simple (you can use --help to check usage). The required command arguments are:
+Another advantage of this script, is that it also keeps all the image url and hyperlinks, so it leaves to you pretty much just reviewing the final result.
 
-1 - url of the page you want to translate
-2 - translated output markdown file location
+The usage of the script is very simple (you can use --help to check usage). The required command arguments are (on this order):
+
+- url of the page you want to translate
+
+- translated output markdown file
 
 Optional arguments to adjust to your language are:
+
 --output_language: language to be translated to, default='pt'
+
 --google_translate_link: link to google translate service, default='translate.google.com.br'
+
 --verbose: print translation progress
 
 Example:

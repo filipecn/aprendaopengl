@@ -57,3 +57,4 @@ Esse site não tem tanta magia quanto o original (nenhuma pra dizer a verdade), 
 {{% /notice %}}
 
 Agora que você sentiu um pouco da estrutura do site, pule para o próximo capitulo e comece sua grande jornada em OpengGL!
+
