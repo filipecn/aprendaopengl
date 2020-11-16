@@ -37,7 +37,7 @@ CMake é uma ferramenta que pode gerar arquivos de projeto/solução de escolha 
 
 Assim que o CMake estiver instalado, você pode optar por executar o CMake a partir da linha de comando ou através de sua GUI. Como não estamos tentando complicar as coisas, vamos usar a GUI. O CMake requer uma pasta de código-fonte e uma pasta de destino para os binários. Para a pasta do código-fonte, vamos escolher a pasta raiz do pacote de origem da GLFW baixado e, para a pasta de compilação, criaremos umo novo diretório _build_ e, em seguida, selecionaremos esse diretório.
 
-![GitHub Logo](/inicio/criando_uma_janela/images/cmake.png)
+![GitHub Logo](https://learnopengl.com/img/getting-started/cmake.png)
 
 Uma vez que as pastas de origem e destino tenham sido definidas, clique no botão **Configure** para que o CMake possa ler as configurações necessárias e o código-fonte. Temos então que escolher o gerador para o projeto e, como estamos usando o Visual Studio 2019, vamos escolher a opção **Visual Studio 16** (Visual Studio 2019 também é conhecido como Visual Studio 16). O CMake irá então exibir as opções de compilação possíveis para configurar a biblioteca. Podemos deixá-las com seus valores padrão e clicar em **Configure** novamente para armazenar as configurações. Depois de definir as configurações, clicamos em **Generate** e os arquivos de projeto resultantes serão gerados em sua pasta de **build**.
 
@@ -56,7 +56,7 @@ Assim que os arquivos necessários forem armazenados em um local de sua escolha,
 
 Primeiro, vamos abrir o Visual Studio e criar um novo projeto. Escolha `C++` se várias opções forem fornecidas e pegue o **Projeto Vazio** (Empty Project) (não se esqueça de dar ao seu projeto um nome adequado). Como faremos tudo em 64 bits e o padrão do projeto é de 32 bits, precisaremos alterar o menu na parte superior, próximo a Depurar (Debug) de x86 para x64:
 
-![GitHub Logo](/inicio/criando_uma_janela/images/x64.png)
+![GitHub Logo](https://learnopengl.com/img/getting-started/x64.png)
 
 Agora temos uma área de trabalho para criar nossa primeiríssima aplicação OpenGL!
 
@@ -66,17 +66,17 @@ Para que o projeto use a GLFW, precisamos {{<definition linkar>}} (link) a bibli
 
 Podemos dizer a IDE para levar esse diretório em consideração quando precisar procurar por arquivos de biblioteca e incluir arquivos. Clique com o botão direito do mouse no nome do projeto no _solution explorer_ e vá para os diretórios **VC++**, conforme mostrado na imagem abaixo:
 
-![GitHub Logo](/inicio/criando_uma_janela/images/vc_directories.png)
+![GitHub Logo](https://learnopengl.com/img/getting-started/vc_directories.png)
 
 A partir daí, você pode adicionar seus próprios diretórios para que o projeto saiba onde pesquisar. Isso pode ser feito inserindo-os manualmente no texto ou clicando na _string_ de localização apropriada e selecionando a opção **<Edit ..>**. Faça isso para os **Diretórios da Biblioteca** (Library Directories) e **Incluir Diretórios** (Include Directories):
 
-![GitHub Logo](/inicio/criando_uma_janela/images/include_directories.png)
+![GitHub Logo](https://learnopengl.com/img/getting-started/include_directories.png)
 
 Aqui você pode adicionar quantos diretórios extras desejar e, a partir desse ponto, a IDE também pesquisará esses diretórios ao procurar por arquivos de biblioteca e de cabeçalho. Assim que sua pasta **Include** da GLFW for incluída, você poderá encontrar todos os arquivos de cabeçalho para a GLFW incluindo **<GLFW / ..>**. O mesmo se aplica aos diretórios da biblioteca.
 
 Uma vez que o VS agora pode encontrar todos os arquivos necessários, podemos finalmente linkar a GLFW ao projeto acessando as guias **Linker** e **Input**:
 
-![GitHub Logo](/inicio/criando_uma_janela/images/linker_input.png)
+![GitHub Logo](https://learnopengl.com/img/getting-started/linker_input.png)
 
 Para linkar a uma biblioteca, você deve especificar o nome da biblioteca para o _linker_. Como o nome da biblioteca é glfw3.lib, adicionamos isso ao campo **Dependências adicionais** (Additional Dependencies) (manualmente ou usando a opção **<Edit ..>**) e a partir desse ponto o GLFW será linkado quando compilarmos. Além da GLFW, também devemos adicionar um link para a biblioteca OpenGL, mas isso pode variar de acordo com o sistema operacional:
 

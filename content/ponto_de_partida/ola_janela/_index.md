@@ -138,7 +138,7 @@ return 0;
 
 Isso limpará todos os recursos e sairá do programa corretamente. Agora tente compilar sua aplicação e se tudo correr bem, você verá a seguinte saída:
 
-![GitHub Logo](/inicio/ola_janela/images/hellowindow.png)
+![GitHub Logo](https://learnopengl.com/img/getting-started/hellowindow.png)
 
 Se for uma imagem preta sem graça e entediante, você fez as coisas certas! Se você não obteve a imagem certa ou está confuso sobre como tudo se encaixa, verifique o código-fonte completo [aqui](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/1.1.hello_window/hello_window.cpp).
 
@@ -205,7 +205,7 @@ Observe que também especificamos a cor para limpar a tela usando {{<struct glCl
 Como você deve se lembrar do capítulo OpenGL, a função {{<struct glClearColor>}} é uma função de configuração de estado e {{<struct glClear>}} é uma função que usa o estado atual para pegar a cor de compensação.
 {{% /notice %}}
 
-![GitHub Logo](/inicio/ola_janela/images/hellowindow2.png)
+![GitHub Logo](https://learnopengl.com/img/getting-started/hellowindow2.png)
 
 O código fonte completo da aplicação pode ser encontrado [aqui](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/1.2.hello_window_clear/hello_window_clear.cpp).
 

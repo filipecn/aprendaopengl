@@ -13,7 +13,7 @@ Este conteúdo é direcionado para quem quer aprender programação gráfica por
 
 A intenção aqui é ajudar quem tem dificuldades em ler textos em inglês ou simplesmente se sente mais confortável com a língua portuguesa. 
 
-Como não sou nenhum _expert_ em inglês, e MENOS ainda em português, espere encontrar algum erro de vez em quando. Não exite em apontar os erros, dar sugestões, fazer críticas e até desabafos... sou todo a ouvidos! Acredito sinceramente que mesmo com alguns errinhos aqui e ali, o aprendizado e informação transmitidos por esta tradução não serão afetados, então nada para se preocupar! 
+Como não sou nenhum _expert_ em inglês, e MENOS ainda em português, espere encontrar algum erro de vez em quando. Não hesite em apontar os erros, dar sugestões, fazer críticas e até desabafos... sou todo ouvidos! Acredito sinceramente que mesmo com alguns errinhos aqui e ali, o aprendizado e informação transmitidos por esta tradução não serão afetados, então nada para se preocupar! 
 
 ## Como é feita a tradução?
 

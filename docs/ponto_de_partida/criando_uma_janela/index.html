@@ -12,21 +12,21 @@
     <title>Criando uma Janela :: Aprenda OpenGL</title>
 
     
-    <link href="/aprendaopengl/css/nucleus.css?1605414724" rel="stylesheet">
-    <link href="/aprendaopengl/css/fontawesome-all.min.css?1605414724" rel="stylesheet">
-    <link href="/aprendaopengl/css/hybrid.css?1605414724" rel="stylesheet">
-    <link href="/aprendaopengl/css/featherlight.min.css?1605414724" rel="stylesheet">
-    <link href="/aprendaopengl/css/perfect-scrollbar.min.css?1605414724" rel="stylesheet">
-    <link href="/aprendaopengl/css/auto-complete.css?1605414724" rel="stylesheet">
-    <link href="/aprendaopengl/css/atom-one-dark-reasonable.css?1605414724" rel="stylesheet">
-    <link href="/aprendaopengl/css/theme.css?1605414724" rel="stylesheet">
-    <link href="/aprendaopengl/css/hugo-theme.css?1605414724" rel="stylesheet">
+    <link href="/aprendaopengl/css/nucleus.css?1605570610" rel="stylesheet">
+    <link href="/aprendaopengl/css/fontawesome-all.min.css?1605570610" rel="stylesheet">
+    <link href="/aprendaopengl/css/hybrid.css?1605570610" rel="stylesheet">
+    <link href="/aprendaopengl/css/featherlight.min.css?1605570610" rel="stylesheet">
+    <link href="/aprendaopengl/css/perfect-scrollbar.min.css?1605570610" rel="stylesheet">
+    <link href="/aprendaopengl/css/auto-complete.css?1605570610" rel="stylesheet">
+    <link href="/aprendaopengl/css/atom-one-dark-reasonable.css?1605570610" rel="stylesheet">
+    <link href="/aprendaopengl/css/theme.css?1605570610" rel="stylesheet">
+    <link href="/aprendaopengl/css/hugo-theme.css?1605570610" rel="stylesheet">
     
-    <link href="/aprendaopengl/css/theme-mine.css?1605414724" rel="stylesheet">
+    <link href="/aprendaopengl/css/theme-mine.css?1605570610" rel="stylesheet">
     
     
 
-    <script src="/aprendaopengl/js/jquery-3.3.1.min.js?1605414724"></script>
+    <script src="/aprendaopengl/js/jquery-3.3.1.min.js?1605570610"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,7 +67,7 @@
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href=''>
-<img src="images/logo.svg" width="100%" height="100%">
+<img src="/aprendaopengl/images/logo.svg" width="100%" height="100%">
 </a>
 
     </div>
@@ -78,14 +78,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/aprendaopengl/js/lunr.min.js?1605414724"></script>
-<script type="text/javascript" src="/aprendaopengl/js/auto-complete.js?1605414724"></script>
+<script type="text/javascript" src="/aprendaopengl/js/lunr.min.js?1605570610"></script>
+<script type="text/javascript" src="/aprendaopengl/js/auto-complete.js?1605570610"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/filipecn.github.io\/aprendaopengl\/";
     
 </script>
-<script type="text/javascript" src="/aprendaopengl/js/search.js?1605414724"></script>
+<script type="text/javascript" src="/aprendaopengl/js/search.js?1605570610"></script>
 
     
   </div>
@@ -659,7 +659,7 @@
 <h2 id="cmake">CMake</h2>
 <p>CMake é uma ferramenta que pode gerar arquivos de projeto/solução de escolha do usuário (por exemplo, Visual Studio, Code::Blocks, Eclipse) a partir de uma coleção de arquivos de código-fonte usando scripts CMake pré-definidos. Isso nos permite gerar um arquivo de projeto do Visual Studio 2019 a partir do pacote da GLFW do qual podemos usar para compilar a biblioteca. Primeiro, precisamos baixar e instalar o CMake, que pode ser baixado em sua página de <a href="http://www.cmake.org/cmake/resources/software.html">download</a>.</p>
 <p>Assim que o CMake estiver instalado, você pode optar por executar o CMake a partir da linha de comando ou através de sua GUI. Como não estamos tentando complicar as coisas, vamos usar a GUI. O CMake requer uma pasta de código-fonte e uma pasta de destino para os binários. Para a pasta do código-fonte, vamos escolher a pasta raiz do pacote de origem da GLFW baixado e, para a pasta de compilação, criaremos umo novo diretório <em>build</em> e, em seguida, selecionaremos esse diretório.</p>
-<p><img src="/inicio/criando_uma_janela/images/cmake.png" alt="GitHub Logo"></p>
+<p><img src="https://learnopengl.com/img/getting-started/cmake.png" alt="GitHub Logo"></p>
 <p>Uma vez que as pastas de origem e destino tenham sido definidas, clique no botão <strong>Configure</strong> para que o CMake possa ler as configurações necessárias e o código-fonte. Temos então que escolher o gerador para o projeto e, como estamos usando o Visual Studio 2019, vamos escolher a opção <strong>Visual Studio 16</strong> (Visual Studio 2019 também é conhecido como Visual Studio 16). O CMake irá então exibir as opções de compilação possíveis para configurar a biblioteca. Podemos deixá-las com seus valores padrão e clicar em <strong>Configure</strong> novamente para armazenar as configurações. Depois de definir as configurações, clicamos em <strong>Generate</strong> e os arquivos de projeto resultantes serão gerados em sua pasta de <strong>build</strong>.</p>
 <h2 id="compilação">Compilação</h2>
 <p>Na pasta <strong>build</strong>, um arquivo chamado <strong>GLFW.sln</strong> pode ser encontrado e o abrimos com o Visual Studio 2019. Como o CMake gerou um arquivo de projeto que já contém as configurações adequadas, só temos que compilar a solução. O CMake deveria ter configurado automaticamente a solução para que compile uma biblioteca de 64 bits; agora clique em <strong>build solution</strong>. Isso nos dará um arquivo de biblioteca compilado que pode ser encontrado em <strong>build/src/Debug</strong> denominado <strong>glfw3.lib</strong>.</p>
@@ -671,18 +671,18 @@
 <p>Assim que os arquivos necessários forem armazenados em um local de sua escolha, podemos começar a criar nosso primeiro projeto OpenGL GLFW.</p>
 <h2 id="nosso-primeiro-projeto">Nosso Primeiro Projeto</h2>
 <p>Primeiro, vamos abrir o Visual Studio e criar um novo projeto. Escolha <code>C++</code> se várias opções forem fornecidas e pegue o <strong>Projeto Vazio</strong> (Empty Project) (não se esqueça de dar ao seu projeto um nome adequado). Como faremos tudo em 64 bits e o padrão do projeto é de 32 bits, precisaremos alterar o menu na parte superior, próximo a Depurar (Debug) de x86 para x64:</p>
-<p><img src="/inicio/criando_uma_janela/images/x64.png" alt="GitHub Logo"></p>
+<p><img src="https://learnopengl.com/img/getting-started/x64.png" alt="GitHub Logo"></p>
 <p>Agora temos uma área de trabalho para criar nossa primeiríssima aplicação OpenGL!</p>
 <h2 id="linking">Linking</h2>
 <p>Para que o projeto use a GLFW, precisamos <span style="color:green">linkar </span>
  (link) a biblioteca ao nosso projeto. Isso pode ser feito especificando o arquivo <strong>glfw3.lib</strong> nas configurações do linker, mas nosso projeto ainda não sabe onde encontrar o arquivo <strong>glfw3.lib</strong>, pois armazenamos nossas bibliotecas de terceiros em um diretório diferente. Portanto, precisamos primeiro adicionar este diretório ao projeto.</p>
 <p>Podemos dizer a IDE para levar esse diretório em consideração quando precisar procurar por arquivos de biblioteca e incluir arquivos. Clique com o botão direito do mouse no nome do projeto no <em>solution explorer</em> e vá para os diretórios <strong>VC++</strong>, conforme mostrado na imagem abaixo:</p>
-<p><img src="/inicio/criando_uma_janela/images/vc_directories.png" alt="GitHub Logo"></p>
+<p><img src="https://learnopengl.com/img/getting-started/vc_directories.png" alt="GitHub Logo"></p>
 <p>A partir daí, você pode adicionar seus próprios diretórios para que o projeto saiba onde pesquisar. Isso pode ser feito inserindo-os manualmente no texto ou clicando na <em>string</em> de localização apropriada e selecionando a opção <strong>&lt;Edit ..&gt;</strong>. Faça isso para os <strong>Diretórios da Biblioteca</strong> (Library Directories) e <strong>Incluir Diretórios</strong> (Include Directories):</p>
-<p><img src="/inicio/criando_uma_janela/images/include_directories.png" alt="GitHub Logo"></p>
+<p><img src="https://learnopengl.com/img/getting-started/include_directories.png" alt="GitHub Logo"></p>
 <p>Aqui você pode adicionar quantos diretórios extras desejar e, a partir desse ponto, a IDE também pesquisará esses diretórios ao procurar por arquivos de biblioteca e de cabeçalho. Assim que sua pasta <strong>Include</strong> da GLFW for incluída, você poderá encontrar todos os arquivos de cabeçalho para a GLFW incluindo <strong>&lt;GLFW / ..&gt;</strong>. O mesmo se aplica aos diretórios da biblioteca.</p>
 <p>Uma vez que o VS agora pode encontrar todos os arquivos necessários, podemos finalmente linkar a GLFW ao projeto acessando as guias <strong>Linker</strong> e <strong>Input</strong>:</p>
-<p><img src="/inicio/criando_uma_janela/images/linker_input.png" alt="GitHub Logo"></p>
+<p><img src="https://learnopengl.com/img/getting-started/linker_input.png" alt="GitHub Logo"></p>
 <p>Para linkar a uma biblioteca, você deve especificar o nome da biblioteca para o <em>linker</em>. Como o nome da biblioteca é glfw3.lib, adicionamos isso ao campo <strong>Dependências adicionais</strong> (Additional Dependencies) (manualmente ou usando a opção <strong>&lt;Edit ..&gt;</strong>) e a partir desse ponto o GLFW será linkado quando compilarmos. Além da GLFW, também devemos adicionar um link para a biblioteca OpenGL, mas isso pode variar de acordo com o sistema operacional:</p>
 <h2 id="biblioteca-opengl-no-windows">Biblioteca OpenGL no Windows</h2>
 <p>Se você estiver no Windows, a biblioteca OpenGL <strong>opengl32.lib</strong> vem com o Microsoft SDK, que é instalado por padrão quando você instala o Visual Studio. Como este capítulo usa o compilador VS e está no Windows, adicionamos <strong>opengl32.lib</strong> às configurações do linker. Observe que o equivalente de 64 bits da biblioteca OpenGL é chamado <strong>opengl32.lib</strong>, assim como o equivalente de 32 bits, que é um nome um tanto infeliz.</p>
@@ -1053,19 +1053,19 @@ glGenBuffers(<span style="color:#ae81ff">1</span>, <span style="color:#f92672">&
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/aprendaopengl/js/clipboard.min.js?1605414724"></script>
-    <script src="/aprendaopengl/js/perfect-scrollbar.min.js?1605414724"></script>
-    <script src="/aprendaopengl/js/perfect-scrollbar.jquery.min.js?1605414724"></script>
-    <script src="/aprendaopengl/js/jquery.sticky.js?1605414724"></script>
-    <script src="/aprendaopengl/js/featherlight.min.js?1605414724"></script>
-    <script src="/aprendaopengl/js/highlight.pack.js?1605414724"></script>
+    <script src="/aprendaopengl/js/clipboard.min.js?1605570610"></script>
+    <script src="/aprendaopengl/js/perfect-scrollbar.min.js?1605570610"></script>
+    <script src="/aprendaopengl/js/perfect-scrollbar.jquery.min.js?1605570610"></script>
+    <script src="/aprendaopengl/js/jquery.sticky.js?1605570610"></script>
+    <script src="/aprendaopengl/js/featherlight.min.js?1605570610"></script>
+    <script src="/aprendaopengl/js/highlight.pack.js?1605570610"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/aprendaopengl/js/modernizr.custom-3.6.0.js?1605414724"></script>
-    <script src="/aprendaopengl/js/learn.js?1605414724"></script>
-    <script src="/aprendaopengl/js/hugo-learn.js?1605414724"></script>
+    <script src="/aprendaopengl/js/modernizr.custom-3.6.0.js?1605570610"></script>
+    <script src="/aprendaopengl/js/learn.js?1605570610"></script>
+    <script src="/aprendaopengl/js/hugo-learn.js?1605570610"></script>
     
         
-            <script src="/aprendaopengl/mermaid/mermaid.js?1605414724"></script>
+            <script src="/aprendaopengl/mermaid/mermaid.js?1605570610"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
