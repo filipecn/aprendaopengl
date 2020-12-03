@@ -25,5 +25,5 @@ home = [ "HTML", "RSS", "JSON"]
   themeVariant = "mine"
   editURL = "https://github.com/filipecn/aprendaopengl/tree/main/content/"
   landingPageURL = "/aprendaopengl"
-  disableLandingPageButton = true
+  #disableLandingPageButton = true
   

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/aprendaopengl/images/favicon.png" type="image/png">
 
-    <title>Iluminação Avançada :: Aprenda OpenGL</title>
+    <title>PBR :: Aprenda OpenGL</title>
 
     
     <link href="/aprendaopengl/css/nucleus.css?1607009012" rel="stylesheet">
@@ -59,7 +59,7 @@
 
 
   </head>
-  <body class="" data-url="/aprendaopengl/iluminacao_avancada/iluminacao_avancada/">
+  <body class="" data-url="/aprendaopengl/pbr/">
     <nav id="sidebar" class="">
 
 
@@ -303,7 +303,7 @@
   
     
     <li data-nav-id="/aprendaopengl/iluminacao/" title="Iluminação" class="dd-item
-        parent
+        
         
         
         ">
@@ -417,7 +417,7 @@
   
     
     <li data-nav-id="/aprendaopengl/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
-        parent
+        
         
         
         ">
@@ -472,8 +472,8 @@
   
     
     <li data-nav-id="/aprendaopengl/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/aprendaopengl/iluminacao_avancada/iluminacao_avancada/">
@@ -526,8 +526,8 @@
   
     
     <li data-nav-id="/aprendaopengl/pbr/" title="PBR" class="dd-item
-        
-        
+        parent
+        active
         
         ">
       <a href="/aprendaopengl/pbr/">
@@ -628,7 +628,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/filipecn/aprendaopengl/tree/main/content/iluminacao_avancada/iluminacao_avancada/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/filipecn/aprendaopengl/tree/main/content/pbr/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -643,8 +643,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -655,13 +653,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/aprendaopengl/'>home</a> > <a href='/aprendaopengl/iluminacao_avancada/'>Iluminação Avançada</a> > Iluminação Avançada
-          
-        
+            <a href='/aprendaopengl/'>home</a> > PBR
           
         
           
@@ -670,13 +662,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -684,89 +669,17 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-              Iluminação Avançada
-            </h1>
           
 
         
 
 
 
-	<p>Nos capítulos de <a href="/aprendaopengl/iluminacao/iluminacao_basica/" title="Iluminação Básica">iluminação</a>, apresentamos brevemente o modelo de iluminação Phong para trazer um mínimo de realismo às nossas cenas. O modelo Phong parece bom, mas tem algumas nuances nas quais nos concentraremos neste capítulo.</p>
-
-<h2 id="blinnphong">Blinn-Phong</h2>
-
-<p>A iluminação Phong é uma aproximação excelente e muito eficiente da iluminação, mas seus reflexos especulares falham em certas condições, especificamente quando a propriedade de brilho é baixa, resultando em uma grande área especular (áspera). A imagem abaixo mostra o que acontece quando usamos um expoente de brilho especular de <code>1.0</code> em um plano com textura:</p>
-
-<p><figure><img src="https://learnopengl.com/img/advanced-lighting/advanced_lighting_phong_limit.png" alt="altlogo"></figure></p>
-
-<p>Você pode ver nas bordas que a área especular é imediatamente cortada. Isso acontece porque o ângulo entre o vetor da câmera e o vetor de reflexão não ultrapassa 90 graus. Se o ângulo for maior que 90 graus, o produto escalar resultante torna-se negativo e isso resulta em um expoente especular de <code>0.0</code>. Você provavelmente está pensando que isso não será um problema, já que não devemos obter nenhuma luz com ângulos superiores a 90 graus, certo?</p>
-
-<p>Errado, isso só se aplica a componente difusa, onde um ângulo superior a 90 graus entre a normal da superfície e a fonte de luz significa que a fonte de luz está abaixo da superfície iluminada e, portanto, a contribuição difusa da luz deve ser igual a <code>0.0</code>. No entanto, com a iluminação especular, não medimos o ângulo entre a fonte de luz e a normal da superfície, mas entre o vetor da câmera e o vetor de reflexão. Dê uma olhada nas duas imagens a seguir:</p>
-
-<p><figure><img src="https://learnopengl.com/img/advanced-lighting/advanced_lighting_over_90.png" alt="altlogo"></figure></p>
-
-<p>Aqui, o problema deve se tornar aparente. A imagem à esquerda mostra os reflexos Phong como de costume, com $\theta$ sendo inferior a 90 graus. Na imagem da direita podemos ver que o ângulo $\theta$ entre o vetor da câmera e o vetor de reflexão é maior do que 90 graus, o que anula a contribuição especular. Isso geralmente não é um problema, uma vez que a direção da câmera está longe da direção da reflexão, mas se usarmos um expoente especular baixo, o raio especular é grande o suficiente para ter uma contribuição nessas condições. Como anulamos essa contribuição em ângulos maiores do que 90 graus, obtemos o artefato conforme visto na primeira imagem.</p>
-
-<p>Em 1977, o modelo de shading <span style="color:green">Blinn-Phong </span>
- foi introduzido por James F. Blinn como uma extensão do shading de Phong que usamos até agora. O modelo Blinn-Phong é muito semelhante, mas se aproxima do modelo especular um pouco diferente de tal forma que resolve nosso problema. Em vez de depender de um vetor de reflexão, estamos usando o chamado <span style="color:green">vetor intermediário </span>
- ( <span style="color:green">halfway vector </span>
-), que é um vetor unitário exatamente no meio do caminho entre a direção da câmera e a direção da luz. Quanto mais próximo este vetor intermediário estiver alinhado com o vetor normal da superfície, maior será a contribuição especular.</p>
-
-<p><figure><img src="https://learnopengl.com/img/advanced-lighting/advanced_lighting_halfway_vector.png" alt="altlogo"></figure></p>
-
-<p>Quando a direção da câmera está perfeitamente alinhada com o vetor de reflexão (agora imaginário), o vetor intermediário se alinha perfeitamente com o vetor normal. Quanto mais próxima a direção da câmera estiver da direção de reflexão original, mais forte será a luminosidade especular.</p>
-
-<p>Aqui você pode ver que, seja qual for a direção de onde o observador olha, o ângulo entre o vetor intermediário e a normal da superfície nunca excede 90 graus (a menos que a luz esteja muito abaixo da superfície, é claro). Os resultados são ligeiramente diferentes das reflexões de Phong, mas geralmente mais plausíveis visualmente, especialmente com expoentes especulares baixos. O modelo de shading Blinn-Phong também é exatamente o modelo de shading usado no pipeline de função fixa anterior da OpenGL.</p>
-
-<p>Obter o vetor intermediário é fácil, adicionamos o vetor de direção da luz e o vetor da câmera e normalizamos o resultado:</p>
-
-<p><span  class="math">\[\bar{H} = \frac{\bar{L} + \bar{V}}{\parallel \bar{L} + \bar{V} \parallel}\]</span></p>
-
-<p>Isso se traduz em código <code>GLSL</code> da seguinte maneira:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 lightDir   <span style="color:#f92672">=</span> normalize(lightPos <span style="color:#f92672">-</span> FragPos);
-vec3 viewDir    <span style="color:#f92672">=</span> normalize(viewPos <span style="color:#f92672">-</span> FragPos);
-vec3 halfwayDir <span style="color:#f92672">=</span> normalize(lightDir <span style="color:#f92672">+</span> viewDir);
-</code></pre></div>
-<p>Então, o cálculo real do termo especular torna-se um produto escalar limitado entre a normal da superfície e o vetor intermediário para obter o ângulo do cosseno entre eles que novamente elevamos a um expoente de brilho especular:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> spec <span style="color:#f92672">=</span> pow(max(dot(normal, halfwayDir), <span style="color:#ae81ff">0.0</span>), shininess);
-vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color:#f92672">*</span> spec;
-</code></pre></div>
-<p>E não há nada mais para Blinn-Phong do que o que acabamos de descrever. A única diferença entre a reflexão especular de Blinn-Phong e Phong é que agora medimos o ângulo entre o vetor normal e intermediário, em vez do ângulo entre o vetor da câmera e o vetor de reflexão.</p>
-
-<p>Com a introdução do vetor intermediário, não deveríamos mais ter o problema de corte especular do shading de Phong. A imagem abaixo mostra a área especular de ambos os métodos com um expoente especular de <code>0.5</code>:</p>
-
-<p><figure><img src="https://learnopengl.com/img/advanced-lighting/advanced_lighting_comparrison.png" alt="altlogo"></figure></p>
-
-<p>Outra diferença sutil entre o shading de Phong e Blinn-Phong é que o ângulo entre o vetor intermediário e a normal da superfície costuma ser menor do que o ângulo entre os vetores da câmera e reflexão. Como resultado, para obter visuais semelhantes ao shading de Phong, o expoente de brilho especular deve ser definido um pouco mais alto. Uma regra geral é configurá-lo entre 2 e 4 vezes o expoente de brilho Phong.</p>
-
-<p>Abaixo está uma comparação entre os dois modelos de reflexão especular com o expoente Phong definido como <code>8.0</code> e o componente Blinn-Phong definido como <code>32.0</code>:</p>
-
-<p><figure><img src="https://learnopengl.com/img/advanced-lighting/advanced_lighting_comparrison2.png" alt="altlogo"></figure></p>
-
-<p>Você pode ver que o expoente especular de Blinn-Phong é um pouco mais nítido em comparação com Phong. Geralmente, requer alguns ajustes para obter resultados semelhantes aos obtidos anteriormente com o shading de Phong. Mas vale a pena, pois o shading de Blinn-Phong é geralmente mais realista em comparação ao shading de Phong padrão.</p>
-
-<p>Aqui, usamos um shader de fragmento simples que alterna entre reflexões Phong regulares e reflexões Blinn-Phong:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
-{
-    [...]
-    <span style="color:#66d9ef">float</span> spec <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>;
-    <span style="color:#66d9ef">if</span>(blinn)
-    {
-        vec3 halfwayDir <span style="color:#f92672">=</span> normalize(lightDir <span style="color:#f92672">+</span> viewDir);  
-        spec <span style="color:#f92672">=</span> pow(max(dot(normal, halfwayDir), <span style="color:#ae81ff">0.0</span>), <span style="color:#ae81ff">16.0</span>);
-    }
-    <span style="color:#66d9ef">else</span>
-    {
-        vec3 reflectDir <span style="color:#f92672">=</span> reflect(<span style="color:#f92672">-</span>lightDir, normal);
-        spec <span style="color:#f92672">=</span> pow(max(dot(viewDir, reflectDir), <span style="color:#ae81ff">0.0</span>), <span style="color:#ae81ff">8.0</span>);
-    }
-</code></pre></div>
-<p>Você pode encontrar o código-fonte para a demonstração simples <a href="/code_viewer_gh.php?code=src/5.advanced_lighting/1.advanced_lighting/advanced_lighting.cpp">aqui</a>. Ao pressionar a tecla <code>b</code>, a demonstração muda de Phong para iluminação Blinn-Phong e vice-versa.</p>
+	<h3 id="capítulo-7">Capítulo 7</h3>
+<h1 id="pbr">PBR</h1>
 
 
 
@@ -776,6 +689,8 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -1008,7 +923,6 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
             
                 
                     
-                    
                 
                 
 
@@ -1023,9 +937,6 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1043,7 +954,6 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
             
                 
                     
-                    
                 
                 
 
@@ -1059,9 +969,6 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1082,6 +989,7 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
             
                 
                     
+                    
                 
                 
 
@@ -1096,6 +1004,9 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1120,10 +1031,10 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
 	 
 	 
 		
-			<a class="nav nav-prev" href="/aprendaopengl/iluminacao_avancada/sombras/" title="Sombras"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/aprendaopengl/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/aprendaopengl/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/aprendaopengl/pbr/teoria/" title="Teoria" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1164,9 +1075,4 @@ vec3 specular <span style="color:#f92672">=</span> lightColor <span style="color
 
   </body>
   
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
-
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
-
 </html>

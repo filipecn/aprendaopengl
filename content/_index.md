@@ -58,9 +58,15 @@ A seguir, temos a lista de todas seções do site com cores indicando quais {{<d
 |{{<struct "Carregamento de Modelos">}} | {{<struct "Assimp">}}, {{<struct "Malha">}}, {{<struct "Modelo">}} |
 |{{<struct "OpenGL Avançada">}} | {{<struct "Teste de Profundidade">}}, {{<struct "Teste de Estêncil">}}, {{<struct "Mistura">}}, {{<struct "Seleção de Faces">}}, {{<struct "Framebuffers">}}, {{<struct "Mapas Cúbicos">}}, {{<struct "Dados Avançados">}}, {{<struct "GLSL Avançada">}}, {{<struct "Shader de Geometria">}}, {{<struct "Instanciação">}}, {{<struct "Anti-Aliasing">}} |
 |{{<english "Iluminação Avançada">}} | {{<variable "Iluminação Avançada">}}, {{<variable "Correção Gama">}}, {{<struct "Sombras - Mapeamento de Sombra">}}, {{<struct "Sombras - Sombras Pontuais">}}, {{<struct "Mappeamento de Normais">}}, {{<struct "Mapeamento de Paralaxe">}}, {{<struct "HDR">}}, {{<struct "Bloom">}}, {{<struct "Deferred Shading">}}, {{<struct "SSAO">}} |
-|{{<struct "PBR">}} | {{<struct "Teoria">}}, {{<struct "Iluminação">}}, {{<struct "IBL - Irradiância Difusa">}}, {{<struct "IBL - IBL Especular">}} |
+|{{<english "PBR">}} | {{<variable "Teoria">}}, {{<struct "Iluminação">}}, {{<struct "IBL - Irradiância Difusa">}}, {{<struct "IBL - IBL Especular">}} |
 |{{<struct "Na Prática">}} | {{<struct "Depurando">}}, {{<struct "Renderização de Texto">}}, {{<struct "Jogo 2D">}}, {{<struct "- Breakout">}}, {{<struct "- Preparação">}}, {{<struct "Renderizando Sprites">}}, {{<struct "- Fases">}}, {{<struct "- Colisões">}}, {{<struct "-- Bola">}}, {{<struct "-- Detecção de Colisão">}}, {{<struct "-- Resolução de Colisão">}}, {{<struct "- Particulas">}}, {{<struct "- Pós-Processamento">}}, {{<struct "- Powerups">}}, {{<struct "- Áudio">}}, {{<struct "- Renderizar Texto">}}, {{<struct "- Considerações Finais">}} |
 |{{<struct "Repositório do Código">}} | |
 
-
+|Estatística|Contagem|
+|----|----|
+|{{<definition "já foram traduzidas e revisadas">}} | 1 |
+|{{<english "sendo traduzidas no momento">}} | 6 |
+|{{<variable "já foram traduzidas mas precisam de revisão">}} | 8 | 
+|{{<struct "ainda nem foram traduzidas">}} | 55 |
+| total | 70 |
 

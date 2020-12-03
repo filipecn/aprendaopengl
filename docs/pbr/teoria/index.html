@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/aprendaopengl/images/favicon.png" type="image/png">
+
+    <title>Teoria :: Aprenda OpenGL</title>
+
+    
+    <link href="/aprendaopengl/css/nucleus.css?1607009012" rel="stylesheet">
+    <link href="/aprendaopengl/css/fontawesome-all.min.css?1607009012" rel="stylesheet">
+    <link href="/aprendaopengl/css/hybrid.css?1607009012" rel="stylesheet">
+    <link href="/aprendaopengl/css/featherlight.min.css?1607009012" rel="stylesheet">
+    <link href="/aprendaopengl/css/perfect-scrollbar.min.css?1607009012" rel="stylesheet">
+    <link href="/aprendaopengl/css/auto-complete.css?1607009012" rel="stylesheet">
+    <link href="/aprendaopengl/css/atom-one-dark-reasonable.css?1607009012" rel="stylesheet">
+    <link href="/aprendaopengl/css/theme.css?1607009012" rel="stylesheet">
+    <link href="/aprendaopengl/css/hugo-theme.css?1607009012" rel="stylesheet">
+    
+    <link href="/aprendaopengl/css/theme-mine.css?1607009012" rel="stylesheet">
+    
+    
+
+    <script src="/aprendaopengl/js/jquery-3.3.1.min.js?1607009012"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/aprendaopengl/pbr/teoria/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href=''>
+<img src="/aprendaopengl/images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/aprendaopengl/js/lunr.min.js?1607009012"></script>
+<script type="text/javascript" src="/aprendaopengl/js/auto-complete.js?1607009012"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/filipecn.github.io\/aprendaopengl\/";
+    
+</script>
+<script type="text/javascript" src="/aprendaopengl/js/search.js?1607009012"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao/" title="Iluminação" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/aprendaopengl/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/aprendaopengl/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/pbr/" title="PBR" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/aprendaopengl/pbr/">
+          <b>7. </b>PBR
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/pbr/teoria/" title="Teoria" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/aprendaopengl/pbr/teoria/">
+          Teoria
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://filipecn.github.io/aprendaopengl/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <center>
+    Conteúdo originalmente criado por /
+    <p>todos direitos reservados para</p>
+    <p><a href="https://twitter.com/JoeyDeVriez">Joey De Vriez</a></p>
+    <p>Construído com <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> usando <a href="https://getgrav.org">Grav</a> e <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/filipecn/aprendaopengl/tree/main/content/pbr/teoria/_index.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/aprendaopengl/'>home</a> > <a href='/aprendaopengl/pbr/'>PBR</a> > Teoria
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Teoria
+            </h1>
+          
+
+        
+
+
+
+	<p><a href="https://learnopengl.com/PBR/Theory">Post Original</a></p>
+
+<p>PBR, ou mais comumente conhecido como <span style="color:green">physically based rendering </span>
+ (renderização baseada em física), é uma coleção de técnicas de renderização mais ou menos baseadas na mesma base teórica que mais se aproxima ao mundo físico. Como a renderização baseada em física visa imitar a luz de maneira fisicamente plausível, geralmente parece mais realista em comparação aos nossos algoritmos de iluminação originais como Phong e Blinn-Phong. Não só parece melhor, pois se aproxima de perto da física real, nós (e especialmente os artistas) podem criar materiais de superfícies baseados em parâmetros físicos sem ter que recorrer a <span style="color:blueviolet">hacks</span>
+ baratos e ajustes para fazer a iluminação parecer certa. Uma das maiores vantagens da criação de materiais baseada em parâmetros físicos é que esses materiais parecerão corretos, independentemente das condições de iluminação; algo que não é verdade em pipelines não-PBR.</p>
+
+<p>A PBR ainda é uma aproximação da realidade (com base nos princípios da física), e é por isso que não é chamado de shading físico, mas <span style="color:blueviolet">physically based shading</span>
+. Para um modelo de iluminação PBR ser considerado fisicamente baseado, ele deve satisfazer as seguintes 3 condições (não se preocupe, chegaremos a elas em breve):</p>
+
+<ol>
+<li><p>Ser baseado no modelo de superfície de <span style="color:blueviolet">microfacets</span>
+ ( <span style="color:blueviolet">microfacet surface model</span>
+).</p></li>
+
+<li><p>Conservar energia.</p></li>
+
+<li><p>Utilizar uma BRDF baseada em física.</p></li>
+</ol>
+
+<p>Nos próximos capítulos PBR, estaremos nos concentrando na abordagem PBR como originalmente explorada pela Disney e adotada para exibição em tempo real pela Epic Games. Sua abordagem, com base no <span style="color:green">metallic workflow </span>
+, é decentemente documentada, amplamente adotada nas engines mais populares e parece visualmente incrível. No final desses capítulos, teremos algo que se parece com isso:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/ibl_specular_result_textured.png" alt="altlogo"></figure></p>
+
+<p>Tenha em mente, os tópicos nesses capítulos são bastante avançados, por isso é aconselhável ter uma boa compreensão da OpenGL e iluminação em shader. Alguns dos conhecimentos mais avançados que você precisará para esta série são: <a href="https://learnopengl.com/Advanced-OpenGL/Framebuffers">frambuffers</a>, <a href="https://learnopengl.com/Advanced-OpenGL/Cubemaps">cubemaps</a>, <a href="https://learnopengl.com/Advanced-Lighting/Gamma-Correction">correção gama</a>, <a href="https://learnopengl.com/Advanced-Lighting/HDR">HDR</a> e <a href="https://learnopengl.com/Advanced-Lighting/Normal-Mapping">normal mapping</a>. Também nos aprofundaremos em algumas matemáticas avançadas, mas farei o meu melhor para explicar os conceitos o mais claro possível.</p>
+
+<h2 id="o-modelo-microfacet">O Modelo Microfacet</h2>
+
+<p>Todas as técnicas PBR são baseadas na teoria dos <span style="color:blueviolet">microfacets</span>
+. A teoria descreve que qualquer superfície em escala microscópica pode ser descrita por pequenos espelhos reflexivos minúsculos chamados <span style="color:green">microfacetes </span>
+. Dependendo da rugosidade de uma superfície, o alinhamento desses pequenos espelhos pode diferir bastante:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/microfacets.png" alt="altlogo"></figure></p>
+
+<p>Quanto mais áspera uma superfície é, mais caoticamente alinhado será cada microfacet ao longo da superfície. O efeito do alinhamento desses &quot;espelhinhos&quot; minúsculos é que, quando especificamente falando sobre iluminação / reflexão especular, os raios de luz recebidos são mais propensos a se espalhar ( <span style="color:green">scatter </span>
+) ao longo de direções completamente diferentes em superfícies mais ásperas, resultando em uma reflexão especular mais espalhada. Em contraste, em uma superfície lisa, os raios de luz são mais propensos a refletir aproximadamente na mesma direção, nos dando reflexos menores e mais nítidos:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/microfacets_light_rays.png" alt="altlogo"></figure></p>
+
+<p>Nenhuma superfície é completamente suave em um nível microscópico, mas visto que esses microfacets são pequenos o suficiente para que não possamos fazer uma distinção entre eles em uma resolução de pixel, nós aproximamos estatisticamente a rugosidade de microfacet da superfície, dado um parâmetro de rugosidade ( <span style="color:green">roughness </span>
+). Com base na aspereza de uma superfície, podemos calcular a proporção de microfacets aproximadamente alinhados a algum vetor $h$. Este vetor $h$ é o <span style="color:green">halfway vector </span>
+ que fica no meio do caminho entre o vetor de luz $l$ e visão $v$. Discutimos o vetor halfway antes no capítulo de <a href="https://learnopengl.com/Advanced-Lighting/Advanced-Lighting">iluminação avançada</a> que é calculado como a soma de $l$ e $v$ dividido pelo seu comprimento:</p>
+
+<p><span  class="math">\[h = \frac{l+v}{\parallel l + v\parallel}\]</span></p>
+
+<p>Quanto mais os microfacets estão alinhados ao vetor halfway, o mais nítido e mais forte é a reflexão especular. Juntamente com o parâmetro roughness que varia entre 0 e 1, podemos aproximar estatisticamente o alinhamento dos microfacets:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/ndf.png" alt="altlogo"></figure></p>
+
+<p>Podemos ver que os valores de rugosidade mais elevados exibem uma forma de reflexão especular muito maior, em contraste com a forma de reflexão especular menor e mais nítida de superfícies lisas.</p>
+
+<h2 id="conservação-de-energia">Conservação de Energia</h2>
+
+<p>A aproximação da microfacet emprega uma forma de <span style="color:green">conservação de energia </span>
+: a energia da luz de saída nunca deve exceder a energia da luz de entrada (excluindo superfícies emissivas). Olhando para a imagem acima, vemos a área de reflexão especular aumentando, mas também seu brilho diminuindo no aumento dos níveis de roughness. Se a intensidade especular fosse a mesma em cada pixel (independentemente do tamanho da forma especular), as superfícies mais rígidas emitiriam muito mais energia, violando o princípio da conservação de energia. É por isso que vemos reflexos especulares mais intensamente em superfícies lisas e mais vagamente em superfícies ásperas.</p>
+
+<p>Para a conservação de energia se manter, precisamos fazer uma distinção clara entre a luz difusa e especular. No momento em que um raio de luz atinge uma superfície, é dividido em uma parte de refração ( <span style="color:green">refraction </span>
+) e uma parte de reflexão ( <span style="color:green">reflection </span>
+). A parte da reflexão é a luz que é refletida diretamente e não entra na superfície; Isto é o que conhecemos como iluminação especular. A parte de refração é a luz restante que entra na superfície e é absorvida; Isto é o que conhecemos como iluminação difusa.</p>
+
+<p>Há algumas nuances aqui como a luz refratada não é imediatamente absorvida ao tocar a superfície. Da física, sabemos que a luz pode ser modelada como um feixe de energia que continua avançando até perder toda a sua energia; A maneira como um feixe de luz perde energia é por colisão. Cada material consiste em pequenas partículas que podem colidir com o raio de luz, conforme ilustrado na imagem a seguir. As partículas absorvem alguma ou toda, energia da luz em cada colisão que é convertida em calor.</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/surface_reaction.png" alt="altlogo"></figure></p>
+
+<p>Geralmente, nem toda a energia é absorvida e a luz continuará a dispersar ( <span style="color:green">scatter </span>
+) em uma direção (na maior parte) aleatória de modo que colide com outras partículas até que sua energia seja esgotada ou deixa a superfície novamente. Raios de luz reemergindo da superfície contribuem para a cor observada da superfície (difusa). Em PBR no entanto, fazemos a suposição simplificadora de que toda a luz refratada é absorvida e espalhada a uma pequena área de impacto, ignorando o efeito de raios de luz espalhados que teriam saído da superfície à uma distância. Técnicas de shading específicas que levam isso em conta são conhecidos como técnicas de <span style="color:green">subsurface scattering </span>
+ que melhoram significativamente a qualidade visual em materiais como pele, mármore ou cera, mas vêm ao preço do desempenho.</p>
+
+<p>Uma sutileza adicional quando se trata de reflexão e refração são superfícies metálicas ( <span style="color:green">metallic </span>
+). As superfícies metálicas reagem diferentemente à luz em comparação a superfícies não metálicas (também conhecidas como dielétricas ( <span style="color:green">dielectrics </span>
+)). Superfícies metálicas seguem os mesmos princípios de reflexão e refração, mas toda a luz refratada fica diretamente absorvida sem dispersão. Isso significa que as superfícies metálicas só deixam sair a luz refletida ou especular; Superfícies metálicas não mostram cores difusas. Devido a essa aparente distinção entre metais e dielétricos, ambos são tratados de maneira diferente no pipeline PBR que vamos aprofundar mais no capítulo.</p>
+
+<p>Essa distinção entre a luz refletida e refratada nos leva a outra observação em relação à preservação da energia: elas são <strong>mutuamente exclusivas</strong>. Qualquer energia de luz que é ​​refletida, não será mais absorvida pelo próprio material. Assim, a energia deixada para entrar na superfície, como luz refratada é diretamente a energia resultante depois que cuidamos da reflexão.</p>
+
+<p>Preservamos essa relação de conservação de energia, primeiro calculando a fração especular que acumula a porcentagem de energia da luz de entrada que é refletida. A fração de luz refratada é então calculada diretamente a partir da fração especular como:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> kS <span style="color:#f92672">=</span> calculateSpecularComponent(...); <span style="color:#75715e">// reflection/specular fraction
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> kD <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> kS;                        <span style="color:#75715e">// refraction/diffuse  fraction
+</span></code></pre></div>
+<p>Desta forma, sabemos tanto a quantidade de luz recebida que é refletida e a quantidade de luz recebida que é refrata, aderindo ao mesmo tempo ao princípio da conservação de energia. Dada esta abordagem, é impossível para a contribuição refratada / difusa e refletida / especular de exceder <code>1.0</code>, garantindo assim que a soma de sua energia nunca exceda a energia de luz recebida. Algo que não levamos em conta nos capítulos de iluminação anteriores.</p>
+
+<h2 id="a-equação-de-refletância">A Equação de Refletância</h2>
+
+<p>Isso nos leva a algo chamado de <a href="https://en.wikipedia.org/wiki/Rendering_equation">render equation</a>, uma equação elaborada por algumas pessoas muito inteligentes, que atualmente é o melhor modelo que temos para simular as aparências da luz. O PBR segue fortemente uma versão mais especializada da render equation conhecida como a equação de refletância ( <span style="color:green">reflectance equation </span>
+). Para entender adequadamente o PBR, é importante primeiro construir uma sólida compreensão da equação de refletância:</p>
+
+<p><span  class="math">\[L_o(p,\omega_o)=\int_\Omega f_r(p,\omega_i,\omega_o)L_i(p,\omega_i)n\cdot\omega_id\omega_i\]</span></p>
+
+<p>A equação de reflectância parece assustadora a primeira vista, mas ao dissecá-la, você verá que ela faz sentido. Para entender a equação, temos que nos aprofundar em um pouco de radiometria ( <span style="color:green">radiometry </span>
+). A radiometria é a medição da radiação eletromagnética, incluindo a luz visível. Existem várias quantidades radiométricas que podemos usar para medir a luz sobre superfícies e direções, mas só discutiremos uma única quantidade que é relevante para a equação de refletância conhecida como radiância ( <span style="color:green">radiance </span>
+), denotada aqui como $L$. A radiância é usada para quantificar a magnitude ou a força da luz que vem de uma única direção. É um pouco complicado entender a princípio já que a radiância é na verdade uma combinação de várias quantidades físicas, então vamos nos concentrar nelas primeiro:</p>
+
+<p><strong>Fluxo radiante</strong> ( <span style="color:blueviolet">radiant flux</span>
+)<strong>:</strong> o fluxo radiante $\Phi$ é a energia transmitida de uma fonte de luz medida em Watts. A luz é uma soma coletiva de energia sobre vários comprimentos de onda diferentes, cada comprimento de onda associado a uma cor específica (visível). A energia emitida de uma fonte de luz pode, portanto, ser pensada como uma função de todos os seus diferentes comprimentos de onda. Comprimentos de onda entre 390nm a 700nm (nanômetros) são considerados parte do espectro de luz visível, isto é, os comprimentos de onda que o olho humano é capaz de perceber. Abaixo você encontrará uma imagem das diferentes energias por comprimento de onda da luz do dia:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/daylight_spectral_distribution.png" alt="altlogo"></figure></p>
+
+<p>O fluxo radiante mede a área total dessa função de diferentes comprimentos de onda. Tomando diretamente essa medida de comprimentos de onda como entrada é ligeiramente impraticável, portanto normalmente simplificamos a representação do fluxo radiante, não como uma função de diferentes forças de comprimento de onda, mas como uma tupla de cores de luz codificada como <strong>RGB</strong> (ou como costumávamos chamá-la: cor de luz). Essa codificação traz bastante perda de informação, mas isso geralmente é insignificante para aspectos visuais.</p>
+
+<p><strong>Solid angle</strong>: O solid angle, denotado como $\omega$, nos diz o tamanho ou área de uma forma projetada sob uma esfera unitária. A área da forma projetada nesta esfera unitária é conhecida como <span style="color:green">solid angle </span>
+; Você pode visualizar o solid angle como uma direção com o volume:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/solid_angle.png" alt="altlogo"></figure></p>
+
+<p>Pense como um observador no centro desta esfera olhando na direção da forma; O tamanho da silhueta que enxerga é o solid angle.</p>
+
+<p><strong>Intensidade radiante</strong> ( <span style="color:green">radiant intensity </span>
+): a intensidade radiante mede a quantidade de fluxo radiante por solid angle, ou a força de uma fonte de luz sobre uma área projetada em uma esfera unitária. Por exemplo, dada uma luz omnidirecional que irradia igualmente em todas as direções, a intensidade radiante pode nos dar sua energia sobre uma área específica (solid angle):</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/radiant_intensity.png" alt="altlogo"></figure></p>
+
+<p>A equação para descrever a intensidade radiante é definida da seguinte forma:</p>
+
+<p><span  class="math">\[I=\frac{d\Phi}{d\omega}\]</span></p>
+
+<p>Onde $I$ é o fluxo radiante $\Phi$ sobre o solid angle $\omega$.</p>
+
+<p>Com conhecimento de fluxo radiante, intensidade radiante e solid angle, podemos finalmente descrever a equação para a <strong>radiância</strong> ( <span style="color:blueviolet">radiance</span>
+). A radiância é descrita como a energia total observada em uma área $A$ sobre o solid angle $\omega$ de uma luz de intensidade radiante $\Phi$:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/radiance.png" alt="altlogo"></figure></p>
+
+<p>A radiância é uma medida radiométrica da quantidade de luz em uma área, escalada pelo ângulo <span style="color:green">incidente </span>
+ (ou de chegada) $\theta$ da luz para a superfície normal como $cos \theta$: a luz é mais fraca a medida que menos irradia diretamente para a superfície, e mais forte quanto mais é diretamente perpendicular à superfície. Isso é semelhante à nossa percepção de iluminação difusa do capítulo de <a href="https://learnopengl.com/Lighting/Basic-lighting">iluminação básica</a> como $cos \theta$ corresponde diretamente ao produto escalar entre o vetor de direção da luz e a normal da superfície:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> cosTheta <span style="color:#f92672">=</span> dot(lightDir, N);  
+</code></pre></div>
+<p>A equação de radiância é bastante útil, pois contém mais quantidades físicas em que estamos interessados. Se considerarmos o solid angle $\omega$ e a área $A$ sendo  infinitamente pequenos, podemos usar a radiância para medir o fluxo de um único raio de luz batendo em um único ponto no espaço. Essa relação permite calcular o brilho de um único raio de luz que influencia um único ponto (de fragmento); Nós efetivamente traduzimos o solid angle $\omega$ em um vector de direção $\omega$ e $A$ em um ponto $p$. Dessa forma, podemos usar diretamente a radiância em nossos shaders para calcular a contribuição de um único raio de luz por fragmento.</p>
+
+<p>De fato, quando se trata de radiância, geralmente nos importamos com <strong>toda</strong> a luz recebida em um ponto $p$, que é a soma de toda a radiância conhecida como <span style="color:green">irradiância </span>
+ ( <span style="color:blueviolet">irradiance</span>
+). Com conhecimento de ambas a radiância e irradiância, podemos voltar à equação de refletância:</p>
+
+<p><span  class="math">\[L_o(p,\omega_o)=\int_\Omega f_r(p,\omega_i,\omega_o)L_i(p,\omega_i)n\cdot\omega_id\omega_i\]</span></p>
+
+<p>Sabemos agora que $L$ na render equation representa a radiância de algum ponto $p$ e algum solid angle incidente infinitamente pequeno $\omega_i$ que pode ser considerado como um vetor de direção de incidência $\omega_i$. Lembre-se que $cos$ $\theta$ escala a energia com base no ângulo de incidência da luz na superfície, que encontramos na equação de reflectância como $n \cdot \omega_i$. A equação de refletância calcula a soma da radiância refletida $L_o(p, \omega_o)$ de um ponto $p$ na direção $\omega_o$, que é a direção de saída para o observador. Em outras palavras: $L_o$ mede a soma refletida da irradiância das luzes no ponto $p$  observada de $\omega_o$.</p>
+
+<p>A equação de reflectância é baseada em torno da irradiância, que é a soma de toda a radiância recebida que medimos da luz. Não apenas de uma única direção de luz recebida, mas de todas as incidências de luz dentro de um hemisfério $\Omega$ centrada em torno do ponto $p$. Um <span style="color:green">hemisfério </span>
+ pode ser descrito como a meia esfera alinhada em torno de uma normal de superfície $n$:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/hemisphere.png" alt="altlogo"></figure></p>
+
+<p>Para calcular o total de valores dentro de uma área ou (no caso de um hemisfério) um volume, usamos uma construção matemática chamada integral denotada na equação de refletância como $\int$ sobre todas as direções de incidência $d\omega_i$ dentro do hemisfério $\Omega$. Uma integral mede a área de uma função, que pode ser calculada analiticamente ou numericamente. Como não há solução analítica para a equação de renderização e de reflexão, vamos ter que resolver numericamente a integral discretamente. Isso se traduz em tomar o resultado de pequenos passos discretos da equação de refletância sobre o hemisfério $\Omega$ e calcular os resultados sobre o tamanho do passo. Isso é conhecido como a <span style="color:green">soma de Riemann </span>
+ que podemos visualizar no código da seguinte forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> steps <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>;
+<span style="color:#66d9ef">float</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0f</span>;
+vec3 P    <span style="color:#f92672">=</span> ...;
+vec3 Wo   <span style="color:#f92672">=</span> ...;
+vec3 N    <span style="color:#f92672">=</span> ...;
+<span style="color:#66d9ef">float</span> dW  <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0f</span> <span style="color:#f92672">/</span> steps;
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> steps; <span style="color:#f92672">++</span>i) 
+{
+    vec3 Wi <span style="color:#f92672">=</span> getNextIncomingLightDir(i);
+    sum <span style="color:#f92672">+=</span> Fr(P, Wi, Wo) <span style="color:#f92672">*</span> L(P, Wi) <span style="color:#f92672">*</span> dot(N, Wi) <span style="color:#f92672">*</span> dW;
+}
+</code></pre></div>
+<p>Ao dimensionar os passos por <code>dW</code>, a soma será igual à área total ou volume da função integral. Como <code>dW</code> escala cada passo discreto, este pode ser pensado como $d\omega_i$ na equação de reflectância. Matematicamente $d \omega_i$ é o símbolo contínuo sobre o qual calculamos a integral e, embora não se relacione diretamente com o <code>dW</code> no código (já que este é um passo discreto da soma de Riemann), ajuda a pensar nisso desta maneira. Tenha em mente que tomar medidas discretas sempre nos dará uma aproximação da área total da função. Um leitor cuidadoso perceberá que podemos aumentar a <em>precisão</em> da soma do Riemann, aumentando o número de passos.</p>
+
+<p>A equação de reflectância soma a radiância de todas as direções de luzes incidentes $\omega_i$ sobre o hemisfério $\Omega$ dimensionada por $f_r$ que atingem o ponto $p$ e retorna a soma da luz refletida $L_o$ na direção do observador. A radiância recebida pode vir de <a href="https://learnopengl.com/PBR/Lighting">fontes de luz</a>, como estamos familiarizados ou de um <span style="color:blueviolet">environment map</span>
+ medindo a radiância de todas as direções incidentes, como vamos discutir nos capítulos de <a href="https://learnopengl.com/PBR/IBL/Diffuse-irradiance">IBL</a>.</p>
+
+<p>Agora, a única parte desconhecida que resta é o símbolo $f_r$ conhecido como a função de distribuição reflexiva bidirecional <span style="color:green">BRDF </span>
+ ( <span style="color:blueviolet">bidirectional reflective distribution function</span>
+) que escala ou pesa a radiância recebida com base nas propriedades do material da superfície.</p>
+
+<h2 id="brdf">BRDF</h2>
+
+<p>A <span style="color:green">BRDF </span>
+, ou <span style="color:green">bidirectional reflective distribution function </span>
+, é uma função que recebe como entrada a direção de incidência (luz) $\omega_i$, a direção de saída (observador) $\omega_o$, a normal da superfície $n$ e um parâmetro de superfície $a$ que representa a rugosidade do micro-superfície. A BRDF aproxima o quanto cada raio individual de luz $\omega_i$ contribui para a luz final refletida de uma superfície opaca, dadas suas propriedades materiais. Por exemplo, se a superfície for perfeitamente lisa (~ como um espelho), a função BRDF retornaria <code>0.0</code> para todos os raios de luz incidentes $\omega_i$, exceto o único raio que tem o mesmo ângulo (refletido) como o raio de reflexão $\omega_o$ em que a função retorna <code>1.0</code>.</p>
+
+<p>Uma BRDF aproxima as propriedades reflexivas e refrativas do material com base na teoria de microfacet discutida anteriormente. Para uma BRDF ser fisicamente plausível, precisa que respeitar a lei da conservação de energia, isto é, a soma de luz refletida nunca deve exceder a quantidade de luz incidente. Tecnicamente, Blinn-Phong é considerado uma BRDF que toma o mesmo $\omega_i$ e $\omega_o$ como entradas. No entanto, Blinn-Phong não é considerado ser fisicamente baseado já que  não adere ao princípio da conservação de energia. Existem várias BRDFs baseadas em física para aproximar a reação da superfície à luz. No entanto, quase todos os pipelines de renderização de PBR em tempo real usam uma BRDF conhecido como a <span style="color:green">Cook-Torrance BRDF </span>
+.</p>
+
+<p>A Cook-Torrance BRDF contém uma parte difusa e uma parte especular:</p>
+
+<p><span  class="math">\[f_r=k_df_{lambert} + k_sf_{cook-torrance}\]</span></p>
+
+<p>Aqui $k_d$ é a relação anterior mencionada de energia da luz incidente que é <em>refratada</em> com $k_s$ sendo a proporção <em>refletida</em>. O lado esquerdo da BRDF afirma a parte difusa da equação denotada aqui como $f_{Lambert}$. Isso é conhecido como <span style="color:green">Lambertian </span>
+ semelhante ao que usamos para diffuse shading, que é um fator constante denotado como:</p>
+
+<p><span  class="math">\[f_{lambert}=\frac{c}{\pi}\]</span></p>
+
+<p>Com $c$ sendo o albedo ou cor da superfície (pense na textura de superfície difusa). A divisão por $\pi$ está lá para normalizar a luz difusa, já que a integral anterior que contém a BRDF é dimensionada por $\pi$ (chegaremos a isso nos capítulos de <a href="https://learnopengl.com/PBR/IBL/Diffuse-irradiance">IBL</a>).</p>
+
+
+<div class="mynotices tip" ><p>Você pode se perguntar como esse Lambertian diffuse se relaciona com a iluminação difusa que usamos antes: a cor da superfície multiplicada pelo produto escalar entre a normal da superfície e a direção da luz. O produto escalar ainda está lá, mas saiu da BRDF como encontramos $n \cdot \omega_i$ no final da integral $L_o$.</p>
+</div>
+
+
+<p>Existem diferentes equações para a parte difusa da BRDF, que tendem a parecer mais realistas, mas também são mais custosas computacionalmente. Como concluído pela Epic Games, no entanto, o Lambertian diffuse é suficiente para a maioria dos propósitos de renderização em tempo real.</p>
+
+<p>A parte especular da BRDF é um pouco mais avançada e é descrita como:</p>
+
+<p><span  class="math">\[f_{CookTorrance}=\frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)}\]</span></p>
+
+<p>A BRDF especular de Cook-Torrance é composta de três funções e um fator de normalização no denominador. Cada um dos símbolos $D$, $F$ e $G$ representam um tipo de função que aproxima uma parte específica das propriedades reflexivas da superfície. Estes são definidos como a função de <strong>D</strong>istribuição normal, a equação de <strong>F</strong>resnel e a função de <strong>G</strong>eometria:</p>
+
+<ul>
+<li><p><strong>Função de distribuição normal:</strong> aproxima o quanto os microfacets da superfície estão alinhados ao vetor halfway, influenciada pela rugosidade da superfície; Esta é a função principal que aproxima os microfacets.</p></li>
+
+<li><p><strong>Função da geometria</strong>: descreve a propriedade de auto-sombreamento dos microfacets. Quando uma superfície é relativamente áspera, os microfacets da superfície podem ofuscar outros microfacets reduzindo a luz que a superfície reflete.</p></li>
+
+<li><p><strong>Equação de Fresnel</strong>: A equação de Fresnel descreve a proporção de reflexão da superfície em diferentes ângulos de superfície.</p></li>
+</ul>
+
+<p>Cada uma dessas funções é uma aproximação de seus equivalentes físicos e você encontrará mais de uma versão de cada uma que visa aproximar a física de maneiras diferentes; alguns mais realistas, outros mais eficientes. É perfeitamente normal escolher qualquer versão aproximada dessas funções que você deseja usar. Brian Karis da Epic Games fez uma grande pesquisa sobre os vários tipos de aproximações <a href="http://graphicrants.blogspot.nl/2013/08/specular-brdf-reference.html">aqui</a>. Nós vamos escolher as mesmas funções usadas pela Unreal Engine 4 da Epic Games que são:  Trowbridge-Reitz GGX para D, a aproximação de Fresnel-Schlick para F, e o Schlick-GGX de Smith para G.</p>
+
+<h3 id="função-de-distribuição-normal-ndf">Função de Distribuição Normal (NDF)</h3>
+
+<p>A <span style="color:green">função de distribuição normal </span>
+ $D$ aproxima estatisticamente a área de superfície relativa de microfacets exatamente alinhados ao vetor (halfway) $h$. Há uma infinidade de NDFs que aproximam estatisticamente do alinhamento geral dos microfacets dado algum parâmetro de rugosidade. O que estaremos usando é conhecido como o Trowbridge-Reitz GGX:</p>
+
+<p><span  class="math">\[NDF_{GGXTR}(n,h,\alpha)=\frac{\alpha^2}{\pi((n\cdot h)^2(\alpha^2-1)+1)^2}\]</span></p>
+
+<p>Aqui $h$ é o vetor halfway para medir contra os microfacets da superfície, com $\alpha$ sendo uma medida da aspereza da superfície. Se tomarmos $h$ como o vetor halfway entre a normal da superfície e a direção da luz variando os parâmetros de rugosidade, recebemos o seguinte resultado visual:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/ndf.png" alt="altlogo"></figure></p>
+
+<p>Quando a rugosidade é baixa (assim a superfície é suave), um número altamente concentrado de microfacets está alinhado a vetores halfway sobre um raio pequeno. Devido a esta alta concentração, a NDF exibe um ponto muito brilhante. Em uma superfície áspera no entanto, onde os microfacets estão alinhados em direções muito mais aleatórias, você encontrará um número muito maior de vetores halfway $h$ um meramente alinhados aos microfacets (mas menos concentrados), nos dando os resultados mais acinzentados .</p>
+
+<p>Em <code>GLSL</code>, a função de distribuição normal Trowbridge-Reitz GGX é traduzida para o seguinte código:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> <span style="color:#a6e22e">DistributionGGX</span>(vec3 N, vec3 H, <span style="color:#66d9ef">float</span> a)
+{
+    <span style="color:#66d9ef">float</span> a2     <span style="color:#f92672">=</span> a<span style="color:#f92672">*</span>a;
+    <span style="color:#66d9ef">float</span> NdotH  <span style="color:#f92672">=</span> max(dot(N, H), <span style="color:#ae81ff">0.0</span>);
+    <span style="color:#66d9ef">float</span> NdotH2 <span style="color:#f92672">=</span> NdotH<span style="color:#f92672">*</span>NdotH;
+	
+    <span style="color:#66d9ef">float</span> nom    <span style="color:#f92672">=</span> a2;
+    <span style="color:#66d9ef">float</span> denom  <span style="color:#f92672">=</span> (NdotH2 <span style="color:#f92672">*</span> (a2 <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0</span>);
+    denom        <span style="color:#f92672">=</span> PI <span style="color:#f92672">*</span> denom <span style="color:#f92672">*</span> denom;
+	
+    <span style="color:#66d9ef">return</span> nom <span style="color:#f92672">/</span> denom;
+}
+</code></pre></div>
+<h2 id="função-de-geometria">Função de Geometria</h2>
+
+<p>A função de geometria aproxima estatisticamente a área de superfície relativa, onde seus micro detalhes de superfície se auto obstruem, fazendo com que os raios de luz sejam ocluídos.</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/geometry_shadowing.png" alt="altlogo"></figure></p>
+
+<p>Semelhante ao NDF, a função de geometria recebe o parâmetro de rugosidade de um material como entrada, com superfícies mais rígidas tendo uma maior probabilidade de ocluir microfacets. A função de geometria que usaremos é uma combinação da aproximação GGX e Schlick-Beckmann conhecida como Schlick-GGX:</p>
+
+<p><span  class="math">\[G_{SchlickGGX}(n,v,k)=\frac{n\cdot v}{(n\cdot v}(1-k) + k\]</span></p>
+
+<p>Aqui $k$ é um remapeamento de $\alpha$ com base em se estamos usando a função de geometria para iluminação direta ou iluminação IBL:</p>
+
+<p><span  class="math">\[k_{direct}=\frac{(\alpha + 1)^2}{8}\]</span></p>
+
+<p><span  class="math">\[k_{IBL}=\frac{\alpha^2}{2}\]</span></p>
+
+<p>Observe que o valor de $\alpha$ pode ser diferente com base em como seu mecanismo traduz a rugosidade $\alpha$. Nos capítulos a seguir, discutiremos extensivamente como e onde esse remapeamento se torna relevante.</p>
+
+<p>Para efetivamente aproximar a geometria, precisamos levar em conta tanto a direção do observador (obstrução da geometria) quanto o vetor de direção da luz (sombreamento de geometria). Podemos levar ambos em conta usando o <span style="color:green">método de Smith </span>
+:</p>
+
+<p><span  class="math">\[G(n,v,l,k)=G_{sub}(n,v,k)G_{sub}(n,l,k)\]</span></p>
+
+<p>Usando o método de Smith com Schlick-GGX como $G_{sub}$ fornece a seguinte aparência visual variando-se a rugosidade <strong>R</strong>:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/geometry.png" alt="altlogo"></figure></p>
+
+<p>A função de geometria é um multiplicador entre <code>[0.0, 1.0]</code> com <code>1.0</code> (ou branco) medindo nenhum sombreamento de microfacet, e <code>0.0</code> (ou preto), sombreamento completo de microfacet.</p>
+
+<p>Em GLSL, a função de geometria se traduz no seguinte código:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> <span style="color:#a6e22e">GeometrySchlickGGX</span>(<span style="color:#66d9ef">float</span> NdotV, <span style="color:#66d9ef">float</span> k)
+{
+    <span style="color:#66d9ef">float</span> nom   <span style="color:#f92672">=</span> NdotV;
+    <span style="color:#66d9ef">float</span> denom <span style="color:#f92672">=</span> NdotV <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> k) <span style="color:#f92672">+</span> k;
+	
+    <span style="color:#66d9ef">return</span> nom <span style="color:#f92672">/</span> denom;
+}
+  
+<span style="color:#66d9ef">float</span> <span style="color:#a6e22e">GeometrySmith</span>(vec3 N, vec3 V, vec3 L, <span style="color:#66d9ef">float</span> k)
+{
+    <span style="color:#66d9ef">float</span> NdotV <span style="color:#f92672">=</span> max(dot(N, V), <span style="color:#ae81ff">0.0</span>);
+    <span style="color:#66d9ef">float</span> NdotL <span style="color:#f92672">=</span> max(dot(N, L), <span style="color:#ae81ff">0.0</span>);
+    <span style="color:#66d9ef">float</span> ggx1 <span style="color:#f92672">=</span> GeometrySchlickGGX(NdotV, k);
+    <span style="color:#66d9ef">float</span> ggx2 <span style="color:#f92672">=</span> GeometrySchlickGGX(NdotL, k);
+	
+    <span style="color:#66d9ef">return</span> ggx1 <span style="color:#f92672">*</span> ggx2;
+}
+</code></pre></div>
+<h3 id="equação-de-fresnel">Equação de Fresnel</h3>
+
+<p>A equação de Fresnel (pronunciada como freh-nel) descreve a proporção de luz que se reflete sobre a luz que é refratada, o que varia sobre o ângulo que estamos olhando para uma superfície. No momento em que a luz atinge uma superfície, com base no ângulo da superfície com a vista, a equação de Fresnel nos diz a porcentagem de luz que se reflete. A partir dessa proporção de reflexão e do princípio da conservação de energia, podemos obter diretamente a porção refratada da luz.</p>
+
+<p>Cada superfície ou material tem um nível de refletividade base ( <span style="color:green">base reflectivity </span>
+) quando olhamos diretamente para sua superfície, mas ao olhar para a superfície de um ângulo, <a href="http://filmicworlds.com/blog/everything-has-fresnel/">todas</a> as reflexões se tornam mais aparentes em comparação com a refletividade base da superfície. Você pode verificar isso por si mesmo olhando para a sua mesa (presumivelmente) de madeira / metálica que tem um certo nível de refletividade base de um ângulo de visão perpendicular, mas olhando para sua mesa de um ângulo de quase 90 graus, você verá as reflexões muito mais aparentes. Todas as superfícies teoricamente refletem totalmente a luz se vistas de ângulos perfeitos de 90 graus. Este fenômeno é conhecido como <span style="color:green">Fresnel </span>
+ e é descrito pela equação de Fresnel.</p>
+
+<p>A equação de Fresnel é uma equação bastante complexa, mas felizmente pode ser aproximada usando a aproximação Fresnel-Schlick:</p>
+
+<p><span  class="math">\[F_{Schlick}(h,v,F_0)=F_0+(1-F_0)(1-(h\cdot v))^5\]</span></p>
+
+<p>$F_0$ representa a refletividade base da superfície, que calculamos usando algo chamado os <em>índices de refração</em> ou IOR. Como você pode ver em uma superfície de esfera, quanto mais olhamos para os ângulos rasos da superfície (com o ângulo entre os vetores halfway e do observador atingindo 90 graus), mais forte o Fresnel e, portanto, as reflexões:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/fresnel.png" alt="altlogo"></figure></p>
+
+<p>Existem algumas sutilezas envolvidas com a equação de Fresnel. Uma é que a aproximação Fresnel-Schlick só é realmente definida para superfícies <span style="color:green">dielétricas </span>
+ ou não metálicas. Para superfícies <span style="color:green">condutoras </span>
+ (metais), o cálculo da refletividade base com índices de refração não se mantém adequadamente e precisamos usar uma equação de fresnel diferente para os condutores. Como isso é inconveniente, aproximamos ainda mais pela pré-computação da resposta da superfície em <span style="color:green">incidência normal </span>
+ ($F_0$) em um ângulo de 0 grau como se estivesse olhando diretamente em uma superfície. Nós interpolamos esse valor com base no ângulo de visão, conforme a aproximação Fresnel-Schlick, de modo que podemos usar a mesma equação para metais e não-metais.</p>
+
+<p>A resposta da superfície em incidência normal, ou a refletividade base, pode ser encontrada em grandes bancos de dados, como <a href="http://refractiveindex.info/">estes</a> com alguns dos valores mais comuns listados abaixo, conforme tirado das notas do curso de Naty Hoffman:</p>
+
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>$F_0$(Linear)</th>
+<th>$F_0$(sRGB)</th>
+<th>Cor</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Water</td>
+<td>$(0.02, 0.02, 0.02)$</td>
+<td>$(0.15, 0.15, 0.15)$</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Plastic / Glass (Low)</td>
+<td>$(0.03, 0.03, 0.03)$</td>
+<td colspan="2">$(0.21, 0.21, 0.21)$</td>
+</tr>
+
+<tr>
+<td>Plastic High</td>
+<td>$(0.05, 0.05, 0.05)$</td>
+<td colspan="2">$(0.24, 0.24, 0.24)$</td>
+</tr>
+
+<tr>
+<td>Glass (high) / Ruby</td>
+<td>$(0.08, 0.08, 0.08)$</td>
+<td colspan="2">$(0.31, 0.31, 0.31)$</td>
+</tr>
+
+<tr>
+<td>Diamond</td>
+<td>$(0.17, 0.17, 0.17)$</td>
+<td colspan="2">$(0.45, 0.45, 0.45)$</td>
+</tr>
+
+<tr>
+<td>Iron</td>
+<td>$(0.56, 0.57, 0.58)$</td>
+<td colspan="2">$(0.77, 0.78, 0.78)$</td>
+</tr>
+
+<tr>
+<td>Copper</td>
+<td>$(0.95, 0.64, 0.54)$</td>
+<td colspan="2">$(0.98, 0.82, 0.76)$</td>
+</tr>
+
+<tr>
+<td>Gold</td>
+<td>$(1.00, 0.71, 0.29)$</td>
+<td colspan="2">$(1.00, 0.86, 0.57)$</td>
+</tr>
+
+<tr>
+<td>Aluminium</td>
+<td>$(0.91, 0.92, 0.92)$</td>
+<td colspan="2">$(0.96, 0.96, 0.97)$</td>
+</tr>
+
+<tr>
+<td>Silver</td>
+<td>$(0.95, 0.93, 0.88)$</td>
+<td colspan="2">$(0.98, 0.97, 0.95)$</td>
+</tr>
+</tbody>
+</table>
+
+<p>O que é interessante de observar aqui é que, para todas as superfícies dielétricas, a refletividade base nunca fica acima de <code>0.17</code>, que é a exceção, em vez da regra, enquanto para os condutores a refletividade base é muito maior e (principalmente) varia entre <code>0.5</code> e <code>1.0</code>. Além disso, para condutores (ou superfícies metálicas) a refletividade base é colorida. É por isso que $F_0$ é apresentado como uma tupla RGB (a refletividade na incidência normal pode variar por comprimento de onda); Isso é algo que só vemos em superfícies metálicas.</p>
+
+<p>Esses atributos específicos de superfícies metálicas em comparação com superfícies dielétricas deu origem a algo chamado <span style="color:green">metallic workflow </span>
+. No metallic workflow, nós configuramos os materiais das superfícies com um parâmetro extra conhecido como <span style="color:green">metalness </span>
+ que descreve se uma superfície é uma superfície metálica ou não metálica.</p>
+
+
+<div class="mynotices tip" ><p>Teoricamente, o metalness de um material é binário: o material é um metal ou não é; Não pode ser ambos. No entanto, a maioria dos pipelines de renderização permitem a configuração do metalness de uma superfície linearmente entre <code>0.0</code> e <code>1.0</code>. Isso é principalmente por causa da falta de precisão de textura do material. Por exemplo, uma superfície com pequenas partículas / arranhões de pó / areia (não metal) sobre uma superfície metálica é difícil de renderizar com valores de metalness binários.</p>
+</div>
+
+
+<p>Ao pré-computar $F_0$ para ambos os dielétricos e condutores, podemos usar a mesma aproximação de Fresnel-Schlick para ambos os tipos de superfícies, mas temos que tingir a refletividade base se tivermos uma superfície metálica. Geralmente, conseguimos isso da seguinte forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 F0 <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">0.04</span>);
+F0      <span style="color:#f92672">=</span> mix(F0, surfaceColor.rgb, metalness);
+</code></pre></div>
+<p>Definimos uma refletividade base que é aproximada para a maioria das superfícies dielétricas. Esta é mais uma aproximação como $F_0$ é calculada em torno de dielétricos mais comuns. Uma refletividade base de <code>0.04</code> se mantém para a maioria dos dielétricos e produz resultados fisicamente plausíveis sem ter que criar um parâmetro de superfície adicional. Em seguida, com base em quão metálica uma superfície é, tomamos a refletividade base dielétrica ou tomamos $F_0$ criadas como a cor da superfície. Como as superfícies metálicas absorvem toda a luz refratada, elas não têm reflexões difusas e podemos usar diretamente a textura de cor de superfície como sua refletividade base.</p>
+
+<p>No código, a aproximação de Fresnel Schlick se traduz em:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 <span style="color:#a6e22e">fresnelSchlick</span>(<span style="color:#66d9ef">float</span> cosTheta, vec3 F0)
+{
+    <span style="color:#66d9ef">return</span> F0 <span style="color:#f92672">+</span> (<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> F0) <span style="color:#f92672">*</span> pow(<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> cosTheta, <span style="color:#ae81ff">5.0</span>);
+}
+</code></pre></div>
+<p>Com a <code>cosTheta</code> sendo o resultado do produto escalar entre a direção normal $n$ e a direção halfway $h$ (ou de vista $v$).</p>
+
+<h3 id="equação-de-refletância-cooktorrance">Equação de Refletância Cook-Torrance</h3>
+
+<p>Com cada componente da BRDF Torrance do Cook descrita, podemos incluir a BRDF baseada em física na equação de reflectância final agora:</p>
+
+<p><span  class="math">\[L_0(p,\omega_o)=\int_\Omega(k_d\frac{c}{\pi} + k_s\frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)})L_i(p,\omega_i)n\cdot\omega_i d\omega_i\]</span></p>
+
+<p>Esta equação não é matematicamente totalmente correta no entanto. Você pode lembrar que o termo Fresnel $F$ representa a proporção de luz que é <em>refletida</em> de uma superfície. Isso é efetivamente nossa relação $k_s$, o que significa que a parte (BRDF) especular da equação de refletância contém implicitamente a relação de reflectância $k_s$. Dado isso, nossa equação final de refletância final torna-se:</p>
+
+<p><span  class="math">\[L_0(p,\omega_o)=\int_\Omega(k_d\frac{c}{\pi} + \frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)})L_i(p,\omega_i)n\cdot\omega_i d\omega_i\]</span></p>
+
+<p>Essa equação agora descreve completamente um modelo de renderização fisicamente baseado que é geralmente reconhecido como o que comumente entendemos como renderização baseada em física, ou PBR. Não se preocupe se você ainda não entendeu completamente como precisaremos adequar todas as matemáticas discutidas no código. Nos próximos capítulos, vamos explorar como utilizar a equação de refletância para obter resultados muito mais fisicamente plausíveis em nossa iluminação renderizada e todos os pedacinhos devem começar lentamente a se encaixar.</p>
+
+<h2 id="criando-authoring-materiais-pbr">Criando (Authoring) Materiais PBR</h2>
+
+<p>Com o conhecimento do modelo matemático subjacente de PBR, finalizaremos a discussão descrevendo como os artistas geralmente criam as propriedades físicas de uma superfície com as quais podemos alimentar diretamente as equações da PBR. Cada um dos parâmetros da superfície que precisamos para um pipeline PBR pode ser definido ou modelado por texturas. O uso de texturas nos dá controle por fragmento sobre como cada ponto de superfície específico deve reagir à luz: se esse ponto é metálico, áspero ou suave, ou como a superfície responde a diferentes comprimentos de onda.</p>
+
+<p>Abaixo, você verá uma lista de texturas que você frequentemente encontrará em um pipeline PBR junto com sua saída visual, se fornecida a um renderizador de PBR:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/textures.png" alt="altlogo"></figure></p>
+
+<p><strong>Albedo</strong>: A textura de <span style="color:green">albedo </span>
+ ( <span style="color:green">albedo texture </span>
+) especifica para cada texel a cor da superfície, ou a refletividade base se esse texel é metálico. Isso é muito semelhante ao que usamos antes como uma textura difusa, mas todas as informações de iluminação são extraídas da textura. Texturas difusas muitas vezes têm ligeiras sombras ou fendas escuras dentro da imagem que é algo que você não quer em uma textura de albedo; Deve-se conter apenas as cores (ou coeficientes de absorção refratados) da superfície.</p>
+
+<p><strong>Normal</strong>: A textura do mapa de normais ( <span style="color:green">normal map texture </span>
+) é exatamente como usamos antes no capítulo <a href="https://learnopengl.com/Advanced-Lighting/Normal-Mapping">mapeamento de normais</a>. O mapa de normais nos permite especificar, por fragmento, uma normal única para dar a ilusão de que uma superfície é mais curvada ( <span style="color:blueviolet">bumpier</span>
+) do que sua contraparte plana.</p>
+
+<p><strong>Metálico</strong>: O mapa metálico ( <span style="color:green">metallic map </span>
+) especifica por texel se um texel é metálico ou não é. Com base em como o motor PBR é configurado, os artistas podem criar o metalness tanto com valores de cinza ou com valores binários de preto ou branco.</p>
+
+<p><strong>Rugosidade</strong>: O mapa de rugosidade ( <span style="color:green">roughness map </span>
+) especifica o quão áspero uma superfície é para cada texel. O valor de rugosidade amostrado da rugosidade influencia as orientações estatísticas de microfacets da superfície. Uma superfície mais áspera recebe reflexões mais amplas e borradas, enquanto uma superfície lisa é focada e reflexões bem definidas. Alguns motores PBR esperam um mapa de suavidade ( <span style="color:green">smoothness map </span>
+) em vez de um mapa de rugosidade que alguns artistas acham mais intuitivo. Esses valores são então traduzidos (<code>1,0 - smoothness</code>) para aspereza no momento em que eles são amostrados.</p>
+
+<p><strong>AO</strong>: A oclusão ambiente ( <span style="color:green">ambient occlusion </span>
+) ou mapa <span style="color:green">AO </span>
+ especifica um fator de sombreamento extra da superfície e geometrias potencialmente próximas. Se tivermos uma superfície de tijolo, por exemplo, a textura do albedo não deve ter informações de sombreamento dentro das fendas do tijolo. O mapa do AO, no entanto, especifica essas bordas escuras, pois é mais difícil para a luz escapar. Tomar a oclusão ambiente em conta no final do estágio de iluminação pode aumentar significativamente a qualidade visual de sua cena. O mapa de oclusão ambiente de uma malha / superfície é gerado manualmente ou pré-calculado em programas de modelagem 3D.</p>
+
+<p>Artistas definem e ajustam esses valores de entrada fisicamente baseados em uma base por texel e podem basear seus valores de textura nas propriedades da superfície física dos materiais do mundo real. Esta é uma das maiores vantagens de um pipeline de renderização do PBR, uma vez que essas propriedades físicas de uma superfície permanecem as mesmas, independentemente do ambiente ou configuração de iluminação, facilitando a vida para os artistas obterem resultados fisicamente plausíveis. As superfícies criadas em um pipeline PBR podem ser facilmente compartilhadas entre os diferentes motores de renderização da PBR, e ficarão corretos, independentemente do ambiente em que estão e, como resultado, parecerão muito mais naturais.</p>
+
+<h1 id="leitura-adicional">Leitura Adicional</h1>
+
+<ul>
+<li><p><a href="http://blog.selfshadow.com/publications/s2013-shading-course/hoffman/s2013_pbs_physics_math_notes.pdf">&quot;Background: Physics and Math of Shading&quot; por Natur Hoffmann</a>: Há muita teoria para discutir plenamente em um único artigo, logo a teoria aqui mal arranha sua superfície; Se você quiser saber mais sobre a física da luz e como esta se refere à teoria do PBR, este é o recurso que você deseja ler.</p></li>
+
+<li><p><a href="http://blog.selfshadow.com/publications/s2013-shading-course/karis/s2013_pbs_epic_notes_v2.pdf">Real Shading in Unreal Engine 4</a>: discute o modelo PBR adotado pela Epic Games em sua 4ª versão da Unreal Engine. O sistema PBR que nos concentraremos nestes capítulos é baseado neste modelo de PBR.</p></li>
+
+<li><p><a href="https://www.shadertoy.com/view/4sSfzK">&quot;SH17C Physically Based Shading&quot; por knarkowicz</a>: Grande <em>showcase</em> de todos os elementos individuais de PBR em uma demo interativa do Shadertoy.</p></li>
+
+<li><p><a href="https://www.marmoset.co/toolbag/learn/pbr-theory">Marmoset: PBR Theory</a>: uma introdução à PBR principalmente destinada a artistas, mas, no entanto, uma boa leitura.</p></li>
+
+<li><p><a href="http://www.codinglabs.net/article_physically_based_rendering.aspx">Coding Labs: Physically based rendering</a>: uma introdução à equação de renderização e como se refere ao PBR.</p></li>
+
+<li><p><a href="http://www.codinglabs.net/article_physically_based_rendering_cook_torrance.aspx">Coding Labs: Physically Based Rendering - Cook–Torrance</a>: uma introdução ao cozinheiro-torrance BRDF.</p></li>
+
+<li><p><a href="http://blog.wolfire.com/2015/10/Physically-based-rendering">Wolfire Games - Physically based rendering</a>: uma introdução ao PBR por Lukas Orsvärn.</p></li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'aprendaopengl-1';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/aprendaopengl/pbr/" title="PBR"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/aprendaopengl/introducao/" title="Introdução" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/aprendaopengl/js/clipboard.min.js?1607009012"></script>
+    <script src="/aprendaopengl/js/perfect-scrollbar.min.js?1607009012"></script>
+    <script src="/aprendaopengl/js/perfect-scrollbar.jquery.min.js?1607009012"></script>
+    <script src="/aprendaopengl/js/jquery.sticky.js?1607009012"></script>
+    <script src="/aprendaopengl/js/featherlight.min.js?1607009012"></script>
+    <script src="/aprendaopengl/js/highlight.pack.js?1607009012"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/aprendaopengl/js/modernizr.custom-3.6.0.js?1607009012"></script>
+    <script src="/aprendaopengl/js/learn.js?1607009012"></script>
+    <script src="/aprendaopengl/js/hugo-learn.js?1607009012"></script>
+    
+        
+            <script src="/aprendaopengl/mermaid/mermaid.js?1607009012"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85882787-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</html>
