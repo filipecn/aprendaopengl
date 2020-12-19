@@ -4,6 +4,7 @@ date: 2020-10-29T15:28:58-03:00
 draft: false
 katex: true
 markup: "mmark"
+weight: 1
 ---
 
 [Post Original](https://learnopengl.com/PBR/Theory)

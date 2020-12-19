@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://filipecn.github.io/aprendaopengl/pbr/teoria/</loc>
+    <lastmod>2020-10-29T15:28:58-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://filipecn.github.io/aprendaopengl/introducao/</loc>
     <lastmod>2020-10-29T15:22:27-03:00</lastmod>
   </url>
@@ -10,6 +15,11 @@
   <url>
     <loc>https://filipecn.github.io/aprendaopengl/ponto_de_partida/</loc>
     <lastmod>2020-10-29T21:00:06-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://filipecn.github.io/aprendaopengl/pbr/iluminacao/</loc>
+    <lastmod>2020-10-29T15:28:58-03:01</lastmod>
   </url>
   
   <url>
@@ -79,11 +89,6 @@
   
   <url>
     <loc>https://filipecn.github.io/aprendaopengl/ponto_de_partida/ola_triangulo/</loc>
-    <lastmod>2020-10-29T15:28:58-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://filipecn.github.io/aprendaopengl/pbr/teoria/</loc>
     <lastmod>2020-10-29T15:28:58-03:00</lastmod>
   </url>
   

@@ -6,10 +6,6 @@
     <description>Recent content in Ponto de Partida on Aprenda OpenGL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 29 Oct 2020 21:00:06 -0300</lastBuildDate>
-    
-	<atom:link href="https://filipecn.github.io/aprendaopengl/ponto_de_partida/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 29 Oct 2020 21:00:06 -0300</lastBuildDate><atom:link href="https://filipecn.github.io/aprendaopengl/ponto_de_partida/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

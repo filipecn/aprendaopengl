@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.79.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/aprendaopengl/images/favicon.png" type="image/png">
+
+    <title>Iluminação :: Aprenda OpenGL</title>
+
+    
+    <link href="/aprendaopengl/css/nucleus.css?1608408550" rel="stylesheet">
+    <link href="/aprendaopengl/css/fontawesome-all.min.css?1608408550" rel="stylesheet">
+    <link href="/aprendaopengl/css/hybrid.css?1608408550" rel="stylesheet">
+    <link href="/aprendaopengl/css/featherlight.min.css?1608408550" rel="stylesheet">
+    <link href="/aprendaopengl/css/perfect-scrollbar.min.css?1608408550" rel="stylesheet">
+    <link href="/aprendaopengl/css/auto-complete.css?1608408550" rel="stylesheet">
+    <link href="/aprendaopengl/css/atom-one-dark-reasonable.css?1608408550" rel="stylesheet">
+    <link href="/aprendaopengl/css/theme.css?1608408550" rel="stylesheet">
+    <link href="/aprendaopengl/css/hugo-theme.css?1608408550" rel="stylesheet">
+    
+    <link href="/aprendaopengl/css/theme-mine.css?1608408550" rel="stylesheet">
+    
+    
+
+    <script src="/aprendaopengl/js/jquery-3.3.1.min.js?1608408550"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+     <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+  <body class="" data-url="/aprendaopengl/pbr/iluminacao/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href=''>
+<img src="/aprendaopengl/images/logo.svg" width="100%" height="100%">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/aprendaopengl/js/lunr.min.js?1608408550"></script>
+<script type="text/javascript" src="/aprendaopengl/js/auto-complete.js?1608408550"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/filipecn.github.io\/aprendaopengl\/";
+    
+</script>
+<script type="text/javascript" src="/aprendaopengl/js/search.js?1608408550"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/introducao/" title="Introdução" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/introducao/">
+          <b>1. </b>Introdução
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/" title="Ponto de Partida" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/">
+          <b>2. </b>Ponto de Partida
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/opengl/" title="OpenGL" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/opengl/">
+          OpenGL
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/criando_uma_janela/" title="Criando uma Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/criando_uma_janela/">
+          Criando uma Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/ola_janela/" title="Olá Janela" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/ola_janela/">
+          Olá Janela
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/ola_triangulo/" title="Olá Triângulo" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/ola_triangulo/">
+          Olá Triângulo
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/ponto_de_partida/transformacoes/" title="Transformações" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/ponto_de_partida/transformacoes/">
+          Transformações
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao/" title="Iluminação" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao/">
+          <b>3. </b>Iluminação
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao/cores/" title="Cores" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao/cores/">
+          Cores
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao/iluminacao_basica/" title="Iluminação Básica" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao/iluminacao_basica/">
+          Iluminação Básica
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao/materiais/" title="Materiais" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao/materiais/">
+          Materiais
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao_avancada/">
+          <b>6. </b>Iluminação Avançada
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao_avancada/sombras/" title="Sombras" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao_avancada/sombras/">
+          <b>X. </b>Sombras
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/iluminacao_avancada/iluminacao_avancada/" title="Iluminação Avançada" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/iluminacao_avancada/iluminacao_avancada/">
+          Iluminação Avançada
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/aprendaopengl/iluminacao_avancada/correcao_gama/index_/" title="Correção Gama" class="dd-item ">
+        <a href="/aprendaopengl/iluminacao_avancada/correcao_gama/index_/">
+        Correção Gama
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/pbr/" title="PBR" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/aprendaopengl/pbr/">
+          <b>7. </b>PBR
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/pbr/teoria/" title="Teoria" class="dd-item
+        
+        
+        
+        ">
+      <a href="/aprendaopengl/pbr/teoria/">
+          Teoria
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/aprendaopengl/pbr/iluminacao/" title="Iluminação" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/aprendaopengl/pbr/iluminacao/">
+          Iluminação
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/filipecn/aprendaopengl"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://filipecn.github.io/aprendaopengl/credits"><i class='fas fa-bullhorn'></i> Credits</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <center>
+    Conteúdo originalmente criado por /
+    <p>todos direitos reservados para</p>
+    <p><a href="https://twitter.com/JoeyDeVriez">Joey De Vriez</a></p>
+    <p>Construído com <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> usando <a href="https://getgrav.org">Grav</a> e <a href="https://gohugo.io/">Hugo</a></p>
+</center>
+
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/filipecn/aprendaopengl/tree/main/content/pbr/iluminacao/_index.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/aprendaopengl/'>home</a> > <a href='/aprendaopengl/pbr/'>PBR</a> > Iluminação
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Iluminação
+            </h1>
+          
+
+        
+
+
+
+	<p><a href="https://learnopengl.com/PBR/Lighting">Post Original</a></p>
+
+<p>No capítulo <a href="https://learnopengl.com/PBR/Theory">anterior</a>, lançamos os fundamentos para se construir um renderizador realista baseado em física. Neste capítulo, vamos nos concentrar em traduzir a teoria discutida anteriormente em um renderizador real que usa fontes de luz diretas (ou analíticas): pense em luzes pontuais, luzes direcionais e / ou holofotes ( <span style="color:blueviolet">spotlights</span>
+).</p>
+
+<p>Vamos começar revisitando a equação final de refletância do capítulo anterior:</p>
+
+<p><span  class="math">\[L_o(p,\omega_o)=\int_\Omega(k_d\frac{c}{\pi}+\frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)})L_i(p,\omega_i)n\cdot \omega_i d\omega_i\]</span></p>
+
+<p>Agora sabemos principalmente o que está acontecendo, mas o que ainda permaneceu uma grande incógnita é como exatamente vamos representar a irradiância, a radiância total $L$, da cena. Sabemos que a radiância $L$ (conforme interpretada na computação gráfica) mede o fluxo radiante $\phi$ ou a energia da luz de uma fonte de luz sobre um determinado solid angle $\omega$. No nosso caso, assumimos que o solid angle $\omega$ é infinitamente pequeno, caso em que a radiância mede o fluxo de uma fonte de luz sobre um único raio de luz ou vetor de direção.</p>
+
+<p>Dado esse conhecimento, como traduzimos isso em parte do conhecimento de iluminação que acumulamos nos capítulos anteriores? Bem, imagine que temos um único ponto de luz (uma fonte de luz que brilha igualmente em todas as direções) com um fluxo radiante de <code>(23.47, 21.31, 20.79)</code> traduzido para um valor RGB. A intensidade radiante desta fonte de luz é igual ao seu fluxo radiante em todos os raios de direção de saída. No entanto, ao analisar um ponto específico $p$ em uma superfície, de todas as direções de luz de entrada possíveis sobre seu hemisfério $\Omega$, apenas um vetor de direção de entrada $w_i$ vem diretamente da fonte de luz pontual. Como temos apenas uma única fonte de luz em nossa cena, assumida como um único ponto no espaço, todas as outras direções de luz de entrada possíveis têm radiância zero observada sobre o ponto da superfície $p$:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/lighting_radiance_direct.png" alt="altlogo"></figure></p>
+
+<p>Se, a princípio, assumirmos que a atenuação da luz (escurecimento da luz ao longo da distância) não afeta a fonte de luz pontual, a radiância do raio de luz que entra é a mesma, independentemente de onde posicionamos a luz (excluindo a escala da radiância pelo ângulo de incidência $\cos theta$). Isso porque a luz pontual tem a mesma intensidade radiante independentemente do ângulo que olhamos para ela, modelando efetivamente sua intensidade radiante como seu fluxo radiante: um vetor constante <code>(23.47, 21.31, 20.79)</code>.</p>
+
+<p>No entanto, a radiância também assume uma posição $p$ como entrada e como qualquer fonte de luz pontual realista leva em conta a atenuação da luz, a intensidade radiante da fonte de luz pontual é dimensionada por alguma medida da distância entre o ponto $p$ e a fonte de luz. Então, conforme extraído da equação de radiância original, o resultado é escalado pelo produto escalar entre a normal da superfície $n$ e a direção da luz que entra $w_i$.</p>
+
+<p>Para colocar isso em termos mais práticos: no caso de uma luz pontual direta, a função de radiância $L$ mede a cor da luz, atenuada ao longo de sua distância para $p$ e dimensionada por $n \cdot w_i$ , mas apenas sobre o único raio de luz $w_i$ que atinge $p$  que é igual ao vetor de direção da luz de $p$.
+  No código, isso se traduz em:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3  lightColor  <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">23.47</span>, <span style="color:#ae81ff">21.31</span>, <span style="color:#ae81ff">20.79</span>);
+vec3  wi          <span style="color:#f92672">=</span> normalize(lightPos <span style="color:#f92672">-</span> fragPos);
+<span style="color:#66d9ef">float</span> cosTheta    <span style="color:#f92672">=</span> max(dot(N, Wi), <span style="color:#ae81ff">0.0</span>);
+<span style="color:#66d9ef">float</span> attenuation <span style="color:#f92672">=</span> calculateAttenuation(fragPos, lightPos);
+vec3  radiance    <span style="color:#f92672">=</span> lightColor <span style="color:#f92672">*</span> attenuation <span style="color:#f92672">*</span> cosTheta;
+</code></pre></div>
+<p>Apesar da terminologia diferente, este trecho de código deve ser bastante familiar para você: é exatamente assim que temos feito a iluminação difusa até agora. Quando se trata de iluminação direta, a radiância é calculada de forma semelhante a como calculamos a iluminação antes, pois apenas um único vetor de direção da luz contribui para a radiância da superfície.</p>
+
+
+<div class="mynotices tip" ><p>Observe que essa suposição é válida, pois as luzes pontuais são infinitamente pequenas e constituem apenas um único ponto no espaço. Se tivéssemos que modelar uma luz com área ou volume, sua radiância seria diferente de zero em mais de uma direção de luz incidente.</p>
+</div>
+
+
+<p>Para outros tipos de fontes de luz originadas de um único ponto, calculamos a radiância de forma semelhante. Por exemplo, uma fonte de luz direcional tem uma constante $w_i$ sem um fator de atenuação. E um holofote não teria uma intensidade radiante constante, mas uma que é dimensionada pelo vetor de direção direta do holofote.</p>
+
+<p>Isso também nos traz de volta à integral $\int$ sobre o hemisfério da superfície $\Omega$. Como sabemos de antemão as localizações únicas de todas as fontes de luz contribuintes ao shading de um único ponto da superfície, não é necessário tentar resolver a integral. Podemos tomar diretamente o número (conhecido) de fontes de luz e calcular sua irradiância total, visto que cada fonte de luz tem apenas uma única direção de luz que influencia no brilho da superfície. Isso torna o PBR em fontes de luz direta relativamente simples, pois efetivamente só precisamos fazer um loop sobre as fontes de luz contribuintes. Quando mais tarde levarmos em consideração a iluminação do ambiente nos capítulos <a href="https://learnopengl.com/PBR/IBL/Diffuse-irradiance">IBL</a>, teremos que levar em consideração a integral, pois a luz pode vir de qualquer direção.</p>
+
+<h2 id="um-modelo-de-superfície-pbr">Um modelo de superfície PBR</h2>
+
+<p>Vamos começar escrevendo um shader de fragmento que implementa os modelos PBR descritos anteriormente. Primeiro, precisamos pegar as entradas relevantes ao PBR para o shading da superfície:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span>out vec4 FragColor;
+in vec2 TexCoords;
+in vec3 WorldPos;
+in vec3 Normal;
+  
+uniform vec3 camPos;
+  
+uniform vec3  albedo;
+uniform <span style="color:#66d9ef">float</span> metallic;
+uniform <span style="color:#66d9ef">float</span> roughness;
+uniform <span style="color:#66d9ef">float</span> ao;
+</code></pre></div>
+<p>Usamos as entradas padrão calculadas de um shader de vértice genérico e um conjunto de constantes de propriedades de material da superfície do objeto.</p>
+
+<p>Então, no início do shader de fragmento fazemos os cálculos usuais exigidos por qualquer algoritmo de iluminação:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    vec3 N <span style="color:#f92672">=</span> normalize(Normal); 
+    vec3 V <span style="color:#f92672">=</span> normalize(camPos <span style="color:#f92672">-</span> WorldPos);
+    [...]
+}
+</code></pre></div>
+<h3 id="iluminação-direta">Iluminação Direta</h3>
+
+<p>No exemplo de demonstração deste capítulo temos um total de 4 luzes pontuais que, em conjunto, representam a irradiância da cena. Para satisfazer a equação de refletância, iteramos sobre as fontes de luz, calculamos cada radiância individual e somamos sua contribuição escalada pela BRDF e o angulo de incidência da luz. Podemos pensar nesse loop como a resolução da integral $\int$ sobre $\Omega$ para fontes de luz direta. Primeiro, calculamos todas variáveis relevantes para cada luz:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 Lo <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">0.0</span>);
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; <span style="color:#f92672">++</span>i) 
+{
+    vec3 L <span style="color:#f92672">=</span> normalize(lightPositions[i] <span style="color:#f92672">-</span> WorldPos);
+    vec3 H <span style="color:#f92672">=</span> normalize(V <span style="color:#f92672">+</span> L);
+  
+    <span style="color:#66d9ef">float</span> distance    <span style="color:#f92672">=</span> length(lightPositions[i] <span style="color:#f92672">-</span> WorldPos);
+    <span style="color:#66d9ef">float</span> attenuation <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">/</span> (distance <span style="color:#f92672">*</span> distance);
+    vec3 radiance     <span style="color:#f92672">=</span> lightColors[i] <span style="color:#f92672">*</span> attenuation; 
+    [...]  
+</code></pre></div>
+<p>Ao calcular a iluminação no espaço linear (fazemos a <a href="https://learnopengl.com/Advanced-Lighting/Gamma-Correction">correção gama</a> no final do shader), atenuamos as fontes de luz pela fisicamente correta <span style="color:green">lei do quadrado-inverso </span>
+.</p>
+
+
+<div class="mynotices tip" ><p>Enquanto fisicamente correta, você pode ainda querer usar a equação de atenuação quadrática-linear-constante que (enquanto não correta fisicamente) pode significativamente oferecer mais controle sobre o decaimento de energia da luz.</p>
+</div>
+
+
+<p>Então, para cada luz queremos calcular o termo completo Cook-Torrance BRDF:</p>
+
+<p><span  class="math">\[\frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)}\]</span></p>
+
+<p>A primeira coisa a se fazer é calcular a razão entre as reflexões especular e difusa, ou quanto a superfície reflete luz versus o quanto refrata a luz. Sabemos do capítulo <a href="https://learnopengl.com/PBR/Theory">anterior</a> que a equação de Fresnel calcula exatamente isto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 <span style="color:#a6e22e">fresnelSchlick</span>(<span style="color:#66d9ef">float</span> cosTheta, vec3 F0)
+{
+    <span style="color:#66d9ef">return</span> F0 <span style="color:#f92672">+</span> (<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> F0) <span style="color:#f92672">*</span> pow(max(<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> cosTheta, <span style="color:#ae81ff">0.0</span>), <span style="color:#ae81ff">5.0</span>);
+}  
+</code></pre></div>
+<p>A aproximação de Fresnel-Schlick espera um parâmetro <span style="color:blue">F0</span>
+ que é conhecido como a <em>reflexão da superfície</em> na <em>incidência zero</em> ou quanto a superfície reflete se olhar diretamente para a superfície. O <span style="color:blue">F0</span>
+ varia de acordo com o material e é tingido em metais, conforme encontramos em grandes bancos de dados de materiais. No metallic workflow  PBR, fazemos a suposição simplificadora de que a maioria das superfícies dielétricas parecem visualmente corretas com uma constante <span style="color:blue">F0</span>
+ de <code>0.04</code>, enquanto especificamos <span style="color:blue">F0</span>
+ para superfícies metálicas conforme dado pelo valor de albedo. Isso se traduz em código da seguinte maneira:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 F0 <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">0.04</span>); 
+F0      <span style="color:#f92672">=</span> mix(F0, albedo, metallic);
+vec3 F  <span style="color:#f92672">=</span> fresnelSchlick(max(dot(H, V), <span style="color:#ae81ff">0.0</span>), F0);
+</code></pre></div>
+<p>Como você pode ver, para superfícies não-metálicas <span style="color:blue">F0</span>
+ vale sempre <code>0.04</code>. Para superfícies metálicas, variamos <span style="color:blue">F0</span>
+ interpolando linearmente entre o valor original de <span style="color:blue">F0</span>
+ e o valor de albedo dado pela propriedade <span style="color:blue">metallic</span>
+.</p>
+
+<p>Dado $F$, os termos restantes são a função de distribuição normal $D$ e a função de geometria $G$.</p>
+
+<p>Em um shader de iluminação direta PBR, seus códigos equivalentes são:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> <span style="color:#a6e22e">DistributionGGX</span>(vec3 N, vec3 H, <span style="color:#66d9ef">float</span> roughness)
+{
+    <span style="color:#66d9ef">float</span> a      <span style="color:#f92672">=</span> roughness<span style="color:#f92672">*</span>roughness;
+    <span style="color:#66d9ef">float</span> a2     <span style="color:#f92672">=</span> a<span style="color:#f92672">*</span>a;
+    <span style="color:#66d9ef">float</span> NdotH  <span style="color:#f92672">=</span> max(dot(N, H), <span style="color:#ae81ff">0.0</span>);
+    <span style="color:#66d9ef">float</span> NdotH2 <span style="color:#f92672">=</span> NdotH<span style="color:#f92672">*</span>NdotH;
+	
+    <span style="color:#66d9ef">float</span> num   <span style="color:#f92672">=</span> a2;
+    <span style="color:#66d9ef">float</span> denom <span style="color:#f92672">=</span> (NdotH2 <span style="color:#f92672">*</span> (a2 <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0</span>);
+    denom <span style="color:#f92672">=</span> PI <span style="color:#f92672">*</span> denom <span style="color:#f92672">*</span> denom;
+	
+    <span style="color:#66d9ef">return</span> num <span style="color:#f92672">/</span> denom;
+}
+
+<span style="color:#66d9ef">float</span> <span style="color:#a6e22e">GeometrySchlickGGX</span>(<span style="color:#66d9ef">float</span> NdotV, <span style="color:#66d9ef">float</span> roughness)
+{
+    <span style="color:#66d9ef">float</span> r <span style="color:#f92672">=</span> (roughness <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0</span>);
+    <span style="color:#66d9ef">float</span> k <span style="color:#f92672">=</span> (r<span style="color:#f92672">*</span>r) <span style="color:#f92672">/</span> <span style="color:#ae81ff">8.0</span>;
+
+    <span style="color:#66d9ef">float</span> num   <span style="color:#f92672">=</span> NdotV;
+    <span style="color:#66d9ef">float</span> denom <span style="color:#f92672">=</span> NdotV <span style="color:#f92672">*</span> (<span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> k) <span style="color:#f92672">+</span> k;
+	
+    <span style="color:#66d9ef">return</span> num <span style="color:#f92672">/</span> denom;
+}
+<span style="color:#66d9ef">float</span> <span style="color:#a6e22e">GeometrySmith</span>(vec3 N, vec3 V, vec3 L, <span style="color:#66d9ef">float</span> roughness)
+{
+    <span style="color:#66d9ef">float</span> NdotV <span style="color:#f92672">=</span> max(dot(N, V), <span style="color:#ae81ff">0.0</span>);
+    <span style="color:#66d9ef">float</span> NdotL <span style="color:#f92672">=</span> max(dot(N, L), <span style="color:#ae81ff">0.0</span>);
+    <span style="color:#66d9ef">float</span> ggx2  <span style="color:#f92672">=</span> GeometrySchlickGGX(NdotV, roughness);
+    <span style="color:#66d9ef">float</span> ggx1  <span style="color:#f92672">=</span> GeometrySchlickGGX(NdotL, roughness);
+	
+    <span style="color:#66d9ef">return</span> ggx1 <span style="color:#f92672">*</span> ggx2;
+}
+</code></pre></div>
+<p>O que é importante notar aqui é que em contraste ao capítulo de <a href="https://learnopengl.com/PBR/Theory">teoria</a>, passamos o parâmetro roughness diretamente para essas funções; deste modo podemos fazer algumas modificações específicas para cada termo no valor original de roughness. Baseados em observações pela Disney e adotados pela Epic Games, a iluminação parece mais correta ao elevar ao quadrado o roughness em ambas funções de geometria e distribuição normal.</p>
+
+<p>Com as funções definidas, calcular o NDF e o termo G no loop de refletância é trivial:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">float</span> NDF <span style="color:#f92672">=</span> DistributionGGX(N, H, roughness);       
+<span style="color:#66d9ef">float</span> G   <span style="color:#f92672">=</span> GeometrySmith(N, V, L, roughness);       
+</code></pre></div>
+<p>Isto nos dá informação suficiente para calcular a Cook-Torrance BRDF:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 numerator    <span style="color:#f92672">=</span> NDF <span style="color:#f92672">*</span> G <span style="color:#f92672">*</span> F;
+<span style="color:#66d9ef">float</span> denominator <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.0</span> <span style="color:#f92672">*</span> max(dot(N, V), <span style="color:#ae81ff">0.0</span>) <span style="color:#f92672">*</span> max(dot(N, L), <span style="color:#ae81ff">0.0</span>);
+vec3 specular     <span style="color:#f92672">=</span> numerator <span style="color:#f92672">/</span> max(denominator, <span style="color:#ae81ff">0.001</span>);  
+</code></pre></div>
+<p>Note que limitamos o denominador para <code>0.001</code> para previnir uma divisão por zero no caso de qualquer produto escalar resultar em <code>0.0</code>.</p>
+
+<p>Agora podemos finalmente calcular cada contribuição de luz a equação de refletância. Como o valor de Fresnel corresponde diretamente a $k_S$, podemos usar <span style="color:blue">F</span>
+ para denotar a contribuição especular de qualquer luz que atinja a superfície. A partir de $k_S$ podemos então calcular a razão de refração $k_D$:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 kS <span style="color:#f92672">=</span> F;
+vec3 kD <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">-</span> kS;
+  
+kD <span style="color:#f92672">*=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> metallic;	
+</code></pre></div>
+<p>Observando como <span style="color:blue">kS</span>
+ representa a energia da luz que é refletida, a razão restante da energia da luz é a luz que é refratada a qual armazenamos em <span style="color:blue">kD</span>
+. Além disso, como superfícies metálicas não refratam luz e portanto não têm reflexões difusas, asseguramos esta propriedade ao zerar <span style="color:blue">kD</span>
+ quando a superfície é metálica. Isso nos dá a informação   final de que precisamos para calcular o valor de refletância de cada luz de saída.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">float</span> PI <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14159265359</span>;
+  
+    <span style="color:#66d9ef">float</span> NdotL <span style="color:#f92672">=</span> max(dot(N, L), <span style="color:#ae81ff">0.0</span>);        
+    Lo <span style="color:#f92672">+=</span> (kD <span style="color:#f92672">*</span> albedo <span style="color:#f92672">/</span> PI <span style="color:#f92672">+</span> specular) <span style="color:#f92672">*</span> radiance <span style="color:#f92672">*</span> NdotL;
+}
+</code></pre></div>
+<p>O valor resultante <span style="color:blue">Lo</span>
+, ou a radiância de saída, é efetivamente o resultado da integral $\int$ sobre $\Omega$ da equação de refletância. Nós não precisamos resolver a integral para todas as direções  de incidência de luz dado que sabemos exatamente as 4 direções incidentes de luz que podem influenciar o fragmento. Por causa disso, podemos iterar diretamente sobre estas direções    de luz incidente, ou seja, sobre o número de luzes na cena.</p>
+
+<p>O que resta é adicionar um termo (improvisado) ambiente ao resultado <span style="color:blue">Lo</span>
+ de iluminação direta, e então teremos a cor final da iluminação do fragmento:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">vec3 ambient <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">0.03</span>) <span style="color:#f92672">*</span> albedo <span style="color:#f92672">*</span> ao;
+vec3 color   <span style="color:#f92672">=</span> ambient <span style="color:#f92672">+</span> Lo;  
+</code></pre></div>
+<h3 id="renderização-linear-e-hdr">Renderização Linear e HDR</h3>
+
+<p>Até agora, assumimos que todos os nossos cálculos estão no espaço de cores linear e, para dar conta disso, precisamos <a href="https://learnopengl.com/Advanced-Lighting/Gamma-Correction">corrigir o gama</a> no final do shader. Calcular a iluminação em um espaço linear é extremamente importante, pois o PBR requer que todas as entradas sejam lineares. Não levar isso em consideração resultará em iluminação incorreta. Além disso, queremos que as entradas de luz sejam próximas de seus equivalentes físicos, de modo que seus valores de brilho ou cor possam variar muito em um alto espectro de valores. Como resultado, <span style="color:blue">Lo</span>
+ pode crescer muito rapidamente e então ficar preso entre <code>0.0</code> e <code>1.0</code> devido à saída padrão de baixa faixa dinâmica ( <span style="color:blueviolet">low dynamic range</span>
+)(LDR). Corrigimos isso tomando <span style="color:blue">Lo</span>
+ e tom ou mapa de exposição do valor de <a href="https://learnopengl.com/Advanced-Lighting/HDR">alta faixa dinâmica</a> ( <span style="color:blueviolet">high dynamic range</span>
+) (HDR) corretamente para LDR antes da correção de gama:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">color <span style="color:#f92672">=</span> color <span style="color:#f92672">/</span> (color <span style="color:#f92672">+</span> vec3(<span style="color:#ae81ff">1.0</span>));
+color <span style="color:#f92672">=</span> pow(color, vec3(<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2.2</span>)); 
+</code></pre></div>
+<p>Aqui aplicamos o mapa de tons na cor HDR usando o operador Reinhard, preservando a alta faixa dinâmica de uma possível irradiância altamente variável, após o qual fazemos a correção gama. Não temos um frambuffer separado ou estádio de pós-processamento, portanto podemos aplicar diretamente ambos tone mapping e correção gama no final do shader de fragmento.</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/lighting_linear_vs_non_linear_and_hdr.png" alt="altlogo"></figure></p>
+
+<p>Levar em consideração o espaço de cores linear e a alta faixa dinâmica é extremamente importante em um pipeline de PBR. Sem eles, é impossível capturar corretamente os detalhes altos e baixos de intensidades de luz variáveis e seus cálculos acabam incorretos e, portanto, visualmente desagradáveis.</p>
+
+<h3 id="shader-pbr-de-iluminação-direta-completo">Shader PBR de Iluminação Direta Completo</h3>
+
+<p>Tudo o que resta agora é passar o tom final mapeado e a cor com correção de gama para o canal de saída do shader de fragmento e temos um shader de iluminação PBR direta. Para fins de integridade, a função <a href=""><span style="color:red">main </span></a>
+ completa está listada abaixo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#version 330 core
+</span><span style="color:#75715e"></span>out vec4 FragColor;
+in vec2 TexCoords;
+in vec3 WorldPos;
+in vec3 Normal;
+
+<span style="color:#75715e">// material parameters
+</span><span style="color:#75715e"></span>uniform vec3  albedo;
+uniform <span style="color:#66d9ef">float</span> metallic;
+uniform <span style="color:#66d9ef">float</span> roughness;
+uniform <span style="color:#66d9ef">float</span> ao;
+
+<span style="color:#75715e">// lights
+</span><span style="color:#75715e"></span>uniform vec3 lightPositions[<span style="color:#ae81ff">4</span>];
+uniform vec3 lightColors[<span style="color:#ae81ff">4</span>];
+
+uniform vec3 camPos;
+
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">float</span> PI <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14159265359</span>;
+  
+<span style="color:#66d9ef">float</span> <span style="color:#a6e22e">DistributionGGX</span>(vec3 N, vec3 H, <span style="color:#66d9ef">float</span> roughness);
+<span style="color:#66d9ef">float</span> <span style="color:#a6e22e">GeometrySchlickGGX</span>(<span style="color:#66d9ef">float</span> NdotV, <span style="color:#66d9ef">float</span> roughness);
+<span style="color:#66d9ef">float</span> <span style="color:#a6e22e">GeometrySmith</span>(vec3 N, vec3 V, vec3 L, <span style="color:#66d9ef">float</span> roughness);
+vec3 <span style="color:#a6e22e">fresnelSchlick</span>(<span style="color:#66d9ef">float</span> cosTheta, vec3 F0);
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{		
+    vec3 N <span style="color:#f92672">=</span> normalize(Normal);
+    vec3 V <span style="color:#f92672">=</span> normalize(camPos <span style="color:#f92672">-</span> WorldPos);
+
+    vec3 F0 <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">0.04</span>); 
+    F0 <span style="color:#f92672">=</span> mix(F0, albedo, metallic);
+	           
+    <span style="color:#75715e">// reflectance equation
+</span><span style="color:#75715e"></span>    vec3 Lo <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">0.0</span>);
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; <span style="color:#f92672">++</span>i) 
+    {
+        <span style="color:#75715e">// calculate per-light radiance
+</span><span style="color:#75715e"></span>        vec3 L <span style="color:#f92672">=</span> normalize(lightPositions[i] <span style="color:#f92672">-</span> WorldPos);
+        vec3 H <span style="color:#f92672">=</span> normalize(V <span style="color:#f92672">+</span> L);
+        <span style="color:#66d9ef">float</span> distance    <span style="color:#f92672">=</span> length(lightPositions[i] <span style="color:#f92672">-</span> WorldPos);
+        <span style="color:#66d9ef">float</span> attenuation <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">/</span> (distance <span style="color:#f92672">*</span> distance);
+        vec3 radiance     <span style="color:#f92672">=</span> lightColors[i] <span style="color:#f92672">*</span> attenuation;        
+        
+        <span style="color:#75715e">// cook-torrance brdf
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">float</span> NDF <span style="color:#f92672">=</span> DistributionGGX(N, H, roughness);        
+        <span style="color:#66d9ef">float</span> G   <span style="color:#f92672">=</span> GeometrySmith(N, V, L, roughness);      
+        vec3 F    <span style="color:#f92672">=</span> fresnelSchlick(max(dot(H, V), <span style="color:#ae81ff">0.0</span>), F0);       
+        
+        vec3 kS <span style="color:#f92672">=</span> F;
+        vec3 kD <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">-</span> kS;
+        kD <span style="color:#f92672">*=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">-</span> metallic;	  
+        
+        vec3 numerator    <span style="color:#f92672">=</span> NDF <span style="color:#f92672">*</span> G <span style="color:#f92672">*</span> F;
+        <span style="color:#66d9ef">float</span> denominator <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.0</span> <span style="color:#f92672">*</span> max(dot(N, V), <span style="color:#ae81ff">0.0</span>) <span style="color:#f92672">*</span> max(dot(N, L), <span style="color:#ae81ff">0.0</span>);
+        vec3 specular     <span style="color:#f92672">=</span> numerator <span style="color:#f92672">/</span> max(denominator, <span style="color:#ae81ff">0.001</span>);  
+            
+        <span style="color:#75715e">// add to outgoing radiance Lo
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">float</span> NdotL <span style="color:#f92672">=</span> max(dot(N, L), <span style="color:#ae81ff">0.0</span>);                
+        Lo <span style="color:#f92672">+=</span> (kD <span style="color:#f92672">*</span> albedo <span style="color:#f92672">/</span> PI <span style="color:#f92672">+</span> specular) <span style="color:#f92672">*</span> radiance <span style="color:#f92672">*</span> NdotL; 
+    }   
+  
+    vec3 ambient <span style="color:#f92672">=</span> vec3(<span style="color:#ae81ff">0.03</span>) <span style="color:#f92672">*</span> albedo <span style="color:#f92672">*</span> ao;
+    vec3 color <span style="color:#f92672">=</span> ambient <span style="color:#f92672">+</span> Lo;
+	
+    color <span style="color:#f92672">=</span> color <span style="color:#f92672">/</span> (color <span style="color:#f92672">+</span> vec3(<span style="color:#ae81ff">1.0</span>));
+    color <span style="color:#f92672">=</span> pow(color, vec3(<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2.2</span>));  
+   
+    FragColor <span style="color:#f92672">=</span> vec4(color, <span style="color:#ae81ff">1.0</span>);
+}  
+</code></pre></div>
+<p>Felizmente, com a teoria do capítulo <a href="https://learnopengl.com/PBR/Theory">anterior</a> e o conhecimento da equação de refletância, esse shader não deve ser mais tão assustador. Se pegarmos este shader, 4 luzes pontuais e algumas esferas onde variamos seus valores metálicos e de rugosidade em seus eixos vertical e horizontal, respectivamente, obteríamos algo assim:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/lighting_result.png" alt="altlogo"></figure></p>
+
+<p>De baixo para cima, o valor metálico varia de <code>0.0</code> a <code>1.0</code>, com a rugosidade aumentando da esquerda para a direita de <code>0.0</code> a <code>1.0</code>. Você pode ver que apenas alterando esses dois parâmetros simples de entender, já podemos exibir uma grande variedade de materiais diferentes.</p>
+
+<p>Você pode encontrar o código-fonte completo da demonstração <a href="/code_viewer_gh.php?code=src/6.pbr/1.1.lighting/lighting.cpp">aqui</a></p>
+
+<h2 id="pbr-texturizado">PBR Texturizado</h2>
+
+<p>Estender o sistema para aceitar seus parâmetros de superficies como texturas ao invés de valores uniformes nos dá um controle por fragmento sobre as propriedades do material da superfície:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">[...]
+uniform sampler2D albedoMap;
+uniform sampler2D normalMap;
+uniform sampler2D metallicMap;
+uniform sampler2D roughnessMap;
+uniform sampler2D aoMap;
+  
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>()
+{
+    vec3 albedo     <span style="color:#f92672">=</span> pow(texture(albedoMap, TexCoords).rgb, <span style="color:#ae81ff">2.2</span>);
+    vec3 normal     <span style="color:#f92672">=</span> getNormalFromNormalMap();
+    <span style="color:#66d9ef">float</span> metallic  <span style="color:#f92672">=</span> texture(metallicMap, TexCoords).r;
+    <span style="color:#66d9ef">float</span> roughness <span style="color:#f92672">=</span> texture(roughnessMap, TexCoords).r;
+    <span style="color:#66d9ef">float</span> ao        <span style="color:#f92672">=</span> texture(aoMap, TexCoords).r;
+    [...]
+}
+</code></pre></div>
+<p>Observe que as texturas de albedo que vêm de artistas são geralmente criadas no espaço sRGB, e é por isso que primeiro as convertemos em espaço linear antes de usar albedo em nossos cálculos de iluminação. Com base no sistema que os artistas usam para gerar mapas de oclusão de ambiente, você também pode ter que convertê-los de sRGB para espaço linear. Mapas metálicos e de rugosidade são quase sempre criados no espaço linear.</p>
+
+<p>Substituir as propriedades do material do conjunto anterior de esferas por texturas já mostra uma grande melhoria visual em relação aos algoritmos de iluminação anteriores que usamos:</p>
+
+<p><figure><img src="https://learnopengl.com/img/pbr/lighting_textured.png" alt="altlogo"></figure></p>
+
+<p>Você pode encontrar o código-fonte completo da demonstração texturizada <a href="/code_viewer_gh.php?code=src/6.pbr/1.2.lighting_textured/lighting_textured.cpp">aqui</a> e o conjunto de texturas usado <a href="http://freepbr.com/materials/rusted-iron-pbr-metal-material-alt/">aqui</a> (com um mapa ao branco). Lembre-se de que as superfícies metálicas tendem a parecer muito escuras em ambientes com iluminação direta, pois não têm refletância difusa. Eles parecem mais corretos quando se leva em consideração a iluminação especular do ambiente, que é o que vamos nos concentrar nos próximos capítulos.</p>
+
+<p>Embora não seja tão visualmente impressionante quanto algumas das demos de renderização PBR que você encontra por aí, dado que ainda não temos <a href="https://learnopengl.com/PBR/IBL/Diffuse-irradiance">iluminação baseada em imagem</a>, o sistema que temos agora ainda é um renderizador baseado fisicamente e mesmo sem IBL podemos ver sua iluminação parecer muito mais realista.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'aprendaopengl-1';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/aprendaopengl/pbr/teoria/" title="Teoria"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/aprendaopengl/pbr/teoria/" title="Teoria" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/aprendaopengl/js/clipboard.min.js?1608408550"></script>
+    <script src="/aprendaopengl/js/perfect-scrollbar.min.js?1608408550"></script>
+    <script src="/aprendaopengl/js/perfect-scrollbar.jquery.min.js?1608408550"></script>
+    <script src="/aprendaopengl/js/jquery.sticky.js?1608408550"></script>
+    <script src="/aprendaopengl/js/featherlight.min.js?1608408550"></script>
+    <script src="/aprendaopengl/js/highlight.pack.js?1608408550"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/aprendaopengl/js/modernizr.custom-3.6.0.js?1608408550"></script>
+    <script src="/aprendaopengl/js/learn.js?1608408550"></script>
+    <script src="/aprendaopengl/js/hugo-learn.js?1608408550"></script>
+    
+        
+            <script src="/aprendaopengl/mermaid/mermaid.js?1608408550"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85882787-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js" integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O" crossorigin="anonymous"></script>
+
+</html>

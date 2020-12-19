@@ -1,48 +1,37 @@
 ---
-title: "Iluminação Básica"
-date: 2020-10-29T15:28:58-03:00
+title: "Iluminação"
+date: 2020-10-29T15:28:58-03:01
 draft: false
 katex: true
 markup: "mmark"
+weight: 2
 ---
 
 [Post Original](https://learnopengl.com/PBR/Lighting)
 
-# Lighting
-
-# PBR/Lighting
-
-
-  In the previous chapter we laid the foundation for getting a realistic physically based renderer off the ground. In this chapter we'll focus on translating the previously discussed theory into an actual renderer that uses direct (or analytic) light sources: think of point lights, directional lights, and/or spotlights. 
-
-
-(https://learnopengl.com/PBR/Theory)
-
-
-  Let's start by re-visiting the final reflectance equation from the previous chapter:
+No capítulo [anterior](https://learnopengl.com/PBR/Theory), lançamos os fundamentos para se construir um renderizador realista baseado em física. Neste capítulo, vamos nos concentrar em traduzir a teoria discutida anteriormente em um renderizador real que usa fontes de luz diretas (ou analíticas): pense em luzes pontuais, luzes direcionais e / ou holofotes ( {{<english spotlights>}}).
 
 
 
-  We now know mostly what's going on, but what still remained a big unknown is how exactly we're going to represent irradiance, the total radiance \(L\), of the scene. We know that radiance \(L\) (as interpreted in computer graphics land) measures the radiant flux \(\phi\) or light energy of a light source over a given solid angle  \(\omega\). In our case we assumed the solid angle \(\omega\) to be infinitely small in which case radiance measures the flux of a light source over a single light ray or direction vector.
+Vamos começar revisitando a equação final de refletância do capítulo anterior:
+
+$$L_o(p,\omega_o)=\int_\Omega(k_d\frac{c}{\pi}+\frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)})L_i(p,\omega_i)n\cdot \omega_i d\omega_i$$ 
 
 
+  Agora sabemos principalmente o que está acontecendo, mas o que ainda permaneceu uma grande incógnita é como exatamente vamos representar a irradiância, a radiância total $L$, da cena. Sabemos que a radiância $L$ (conforme interpretada na computação gráfica) mede o fluxo radiante $\phi$ ou a energia da luz de uma fonte de luz sobre um determinado solid angle $\omega$. No nosso caso, assumimos que o solid angle $\omega$ é infinitamente pequeno, caso em que a radiância mede o fluxo de uma fonte de luz sobre um único raio de luz ou vetor de direção.
 
-  Given this knowledge, how do we translate this into some of the lighting knowledge we've accumulated from previous chapters? Well, imagine we have a single point light (a light source that shines equally bright in all directions) with a radiant flux of (23.47, 21.31, 20.79) as translated to an RGB triplet. The radiant intensity of this light source equals its radiant flux at all outgoing direction rays. However, when shading a specific point \(p\) on a surface, of all possible incoming light directions over its hemisphere \(\Omega\), only one incoming direction vector \(w_i\) directly comes from the point light source. As we only have a single light source in our scene, assumed to be a single point in space, all other possible incoming light directions have zero radiance observed over the surface point \(p\):
+  Dado esse conhecimento, como traduzimos isso em parte do conhecimento de iluminação que acumulamos nos capítulos anteriores? Bem, imagine que temos um único ponto de luz (uma fonte de luz que brilha igualmente em todas as direções) com um fluxo radiante de ```(23.47, 21.31, 20.79)``` traduzido para um valor RGB. A intensidade radiante desta fonte de luz é igual ao seu fluxo radiante em todos os raios de direção de saída. No entanto, ao analisar um ponto específico $p$ em uma superfície, de todas as direções de luz de entrada possíveis sobre seu hemisfério $\Omega$, apenas um vetor de direção de entrada $w_i$ vem diretamente da fonte de luz pontual. Como temos apenas uma única fonte de luz em nossa cena, assumida como um único ponto no espaço, todas as outras direções de luz de entrada possíveis têm radiância zero observada sobre o ponto da superfície $p$:
 
 
 ![altlogo](https://learnopengl.com/img/pbr/lighting_radiance_direct.png)
 
 
-  If at first, we assume that light attenuation (dimming of light over distance) does not affect the point light source, the radiance of the incoming light ray is the same regardless of where we position the light (excluding scaling the radiance by the incident angle \(\cos  \theta\)). This, because the point light has the same radiant intensity regardless of the angle we look at it, effectively modeling its radiant intensity as its radiant flux: a constant vector (23.47, 21.31, 20.79).
+  Se, a princípio, assumirmos que a atenuação da luz (escurecimento da luz ao longo da distância) não afeta a fonte de luz pontual, a radiância do raio de luz que entra é a mesma, independentemente de onde posicionamos a luz (excluindo a escala da radiância pelo ângulo de incidência $\cos theta$). Isso porque a luz pontual tem a mesma intensidade radiante independentemente do ângulo que olhamos para ela, modelando efetivamente sua intensidade radiante como seu fluxo radiante: um vetor constante ```(23.47, 21.31, 20.79)```.
 
+  No entanto, a radiância também assume uma posição $p$ como entrada e como qualquer fonte de luz pontual realista leva em conta a atenuação da luz, a intensidade radiante da fonte de luz pontual é dimensionada por alguma medida da distância entre o ponto $p$ e a fonte de luz. Então, conforme extraído da equação de radiância original, o resultado é escalado pelo produto escalar entre a normal da superfície $n$ e a direção da luz que entra $w_i$.
 
-
-  However, radiance also takes a position \(p\) as input and as any realistic point light source takes light attenuation into account, the radiant intensity of the point light source is scaled by some measure of the distance between point \(p\) and the light source. Then, as extracted from the original radiance equation, the result is scaled by the dot product between the surface normal \(n\) and the incoming light direction \(w_i\).
-
-
-
-  To put this in more practical terms: in the case of a direct point light the radiance function \(L\)  measures the light color, attenuated over its distance to \(p\) and scaled by \(n \cdot w_i\), but only over the single light ray \(w_i\) that hits \(p\) which equals the light's direction vector from \(p\).
-  In code this translates to:
+  Para colocar isso em termos mais práticos: no caso de uma luz pontual direta, a função de radiância $L$ mede a cor da luz, atenuada ao longo de sua distância para $p$ e dimensionada por $n \cdot w_i$ , mas apenas sobre o único raio de luz $w_i$ que atinge $p$  que é igual ao vetor de direção da luz de $p$.
+  No código, isso se traduz em:
 
 
 ```cpp
@@ -55,32 +44,26 @@ vec3  radiance    = lightColor * attenuation * cosTheta;
 
 ```
 
-
-  Aside from the different terminology, this piece of code should be awfully familiar to you: this is exactly how we've been doing diffuse lighting so far. When it comes to direct lighting, radiance is calculated similarly to how we've calculated lighting before as only a single light direction vector contributes to the surface's radiance. 
-
-
-{{% greenbox tip %}}
-
-  Note that this assumption holds as point lights are infinitely small and only a single point in space. If we were to model a light that has area or volume, its radiance would be non-zero in more than one incoming light direction.
+  Apesar da terminologia diferente, este trecho de código deve ser bastante familiar para você: é exatamente assim que temos feito a iluminação difusa até agora. Quando se trata de iluminação direta, a radiância é calculada de forma semelhante a como calculamos a iluminação antes, pois apenas um único vetor de direção da luz contribui para a radiância da superfície.
 
 
-{{% /greenbox %}}
+{{% greenbox tip%}}
+
+  Observe que essa suposição é válida, pois as luzes pontuais são infinitamente pequenas e constituem apenas um único ponto no espaço. Se tivéssemos que modelar uma luz com área ou volume, sua radiância seria diferente de zero em mais de uma direção de luz incidente.
 
 
-  For other types of light sources originating from a single point we calculate radiance similarly. For instance, a directional light source has a constant \(w_i\) without an attenuation factor. And a spotlight would not have a constant radiant intensity, but one that is scaled by the forward direction vector of the spotlight. 
+{{% / greenbox%}}
 
 
-
-  This also brings us back to the integral \(\int\) over the surface's hemisphere \(\Omega\) . As we know beforehand the single locations of all the contributing light sources while shading a single surface point, it is not required to try and solve the integral. We can directly take the (known) number of light sources and calculate their total irradiance, given that each light source has only a single light direction that influences the surface's radiance. This makes PBR on direct light sources relatively simple as we effectively only have to loop over the contributing light sources. When we later take environment lighting into account in the IBL chapters we do have to take the integral into account as light can come from any direction.
-
-
-(https://learnopengl.com/PBR/IBL/Diffuse-irradiance)
-
-## A PBR surface model
+  Para outros tipos de fontes de luz originadas de um único ponto, calculamos a radiância de forma semelhante. Por exemplo, uma fonte de luz direcional tem uma constante $w_i$ sem um fator de atenuação. E um holofote não teria uma intensidade radiante constante, mas uma que é dimensionada pelo vetor de direção direta do holofote.
 
 
-  Let's start by writing a fragment shader that implements the previously described PBR models. First, we need to take the relevant PBR inputs required for shading the surface:
+  Isso também nos traz de volta à integral $\int$ sobre o hemisfério da superfície $\Omega$. Como sabemos de antemão as localizações únicas de todas as fontes de luz contribuintes ao shading de um único ponto da superfície, não é necessário tentar resolver a integral. Podemos tomar diretamente o número (conhecido) de fontes de luz e calcular sua irradiância total, visto que cada fonte de luz tem apenas uma única direção de luz que influencia no brilho da superfície. Isso torna o PBR em fontes de luz direta relativamente simples, pois efetivamente só precisamos fazer um loop sobre as fontes de luz contribuintes. Quando mais tarde levarmos em consideração a iluminação do ambiente nos capítulos [IBL](https://learnopengl.com/PBR/IBL/Diffuse-irradiance), teremos que levar em consideração a integral, pois a luz pode vir de qualquer direção.
 
+
+## Um modelo de superfície PBR 
+
+Vamos começar escrevendo um shader de fragmento que implementa os modelos PBR descritos anteriormente. Primeiro, precisamos pegar as entradas relevantes ao PBR para o shading da superfície:
 
 ```cpp
 
@@ -99,12 +82,9 @@ uniform float ao;
 
 ```
 
+ Usamos as entradas padrão calculadas de um shader de vértice genérico e um conjunto de constantes de propriedades de material da superfície do objeto.
 
-  We take the standard inputs as calculated from a generic vertex shader and a set of constant material properties over the surface of the object. 
-
-
-
-  Then at the start of the fragment shader we do the usual calculations required for any lighting algorithm:
+ Então, no início do shader de fragmento fazemos os cálculos usuais exigidos por qualquer algoritmo de iluminação:
 
 
 ```cpp
@@ -118,8 +98,9 @@ void main()
 
 ```
 
+### Iluminação Direta
 
-  In this chapter's example demo we have a total of 4 point lights that together represent the scene's irradiance. To satisfy the reflectance equation we loop over each light source, calculate its individual radiance and sum its contribution scaled by the BRDF and the light's incident angle. We can think of the loop as solving the integral \(\int\) over \(\Omega\) for direct light sources. First, we calculate the relevant per-light variables:
+ No exemplo de demonstração deste capítulo temos um total de 4 luzes pontuais que, em conjunto, representam a irradiância da cena. Para satisfazer a equação de refletância, iteramos sobre as fontes de luz, calculamos cada radiância individual e somamos sua contribuição escalada pela BRDF e o angulo de incidência da luz. Podemos pensar nesse loop como a resolução da integral $\int$ sobre $\Omega$ para fontes de luz direta. Primeiro, calculamos todas variáveis relevantes para cada luz:
 
 
 ```cpp
@@ -137,41 +118,34 @@ for(int i = 0; i < 4; ++i)
 
 ```
 
+  Ao calcular a iluminação no espaço linear (fazemos a [correção gama](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) no final do shader), atenuamos as fontes de luz pela fisicamente correta {{<definition "lei do quadrado-inverso">}}.
 
-  As we calculate lighting in linear space (we'll gamma correct at the end of the shader) we attenuate the light sources by the more physically correct inverse-square law. 
-
-
-(https://learnopengl.com/Advanced-Lighting/Gamma-Correction)
 
 {{% greenbox tip %}}
 
-  While physically correct, you may still want to use the constant-linear-quadratic attenuation equation that (while not physically correct) can offer you significantly more control over the light's energy falloff.
-
+ Enquanto fisicamente correta, você pode ainda querer usar a equação de atenuação quadrática-linear-constante que (enquanto não correta fisicamente) pode significativamente oferecer mais controle sobre o decaimento de energia da luz.
 
 {{% /greenbox %}}
 
+ Então, para cada luz queremos calcular o termo completo Cook-Torrance BRDF:
 
-  Then, for each light we want to calculate the full Cook-Torrance specular BRDF term:
-
-
-
-  The first thing we want to do is calculate the ratio between specular and diffuse reflection, or how much the surface reflects light versus how much it refracts light. We know from the previous chapter that the Fresnel equation calculates just that:
+$$\frac{DFG}{4(\omega_o\cdot n)(\omega_i\cdot n)}$$
 
 
-(https://learnopengl.com/PBR/Theory)
+ A primeira coisa a se fazer é calcular a razão entre as reflexões especular e difusa, ou quanto a superfície reflete luz versus o quanto refrata a luz. Sabemos do capítulo [anterior](https://learnopengl.com/PBR/Theory) que a equação de Fresnel calcula exatamente isto:
+
 
 ```cpp
 
 vec3 fresnelSchlick(float cosTheta, vec3 F0)
 {
-    return F0 + (1.0 - F0) * pow(1.0 - cosTheta, 5.0);
+    return F0 + (1.0 - F0) * pow(max(1.0 - cosTheta, 0.0), 5.0);
 }  
 
 ```
+ 
 
-
-  The Fresnel-Schlick approximation expects a F0 parameter which is known as the surface reflection at zero incidence or how much the surface reflects if looking directly at the surface. The F0 varies per material and is tinted on metals as we find in large material databases. In the PBR metallic workflow we make the simplifying assumption that most dielectric surfaces look visually correct with a constant F0 of 0.04, while we do specify F0 for metallic surfaces as then given by the albedo value. This translates to code as follows:
-
+  A aproximação de Fresnel-Schlick espera um parâmetro {{<variable F0>}} que é conhecido como a _reflexão da superfície_ na _incidência zero_ ou quanto a superfície reflete se olhar diretamente para a superfície. O {{<variable F0>}} varia de acordo com o material e é tingido em metais, conforme encontramos em grandes bancos de dados de materiais. No metallic workflow  PBR, fazemos a suposição simplificadora de que a maioria das superfícies dielétricas parecem visualmente corretas com uma constante {{<variable F0>}} de ```0.04```, enquanto especificamos {{<variable F0>}} para superfícies metálicas conforme dado pelo valor de albedo. Isso se traduz em código da seguinte maneira:
 
 ```cpp
 
@@ -181,17 +155,11 @@ vec3 F  = fresnelSchlick(max(dot(H, V), 0.0), F0);
 
 ```
 
+Como você pode ver, para superfícies não-metálicas {{<variable F0>}} vale sempre ```0.04```. Para superfícies metálicas, variamos {{<variable F0>}} interpolando linearmente entre o valor original de {{<variable F0>}} e o valor de albedo dado pela propriedade {{<variable metallic>}}.
 
-  As you can see, for non-metallic surfaces F0 is always 0.04. For metallic surfaces, we vary F0 by linearly interpolating between the original F0 and the albedo value given the metallic property. 
+Dado $F$, os termos restantes são a função de distribuição normal $D$ e a função de geometria $G$.
 
-
-
-  Given \(F\), the remaining terms to calculate are the normal distribution function \(D\) and the geometry function \(G\).
-
-
-
-  In a direct PBR lighting shader their code equivalents are:
-
+Em um shader de iluminação direta PBR, seus códigos equivalentes são:
 
 ```cpp
 
@@ -231,14 +199,9 @@ float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughness)
 
 ```
 
+O que é importante notar aqui é que em contraste ao capítulo de [teoria](https://learnopengl.com/PBR/Theory), passamos o parâmetro roughness diretamente para essas funções; deste modo podemos fazer algumas modificações específicas para cada termo no valor original de roughness. Baseados em observações pela Disney e adotados pela Epic Games, a iluminação parece mais correta ao elevar ao quadrado o roughness em ambas funções de geometria e distribuição normal.
 
-  What's important to note here is that in contrast to the theory chapter, we pass the roughness parameter directly to these functions; this way we can make some term-specific modifications to the original roughness value. Based on observations by Disney and adopted by Epic Games, the lighting looks more correct squaring the roughness in both the geometry and normal distribution function.
-
-
-(https://learnopengl.com/PBR/Theory)
-
-
-  With both functions defined, calculating the NDF and the G term in the reflectance loop is straightforward: 
+Com as funções definidas, calcular o NDF e o termo G no loop de refletância é trivial:
 
 
 ```cpp
@@ -248,8 +211,7 @@ float G   = GeometrySmith(N, V, L, roughness);
 
 ```
 
-
-  This gives us enough to calculate the Cook-Torrance BRDF:
+Isto nos dá informação suficiente para calcular a Cook-Torrance BRDF:
 
 
 ```cpp
@@ -260,12 +222,9 @@ vec3 specular     = numerator / max(denominator, 0.001);
 
 ```
 
+ Note que limitamos o denominador para ```0.001``` para previnir uma divisão por zero no caso de qualquer produto escalar resultar em ```0.0```.
 
-  Note that we constrain the denominator to 0.001 to prevent a divide by zero in case any dot product ends up 0.0.
-
-
-
-  Now we can finally calculate each light's contribution to the reflectance equation. As the Fresnel value directly corresponds to \(k_S\) we can use F to denote the specular contribution of any light that hits the surface. From \(k_S\) we can then calculate the ratio of refraction \(k_D\):
+ Agora podemos finalmente calcular cada contribuição de luz a equação de refletância. Como o valor de Fresnel corresponde diretamente a $k_S$, podemos usar {{<variable F>}} para denotar a contribuição especular de qualquer luz que atinja a superfície. A partir de $k_S$ podemos então calcular a razão de refração $k_D$:
 
 
 ```cpp
@@ -276,9 +235,7 @@ vec3 kD = vec3(1.0) - kS;
 kD *= 1.0 - metallic;	
 
 ```
-
-
-  Seeing as kS represents the energy of light that gets reflected, the remaining ratio of light energy is the light that gets refracted which we store as kD. Furthermore, because metallic surfaces don't refract light and thus have no diffuse reflections we enforce this property by nullifying kD if the surface is metallic.  This gives us the final data we need to calculate each light's outgoing reflectance value:
+ Observando como {{<variable kS>}} representa a energia da luz que é refletida, a razão restante da energia da luz é a luz que é refratada a qual armazenamos em {{<variable kD>}}. Além disso, como superfícies metálicas não refratam luz e portanto não têm reflexões difusas, asseguramos esta propriedade ao zerar {{<variable kD>}} quando a superfície é metálica. Isso nos dá a informação	final de que precisamos para calcular o valor de refletância de cada luz de saída.
 
 
 ```cpp
@@ -291,12 +248,9 @@ kD *= 1.0 - metallic;
 
 ```
 
+ O valor resultante {{<variable Lo>}}, ou a radiância de saída, é efetivamente o resultado da integral $\int$ sobre $\Omega$ da equação de refletância. Nós não precisamos resolver a integral para todas as direções	de incidência de luz dado que sabemos exatamente as 4 direções incidentes de luz que podem influenciar o fragmento. Por causa disso, podemos iterar diretamente sobre estas direções	de luz incidente, ou seja, sobre o número de luzes na cena.
 
-  The resulting Lo value, or the outgoing radiance, is effectively the result of the reflectance equation's integral \(\int\) over \(\Omega\).  We don't really have to try and solve the integral for all possible incoming light directions as we know exactly the 4 incoming light directions that can influence the fragment. Because of this, we can directly loop over these incoming light directions e.g. the number of lights in the scene.
-
-
-
-  What's left is to add an (improvised) ambient term to the direct lighting result Lo and we have the final lit color of the fragment:
+O que resta é adicionar um termo (improvisado) ambiente ao resultado {{<variable Lo>}} de iluminação direta, e então teremos a cor final da iluminação do fragmento:
 
 
 ```cpp
@@ -306,13 +260,10 @@ vec3 color   = ambient + Lo;
 
 ```
 
+### Renderização Linear e HDR
 
-  So far we've assumed all our calculations to be in linear color space and to account for this we need to gamma correct at the end of the shader. Calculating lighting in linear space is incredibly important as PBR requires all inputs to be linear. Not taking this into account will result in incorrect lighting. Additionally, we want light inputs to be close to their physical equivalents such that their radiance or color values can vary wildly over a high spectrum of values. As a result, Lo can rapidly grow really high which then gets clamped between 0.0 and 1.0 due to the default low dynamic range (LDR) output. We fix this by taking Lo and tone or exposure map the high dynamic range (HDR) value correctly to LDR before gamma correction: 
+ Até agora, assumimos que todos os nossos cálculos estão no espaço de cores linear e, para dar conta disso, precisamos [corrigir o gama](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) no final do shader. Calcular a iluminação em um espaço linear é extremamente importante, pois o PBR requer que todas as entradas sejam lineares. Não levar isso em consideração resultará em iluminação incorreta. Além disso, queremos que as entradas de luz sejam próximas de seus equivalentes físicos, de modo que seus valores de brilho ou cor possam variar muito em um alto espectro de valores. Como resultado, {{<variable Lo>}} pode crescer muito rapidamente e então ficar preso entre ```0.0``` e ```1.0``` devido à saída padrão de baixa faixa dinâmica ( {{<english "low dynamic range">}})(LDR). Corrigimos isso tomando {{<variable Lo>}} e tom ou mapa de exposição do valor de [alta faixa dinâmica](https://learnopengl.com/Advanced-Lighting/HDR) ( {{<english "high dynamic range">}}) (HDR) corretamente para LDR antes da correção de gama:
 
-
-(https://learnopengl.com/Advanced-Lighting/Gamma-Correction)
-
-(https://learnopengl.com/Advanced-Lighting/HDR)
 
 ```cpp
 
@@ -321,18 +272,17 @@ color = pow(color, vec3(1.0/2.2));
 
 ```
 
-
-  Here we tone map the HDR color using the Reinhard operator, preserving the high dynamic range of a possibly highly varying irradiance, after which we gamma correct the color. We don't have a separate framebuffer or post-processing stage so we can directly apply both the tone mapping and gamma correction step at the end of the forward fragment shader. 
+Aqui aplicamos o mapa de tons na cor HDR usando o operador Reinhard, preservando a alta faixa dinâmica de uma possível irradiância altamente variável, após o qual fazemos a correção gama. Não temos um frambuffer separado ou estádio de pós-processamento, portanto podemos aplicar diretamente ambos tone mapping e correção gama no final do shader de fragmento.
 
 
 ![altlogo](https://learnopengl.com/img/pbr/lighting_linear_vs_non_linear_and_hdr.png)
 
 
-  Taking both linear color space and high dynamic range into account is incredibly important in a PBR pipeline. Without these it's impossible to properly capture the high and low details of varying light intensities and your calculations end up incorrect and thus visually unpleasing.
+  Levar em consideração o espaço de cores linear e a alta faixa dinâmica é extremamente importante em um pipeline de PBR. Sem eles, é impossível capturar corretamente os detalhes altos e baixos de intensidades de luz variáveis e seus cálculos acabam incorretos e, portanto, visualmente desagradáveis.
 
+### Shader PBR de Iluminação Direta Completo
 
-
-  All that's left now is to pass the final tone mapped and gamma corrected color to the fragment shader's output channel and we have ourselves a direct PBR lighting shader. For completeness' sake, the complete main function is listed below:
+   Tudo o que resta agora é passar o tom final mapeado e a cor com correção de gama para o canal de saída do shader de fragmento e temos um shader de iluminação PBR direta. Para fins de integridade, a função {{<struct main>}} completa está listada abaixo:
 
 
 ```cpp
@@ -411,28 +361,22 @@ void main()
 ```
 
 
-  Hopefully, with the theory from the previous chapter and the knowledge of the reflectance equation this shader shouldn't be as daunting anymore. If we take this shader, 4 point lights, and quite a few spheres where we vary both their metallic and roughness values on their vertical and horizontal axis respectively, we'd get something like this:
+  Felizmente, com a teoria do capítulo [anterior](https://learnopengl.com/PBR/Theory) e o conhecimento da equação de refletância, esse shader não deve ser mais tão assustador. Se pegarmos este shader, 4 luzes pontuais e algumas esferas onde variamos seus valores metálicos e de rugosidade em seus eixos vertical e horizontal, respectivamente, obteríamos algo assim:
 
 
-(https://learnopengl.com/PBR/Theory)
 
 ![altlogo](https://learnopengl.com/img/pbr/lighting_result.png)
 
 
-  From bottom to top the metallic value ranges from 0.0 to 1.0, with roughness increasing left to right from 0.0 to 1.0. You can see that by only changing these two simple to understand parameters we can already display a wide array of different materials.
+  De baixo para cima, o valor metálico varia de ```0.0``` a ```1.0```, com a rugosidade aumentando da esquerda para a direita de ```0.0``` a ```1.0```. Você pode ver que apenas alterando esses dois parâmetros simples de entender, já podemos exibir uma grande variedade de materiais diferentes.
 
 
 
-  You can find the full source code of the demo here.
+   Você pode encontrar o código-fonte completo da demonstração [aqui](/code_viewer_gh.php?code=src/6.pbr/1.1.lighting/lighting.cpp)
 
+## PBR Texturizado
 
-(/code_viewer_gh.php?code=src/6.pbr/1.1.lighting/lighting.cpp)
-
-## Textured PBR
-
-
-  Extending the system to now accept its surface parameters as textures instead of uniform values gives us per-fragment control over the surface material's properties:
-
+Estender o sistema para aceitar seus parâmetros de superficies como texturas ao invés de valores uniformes nos dá um controle por fragmento sobre as propriedades do material da superfície:
 
 ```cpp
 
@@ -456,26 +400,18 @@ void main()
 ```
 
 
-  Note that the albedo textures that come from artists are generally authored in sRGB space which is why we first convert them to linear space before using albedo in our lighting calculations. Based on the system artists use to generate ambient occlusion maps you may also have to convert these from sRGB to linear space as well. Metallic and roughness maps are almost always authored in linear space.
+  Observe que as texturas de albedo que vêm de artistas são geralmente criadas no espaço sRGB, e é por isso que primeiro as convertemos em espaço linear antes de usar albedo em nossos cálculos de iluminação. Com base no sistema que os artistas usam para gerar mapas de oclusão de ambiente, você também pode ter que convertê-los de sRGB para espaço linear. Mapas metálicos e de rugosidade são quase sempre criados no espaço linear.
 
-
-
-  Replacing the material properties of the previous set of spheres with textures, already shows a major visual improvement over the previous lighting algorithms we've used:
-
+   Substituir as propriedades do material do conjunto anterior de esferas por texturas já mostra uma grande melhoria visual em relação aos algoritmos de iluminação anteriores que usamos:
 
 ![altlogo](https://learnopengl.com/img/pbr/lighting_textured.png)
 
 
-  You can find the full source code of the textured demo here and the texture set used here (with a white ao map). Keep in mind that metallic surfaces tend to look too dark in direct lighting environments as they don't have diffuse reflectance. They do look more correct when taking the environment's specular ambient lighting into account, which is what we'll focus on in the next chapters.
+  Você pode encontrar o código-fonte completo da demonstração texturizada [aqui](/code_viewer_gh.php?code=src/6.pbr/1.2.lighting_textured/lighting_textured.cpp) e o conjunto de texturas usado [aqui](http://freepbr.com/materials/rusted-iron-pbr-metal-material-alt/) (com um mapa ao branco). Lembre-se de que as superfícies metálicas tendem a parecer muito escuras em ambientes com iluminação direta, pois não têm refletância difusa. Eles parecem mais corretos quando se leva em consideração a iluminação especular do ambiente, que é o que vamos nos concentrar nos próximos capítulos.
 
 
-(/code_viewer_gh.php?code=src/6.pbr/1.2.lighting_textured/lighting_textured.cpp)
-
-(http://freepbr.com/materials/rusted-iron-pbr-metal-material-alt/)
+  Embora não seja tão visualmente impressionante quanto algumas das demos de renderização PBR que você encontra por aí, dado que ainda não temos [iluminação baseada em imagem](https://learnopengl.com/PBR/IBL/Diffuse-irradiance), o sistema que temos agora ainda é um renderizador baseado fisicamente e mesmo sem IBL podemos ver sua iluminação parecer muito mais realista.
 
 
-  While not as visually impressive as some of the PBR render demos you find out there, given that we don't yet have image based lighting built in, the system we have now is still a physically based renderer, and even without IBL you'll see your lighting look a lot more realistic.
 
-
-(https://learnopengl.com/PBR/IBL/Diffuse-irradiance)
 
