@@ -53,7 +53,7 @@ A seguir, temos a lista de todas seções do site com cores indicando quais {{<d
 |Capítulo|Seções|
 |---|--------|
 |{{<definition Introdução>}} | |
-|{{<english "Ponto de Partida">}} | {{<variable "Criando uma Janela">}}, {{<variable "Olá Janela">}}, {{<variable "Olá Triângulo">}}, {{<struct "Shaders">}}, {{<struct "Texturas">}}, {{<english "Transformações">}}, {{<struct "Sistemas de Coordenadas">}}, {{<struct "Câmera">}}, {{<struct "Revisão">}} |
+|{{<english "Ponto de Partida">}} | {{<variable "Criando uma Janela">}}, {{<variable "Olá Janela">}}, {{<variable "Olá Triângulo">}}, {{<struct "Shaders">}}, {{<struct "Texturas">}}, {{<variable "Transformações">}}, {{<struct "Sistemas de Coordenadas">}}, {{<struct "Câmera">}}, {{<struct "Revisão">}} |
 |{{<english "Iluminação">}} | {{<variable "Cores">}}, {{<variable "Iluminação Básica">}}, {{<english "Materiais">}}, {{<struct "Mapas de Iluminação">}}, {{<struct "Lançadores de Luz">}}, {{<struct "Múltiplas Luzes">}}, {{<struct "Revisão">}} |
 |{{<struct "Carregamento de Modelos">}} | {{<struct "Assimp">}}, {{<struct "Malha">}}, {{<struct "Modelo">}} |
 |{{<struct "OpenGL Avançada">}} | {{<struct "Teste de Profundidade">}}, {{<struct "Teste de Estêncil">}}, {{<struct "Mistura">}}, {{<struct "Seleção de Faces">}}, {{<struct "Framebuffers">}}, {{<struct "Mapas Cúbicos">}}, {{<struct "Dados Avançados">}}, {{<struct "GLSL Avançada">}}, {{<struct "Shader de Geometria">}}, {{<struct "Instanciação">}}, {{<struct "Anti-Aliasing">}} |
@@ -65,8 +65,8 @@ A seguir, temos a lista de todas seções do site com cores indicando quais {{<d
 |Estatística|Contagem|
 |----|----|
 |{{<definition "já foram traduzidas e revisadas">}} | 1 |
-|{{<english "sendo traduzidas no momento">}} | 6 |
-|{{<variable "já foram traduzidas mas precisam de revisão">}} | 9 | 
+|{{<english "sendo traduzidas no momento">}} | 5 |
+|{{<variable "já foram traduzidas mas precisam de revisão">}} | 10 | 
 |{{<struct "ainda nem foram traduzidas">}} | 54 |
 | total | 70 |
 
